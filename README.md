@@ -1,3 +1,9 @@
+
+* 試著插入 TortoiseGit 範例 (預計先做到第2章)
+* 請選擇你想要看的語言資料夾進去看, 例如: 繁體中文請進"zh-tw"資料夾
+
+----
+
 [![Build Status](https://secure.travis-ci.org/progit/progit.png?branch=master)](https://travis-ci.org/progit/progit)
 
 # Pro Git Book Contents
