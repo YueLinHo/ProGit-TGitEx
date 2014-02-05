@@ -1,4 +1,4 @@
-# Getting Started #
+﻿# Getting Started #
 
 This chapter will be about getting started with Git.  We will begin at the beginning by explaining some background on version control tools, then move on to how to get Git running on your system and finally how to get it setup to start working with.  At the end of this chapter you should understand why Git is around, why you should use it and you should be all setup to do so.
 
@@ -184,6 +184,36 @@ After it’s installed, you have both a command-line version (including an SSH c
 
 Note on Windows usage: you should use Git with the provided msysGit shell (Unix style), it allows to use the complex lines of command given in this book. If you need, for some reason, to use the native Windows shell / command line console, you have to use double quotes instead of simple quotes (for parameters with spaces in them) and you must quote the parameters ending with the circumflex accent (^) if they are last on the line, as it is a continuation symbol in Windows.
 
+> #### TortoiseGit ####
+> 
+> [TortoiseGit 1.8.7.0 Download Page](https://code.google.com/p/tortoisegit/wiki/Download?tm=2)
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_02/01.png)
+> ![](/figures/TGit/1.4.4_02/02.png)
+> ![](/figures/TGit/1.4.4_02/03.png)
+> ![](/figures/TGit/1.4.4_02/04.png)
+> ![](/figures/TGit/1.4.4_02/05.png)
+> ![](/figures/TGit/1.4.4_02/06.png)
+> 
+> #### Git on Windows(msysGit) ####
+> 
+> [Download List](https://code.google.com/p/msysgit/downloads/list)
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_03/01.png)
+> ![](/figures/TGit/1.4.4_03/02.png)
+> ![](/figures/TGit/1.4.4_03/03.png)
+> ![](/figures/TGit/1.4.4_03/04.png)
+> ![](/figures/TGit/1.4.4_03/05.png)
+> ![](/figures/TGit/1.4.4_03/06.png)
+> ![](/figures/TGit/1.4.4_03/07.png)
+> ![](/figures/TGit/1.4.4_03/08.png)
+> ![](/figures/TGit/1.4.4_03/09.png)
+> 
+
 ## First-Time Git Setup ##
 
 Now that you have Git on your system, you’ll want to do a few things to customize your Git environment. You should have to do these things only once; they’ll stick around between upgrades. You can also change them at any time by running through the commands again.
@@ -205,6 +235,23 @@ The first thing you should do when you install Git is to set your user name and 
 
 Again, you need to do this only once if you pass the `--global` option, because then Git will always use that information for anything you do on that system. If you want to override this with a different name or e-mail address for specific projects, you can run the command without the `--global` option when you’re in that project.
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on desktop & Click on **Settings**
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify User Info
+> 
+>     ![](/figures/TGit/1.5.1/02.png)
+> 
+>   * Click **Git** node
+>   * Click **Global** in **Config source**
+>   * Un-check **inherit** checkbox of **Name** and **Email** in User Info group box
+>   * Fill the **Name** and **Email**
+>   * Push **Apply** button
+> 
+
 ### Your Editor ###
 
 Now that your identity is set up, you can configure the default text editor that will be used when Git needs you to type in a message. By default, Git uses your system’s default editor, which is generally Vi or Vim. If you want to use a different text editor, such as Emacs, you can do the following:
@@ -218,6 +265,47 @@ Another useful option you may want to configure is the default diff tool to use 
 	$ git config --global merge.tool vimdiff
 
 Git accepts kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, and opendiff as valid merge tools. You can also set up a custom tool; see Chapter 7 for more information about doing that.
+
+> #### TortoiseGit - Diff Viewer ####
+> 
+> 1.  Right click on desktop & Click on Settings
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify Diff Viewer
+> 
+>     ![](/figures/TGit/1.5.3/01.png)
+> 
+>   * Click **Diff Viewer**
+>   * Click **External**
+>   * Fill: **C:\Program Files (x86)\WinMerge\WinMergeU.exe -s -e -x -ul -ur -wl -dl %bname -dr %yname %base %mine**
+>   * Push **Apply** button
+> 
+> #### TortoiseGit - Diff Viewer for specific file extension ####
+> 
+> 1.  Click **Diff Viewer** node
+> 2.  Click **External**
+> 3.  Copy **WinMerge setting value**
+> 4.  Push **Advanced** button
+> 
+>     ![](/figures/TGit/1.5.3/03.png)
+> 
+> 5.  Push **Add** button
+> 
+>     ![](/figures/TGit/1.5.3/04.png)
+> 
+> 6.  Fill **Extension**, Paste WinMerge setting value into **External program**, then Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/05.png)
+> 
+> 7.  Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/06.png)
+> 
+> 8.  Click back to "TortoiseGitMerge", Push **Apply** button
+> 
+>     ![](/figures/TGit/1.5.3/07.png)
+> 
 
 ### Checking Your Settings ###
 
@@ -253,6 +341,31 @@ For example, you can get the manpage help for the config command by running
 
 These commands are nice because you can access them anywhere, even offline.
 If the manpages and this book aren’t enough and you need in-person help, you can try the `#git` or `#github` channel on the Freenode IRC server (irc.freenode.net). These channels are regularly filled with hundreds of people who are all very knowledgeable about Git and are often willing to help.
+
+> ### TortoiseGit - Offline Help ###
+> 
+> ![](/figures/TGit/1.6/01.png)
+> 
+> ![](/figures/TGit/1.6/02.png)
+> 
+> ### TortoiseGit - Online Help ###
+> 
+> [TortoiseGit Help Online Doc](http://tortoisegit.org/docs/tortoisegit/)
+> 
+> ![](/figures/TGit/1.6/03.png)
+> 
+> [~~General Group~~](https://groups.google.com/forum/#!forum/tortoisegit)
+> 
+> [Users Group](https://groups.google.com/forum/#!forum/tortoisegit-users)
+> 
+> [Dev Group](https://groups.google.com/forum/#!forum/tortoisegit-dev)
+> 
+> [The Issue List](https://code.google.com/p/tortoisegit/issues/list)
+> 
+> [The Project on Google](https://code.google.com/p/tortoisegit/)
+> 
+> [The Project on GitHub](https://github.com/TortoiseGit/TortoiseGit)
+> 
 
 ## Summary ##
 

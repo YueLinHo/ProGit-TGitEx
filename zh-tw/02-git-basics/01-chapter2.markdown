@@ -12,6 +12,23 @@
 
 	$ git init
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click in an existing directory, Click **Git Create repository here...**
+> 
+>   ![](/figures/TGit/2.1.1_01/01.png)
+> 
+> 1.  Push **OK OK**
+> 
+>   ![](/figures/TGit/2.1.1_01/02.png)
+> 
+>   ![](/figures/TGit/2.1.1_01/03.png)
+> 
+> 1.  The **.git** subdirectory & the context menu
+> 
+>   ![](/figures/TGit/2.1.1_01/04.png)
+> 
+
 這個命令會建立名為 `.git` 的子目錄，該目錄包含一個Git儲存庫架構必要的所有檔案。 目前來說，專案內任何檔案都還沒有被追蹤。（關於.git目錄內有些什麼檔案，可參考第九章）
 
 若讀者想要開始對現有的檔案開始做版本控制（除了空的目錄以外），讀者也許應該開始追蹤這些檔案並做第一次的提交。 讀者能以少數的git add命令指定要追蹤的檔案，並將它們提交：
@@ -19,6 +36,26 @@
 	$ git add *.c
 	$ git add README
 	$ git commit -m 'initial project version'
+
+> 
+> 或者也可以直接先做一個空提交, 其指令:
+> 
+> 		$ git commit -m 'Head' --allow-empty
+> 
+> #### TortoiseGit ####
+> 
+> 1.  Right Click in the root of repository, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.1.1_02/01_Commit.png)
+> 
+> 1.  Write **Message**, Tick **Message only** checkbox, Push **OK** button
+> 
+>   ![](/figures/TGit/2.1.1_02/02_MsgOnly.png)
+> 
+> 1.  The Git Command Progress dailog running..., Push **Close** button
+> 
+>   ![](/figures/TGit/2.1.1_02/03_Success.png)
+> 
 
 這些命令執行完畢大約只需要一分鐘。 現在，讀者已經有個追蹤部份檔案及第一次提交內容的Git儲存庫。
 
@@ -35,6 +72,33 @@
 	$ git clone git://github.com/schacon/grit.git mygrit
 
 這個命令做的事大致如同上一個命令，只不過目的目錄名為mygrit。
+
+> #### TortoiseGit ####
+> 
+> 1.  Select URL, and push Ctrl+C (for fill URL automatically)
+> 
+>   ![](/figures/TGit/2.1.2/01.png)
+> 
+> 1.  Right Click **in** the target directory, Click **Git Clone...**
+> 
+>   ![](/figures/TGit/2.1.2/02.png)
+> 
+> 1.  **URL** and **Directory* is filled automatically
+> 
+>   ![](/figures/TGit/2.1.2/03.png)
+> 
+> 1.  Modify **Directory** if needed, Push **OK** button
+> 
+>   ![](/figures/TGit/2.1.2/04.png)
+> 
+> 1.  Cloning..., Success, Push **Close** button
+> 
+>   ![](/figures/TGit/2.1.2/05.png)
+> 
+> 1.  The version control folder
+> 
+>   ![](/figures/TGit/2.1.2/06.png)
+> 
 
 Git提供很多種協定給讀者使用。 上一個範例採用 `git://` 協定，讀者可能會看過 `http(s)://` 或者 `user@server:/path.git` 等使用 SSH 傳輸的協定。 在第四章會介紹設定存取伺服器上的 Git 儲存庫的所有可用的選項，以及它們的優點及缺點。
 
@@ -57,6 +121,17 @@ Git提供很多種協定給讀者使用。 上一個範例採用 `git://` 協定
 	On branch master
 	nothing to commit, working directory clean
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click in/on root directory, Click **Check for modifications**
+> 
+>   ![](/figures/TGit/2.2.1/01.png)
+> 
+> 1.  TGit shows **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.1/02.png)
+> 
+
 Wokring directory clean意謂著目前的工作目錄沒有未被追蹤或已被修改的檔案。Git未看到任何未被追蹤的檔案，否則會將它們列出。 最後，這個命令告訴讀者目前在哪一個分支(branch)。到目前為止，一直都是master，這是預設的。下一個章節會詳細介紹分支(branch)，目前我們先不考慮它。
 
 假設讀者新增一些檔案到專案，如`README`。 若該檔案先前並不存在，執行 `git status` 命令後，讀者會看到未被追蹤的檔案，如下：
@@ -71,6 +146,17 @@ Wokring directory clean意謂著目前的工作目錄沒有未被追蹤或已被
 
 	nothing added to commit but untracked files present (use "git add" to track)
 
+> #### TortoiseGit ####
+> 
+> 1.  Create **README** file in root directory
+> 
+>   ![](/figures/TGit/2.2.1/03.png)
+> 
+> 1.   Push **Refresh** button or **F5** in **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.1/04.png)
+> 
+
 我們可以看到新增的`README`尚未被追蹤，因為它被列在輸出訊息的 Untracked files 下方。 除非我們明確指定要將該檔案加入提交的快照，Git不會主動將它加入。這樣可以避免加入一些二進位格式的檔案或其它使用者不想列入追蹤的檔案。 不過在這個例子中，我們的確是要將 `README` 檔案加入追蹤:
 
 ### 追蹤新檔案 ###
@@ -78,6 +164,25 @@ Wokring directory clean意謂著目前的工作目錄沒有未被追蹤或已被
 要追蹤新增的檔案，我們可以使用`git add`命令。例如:要追蹤`README`檔案，可執行：
 
 	$ git add README
+
+> #### TortoiseGit ####
+> 
+> 1.  Select the file(s) in Explorer, Right click on the file(s), Click **Add**
+> 
+>   ![](/figures/TGit/2.2.2/01.png)
+> 
+> 1.  TGit shows **Add** dialog ( The file(s) is/are ticked automatically ), Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.2/02.png)
+> 
+> 1.  TGit shows **Add Finished!** dialog, then push **OK** button
+> 
+>   ![](/figures/TGit/2.2.2/03.png)
+> 
+> 1.  The overlay icon changed from Blue Question to Blue Added (Perhaps push **F5** to refresh)
+> 
+>   ![](/figures/TGit/2.2.2/04.png)
+> 
 
 如此一來，我們重新檢查狀態(status)時，可看到`README`檔案已被列入追蹤並且已被暫存：
 
@@ -88,6 +193,13 @@ Wokring directory clean意謂著目前的工作目錄沒有未被追蹤或已被
 	
 	        new file:   README
 	
+
+> #### TortoiseGit ####
+> 
+> 1.  Open **Working Tree** dialog, the file status is added:
+> 
+>   ![](/figures/TGit/2.2.2/05.png)
+> 
 
 因為它被放在Changes to be commited文字下方，讀者可得知它已被暫存起來。 若讀者此時提交更新，剛才執行`git add`加進來的檔案就會被記錄在歷史的快照。 讀者可能可回想一下先前執行`git init`後也有執行過`git add`，開始追蹤目錄內的檔案。`git add`命令可接受檔名或者目錄名。 若是目錄名，Git會以遞迴(recursive)的方式會將整個目錄下所有檔案及子目錄都加進來。
 
@@ -188,6 +300,55 @@ Glob pattern就像是shell使用的簡化版正規運算式。 星號（`*`）�
 
 A `**/` pattern is available in Git since version 1.8.2.
 
+> #### TortoiseGit ####
+> 
+> ##### no .a files #####
+> 
+> 1.  Right Click on *.a, Click **Add to ignore list -> *.a**
+> 
+>   ![](/figures/TGit/2.2.4/00.png)
+> 
+> 1.  TGit shows **Ignore** dialog, Choose **Ignore item(s) recursively**,Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/01.png)
+> 
+> 1.  The file **.gitignore** is created, and the Result
+> 
+>   ![](/figures/TGit/2.2.4/03.png)
+> 
+> ##### only ignore the root TODO file, not subdir/TODO #####
+> 
+> 1.  Right click on **TODO** directory, Click **Add to ignore list -> TODO**
+> 
+>   ![](/figures/TGit/2.2.4/10.png)
+> 
+> 1.  Choose **Ignore item(s) only in the containing folder(s)**, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/11.png)
+> 
+> 1.  The Result
+> 
+>   ![](/figures/TGit/2.2.4/12.png)
+> 
+>   ![](/figures/TGit/2.2.4/13.png)
+> 
+> ##### Ignore doc/\*.txt, but not doc/server/\*.txt #####
+> 
+> 1.  Right click on notes.txt, Click **Add to ignore list**
+> 
+>   ![](/figures/TGit/2.2.4/30.png)
+> 
+> 1.  Choose **Ignore item(s) only in the containing folder(s)**, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/11.png)
+> 
+> 1.  The Result
+> 
+>   ![](/figures/TGit/2.2.4/32.png)
+> 
+>   ![](/figures/TGit/2.2.4/33.png)
+> 
+
 ### 檢視已暫存及尚未暫存的更動 ###
 
 在某些情況下，`git status`指令提供的資訊就太過簡要。
@@ -229,6 +390,21 @@ A `**/` pattern is available in Git since version 1.8.2.
 	           log.size
 
 這命令會比對目前工作目錄(working directory)及暫存區域(stage area)的版本，然後顯示尚未被存入暫存區(stage area)的變更。
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click in root directory, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.2.5/00.png)
+> 
+> 1.  Click **benchmarks.rb** in file list, Click **View Patch>>** link 
+> 
+>   ![](/figures/TGit/2.2.5/01.png)
+> 
+> 1.  The Patch:
+> 
+>   ![](/figures/TGit/2.2.5/02.png)
+> 
 
 若讀者想比對暫存區域(stage)及最後一次提交(commit)的差異，可用`git diff --cached`指令（Git 1.6.1之後的版本，可用較易記的`git diff --staged` 指令）:
 
@@ -352,6 +528,25 @@ A `**/` pattern is available in Git since version 1.8.2.
 
 留意本次的提交之前，讀者並不需要執行`git add`將`benchmarks.rb`檔案加入。
 
+> #### TortoiseGit ####
+> 
+> 1.  The file with Red Modified icon, Right click in root directory, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.2.7/00.png)
+> 
+> 1.  Fill the Message, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.7/02.png)
+> 
+> 1.  Shows **Git Command Progress** dialog, Wait Success, Push **Close** button
+> 
+>   ![](/figures/TGit/2.2.7/03.png)
+> 
+> 1.  The overlay icon
+> 
+>   ![](/figures/TGit/2.2.7/04.png)
+> 
+
 ### 刪除檔案 ###
 
 要從Git刪除檔案，讀者需要將它從已被追蹤檔案中移除（更精確的來說，是從暫存區域移除），並且提交。 `git rm`命令除了完成此工作外，也會將該檔案從工作目錄移除。 因此讀者以後不會在未被追蹤檔案列表看到它。
@@ -381,11 +576,57 @@ A `**/` pattern is available in Git since version 1.8.2.
 	        deleted:    grit.gemspec
 	
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Delete**
+> 
+>   ![](/figures/TGit/2.2.8/00.png)
+> 
+> 1.  Popup confirm message box, Click **Remove** button
+> 
+>   ![](/figures/TGit/2.2.8/01.png)
+> 
+> 1.  Popup message box, Click **Ok** button
+> 
+>   ![](/figures/TGit/2.2.8/02.png)
+> 
+> 1.  the directory
+> 
+>   ![](/figures/TGit/2.2.8/03.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.8/04.png)
+> 
+
 下一次提交時，該檔案將會消失而且不再被追蹤。 若已更動過該檔案且將它記錄到暫存區域。 必須使用`-f`參數才能將它強制移除。 這是為了避免已被記錄的快照意外被移除且再也無法使用Git復原。
 
 其它有用的技巧是保留工作目錄內的檔案，但從暫存區域移除。 換句話說，或許讀者想在磁碟機上的檔案且不希望Git繼續追蹤它。 這在讀者忘記將某些檔案記錄到`.gitignore`且不小心將它增加到暫存區域時特別有用。 比如說：巨大的記錄檔、或大量在編譯時期產生的`.a`檔案。 欲使用此功能，加上`--cached`參數：
 
 	$ git rm --cached readme.txt
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Delete(keep local)**
+> 
+>   ![](/figures/TGit/2.2.8/10.png)
+> 
+> 1.  Popup confirm message box, Click **Remove** button
+> 
+>   ![](/figures/TGit/2.2.8/11.png)
+> 
+> 1.  Popup message box, Click **Ok** button
+> 
+>   ![](/figures/TGit/2.2.8/12.png)
+> 
+> 1.  The file is still there with red **X** icon overlay.
+> 
+>   ![](/figures/TGit/2.2.8/13.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.8/14.png)
+> 
 
 除了檔名、目錄名以外，還可以指定簡化的正規運算式給`git rm`命令。 這意謂著可執行類似下列指令：
 
@@ -416,6 +657,29 @@ Git並不像其它檔案控制系統一樣，明確地追蹤檔案的移動。 �
 	        renamed:    README.txt -> README
 	
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on the file, Click **Rename...**
+> 
+>   ![](/figures/TGit/2.2.9/00.png)
+> 
+> 1.  Shows **Rename** dialog
+> 
+>   ![](/figures/TGit/2.2.9/01.png)
+> 
+> 1.  Fill new file name, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.9/02.png)
+> 
+> 1.  The overlay
+> 
+>   ![](/figures/TGit/2.2.9/03.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.9/04.png)
+> 
+
 不過，這就相當於執行下列命令：
 
 	$ mv README.txt README
@@ -431,6 +695,21 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 以下採用非常簡單，名為 `simplegit` 的專案做展示。 欲取得此專案，執行以下命令：
 
 	git clone git://github.com/schacon/simplegit-progit.git
+
+> #### TortoiseGit ####
+> 
+> 1.  Go to [this page](https://github.com/schacon/simplegit-progit), Copy the URL for clone
+> 
+>   ![](/figures/TGit/2.3.0/00.png)
+> 
+> 1.  Clone
+> 
+>   ![](/figures/TGit/2.3.0/01.png)
+> 
+>   ![](/figures/TGit/2.3.0/02.png)
+> 
+>   ![](/figures/TGit/2.3.0/03.png)
+> 
 
 在此專案目錄內執行 `git log`，應該會看到類似以下訊息：
 
@@ -452,6 +731,17 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 	Date:   Sat Mar 15 10:31:28 2008 -0700
 
 	    first commit
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click on root directory, Click **Show log**
+> 
+>   ![](/figures/TGit/2.3.0/10.png)
+> 
+> 1.  The Log Message dialog
+> 
+>   ![](/figures/TGit/2.3.0/11.png)
+> 
 
 在未加任何參數情況下，`git log`以新到舊的順序列出儲存庫的提交的歷史記錄。 也就是說最新的更新會先被列出來。 同時也會列出每個更新的 SHA-1 查核值、作者大名及電子郵件地址、及提交時輸入的訊息。
 
@@ -499,6 +789,17 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 	-end
 	\ No newline at end of file
 
+> #### TortoiseGit ####
+> 
+> 1.  Click the commit, Right click the file, Click **Show changes as unified diff**
+> 
+>   ![](/figures/TGit/2.3.0/20.png)
+> 
+> 1.  Shows
+> 
+>   ![](/figures/TGit/2.3.0/21.png)
+> 
+
 這個選項除了顯示相同的資訊外，還另外附上每個更新的差異。 這對於重新檢視或者快速的瀏覽協同工作伙伴新增的更新非常有幫助。
 
 有時候用 word level 的方式比 line level 更容易看懂變化。在 `git log -p` 後面附加 `--word-diff` 選項，就可以取代預設的  line level 模式。當你在看原始碼的時候 word level 還挺有用的，還有一些大型文字檔，如書籍或論文就派上用場了，範例如下：
@@ -518,6 +819,17 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 	    s.name      =   "simplegit"
 	    s.version   =   [-"0.1.0"-]{+"0.1.1"+}
 	    s.author    =   "Scott Chacon"
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Compare with base** (or **Double click**)
+> 
+>   ![](/figures/TGit/2.3.0/30.png)
+> 
+> 1.  Show Diff
+> 
+>   ![](/figures/TGit/2.3.0/31.png)
+> 
 
 如你所見，輸出範例中沒有列出新增與刪除的行，變動的地方用內嵌的方式顯示，你可以看到新增的字被包括在 `{+ +}` 內，而刪除的則包括在 `{- -}` 內，如果你想再減少顯示的資訊，將上述的三行再減少到只顯示變動的那行。你可以用 `-U1` 選項，就像上述的範例中那樣。
 
@@ -553,6 +865,17 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 	 lib/simplegit.rb |   25 +++++++++++++++++++++++++
 	 3 files changed, 54 insertions(+)
 
+> #### TortoiseGit ####
+> 
+> Click different commit, and shows:
+> 
+>   ![](/figures/TGit/2.3.0/40.png)
+> 
+>   ![](/figures/TGit/2.3.0/41.png)
+> 
+>   ![](/figures/TGit/2.3.0/42.png)
+> 
+
 如以上所示，`--stat`選項在每個更新項目的下方列出被更動的檔案、有多少檔案被更動，以及有多行列被加入或移出該檔案。 也會在最後印出摘要的訊息。
 其它實用的選項是 `--pretty`。 這個選項改變原本預設輸出的格式。 有數個內建的選項供讀者選用。 其中 `oneline` 選項將每一個更新印到單獨一行，對於檢視很多更新時很有用。 更進一步，`short`、`full`、`fuller` 選項輸出的格式大致相同，但會少一些或者多一些資訊。
 
@@ -561,12 +884,46 @@ Git會在背後判斷檔案是否被更名，因此不管是用上述方法還�
 	085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 removed unnecessary test code
 	a11bef06a3f659402fe7563abf99ad00de2209e6 first commit
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on title, select the info you want to show
+> 
+>   ![](/figures/TGit/2.3.0/50.png)
+> 
+> 1.  The result
+> 
+>   ![](/figures/TGit/2.3.0/51.png)
+> 
+
 最有趣的選項是 `format`，允許讀者指定自訂的輸出格式。 當需要輸出給機器分析時特別有用。 因為明確地指定了格式，即可確定它不會因為更新 Git 而被更動：
 
 	$ git log --pretty=format:"%h - %an, %ar : %s"
 	ca82a6d - Scott Chacon, 11 months ago : changed the version number
 	085bb3b - Scott Chacon, 11 months ago : removed unnecessary test code
 	a11bef0 - Scott Chacon, 11 months ago : first commit
+
+> #### TortoiseGit ####
+> 
+> 1.  Drag Column
+> 
+>   ![](/figures/TGit/2.3.0/60.png)
+> 
+> 1.  Change the settings
+>   * Tick **Relative Times in log**
+>   * Tick **Symbolize ref names**
+>   * Tick **Draw tag/branch labels on right side**
+> 
+>   ![](/figures/TGit/2.3.0/61.png)
+> 
+> 1.  The result
+> 
+>   ![](/figures/TGit/2.3.0/62.png)
+> 
+> Note for **Symbolize ref names**
+>  * ![](/figures/TGit/2.3.0/63.png) -> origin/master
+>  * ![](/figures/TGit/2.3.0/64.png) -> origin/HEAD
+>  * More Info: [TortoiseGit Help 3.35.1.3. TortoiseGit Dialog Settings](http://tortoisegit.org/docs/tortoisegit/tgit-dug-settings.html)
+>
 
 表格2-1列出一些 `format` 支援的選項。
 
@@ -607,6 +964,22 @@ The lines must be formatted as follows
 	|/
 	* d6016bc require time for xmlschema
 	*  11d191e Merge branch 'defunkt' into local
+
+> #### TortoiseGit ####
+> 
+> 1.  clone the [grit](https://github.com/schacon/grit) repository 
+> 1.  Search **2d3acf9**
+> 
+>   ![](/figures/TGit/2.3.0/70.png)
+> 
+> 1.  Click the commit **2d3acf9**, Click **X**
+> 
+>   ![](/figures/TGit/2.3.0/71.png)
+> 
+> 1.  The result:
+> 
+>   ![](/figures/TGit/2.3.0/72.png)
+> 
 
 這些只是一些簡單的 `git log` 的選項，還有許多其它的。 表格2-2列出目前我們涵蓋的及一些可能有用的格式選項，以及它們如何更動 `log` 命令的輸出格式。
 

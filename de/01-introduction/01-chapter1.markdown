@@ -319,6 +319,34 @@ Danach hast Du sowohl eine Kommandozeilenversion (inklusive eines SSH Clients, d
 
 Hinweis für Windows Benutzer: Du solltest Git mit der in msysGit enthaltenen Shell (Unix Style) ausführen. Dies erlaubt es Dir auch die komplexen Kommandozeilenbefehle aus diesem Buch auszuführen. Wenn Du aus irgendeinem Grund die native Windows Shell, also die Eingabeaufforderung, verwenden musst, müssen Gänsefüßchen, statt einzelnen Anführungszeichen verwendet werden (für Parameter, die ein Leerzeichen enthalten). Außerdem müssen alle Parameter, die mit einem Zirkumflex (^) enden und am Ende einer Zeile stehen, mit Gänsefüßchen umschlossen werden. Der Zirkumflex am Ende einer Zeile teilt Windows sonst mit, dass diese Zeile noch nicht beendet ist und in der nächsten Zeile fortgesetzt werden soll.
 
+> #### TortoiseGit ####
+> 
+> [TortoiseGit 1.8.7.0 Download Page](https://code.google.com/p/tortoisegit/wiki/Download?tm=2)
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_02/01.png)
+> ![](/figures/TGit/1.4.4_02/02.png)
+> ![](/figures/TGit/1.4.4_02/03.png)
+> ![](/figures/TGit/1.4.4_02/04.png)
+> ![](/figures/TGit/1.4.4_02/05.png)
+> ![](/figures/TGit/1.4.4_02/06.png)
+> 
+> #### Git on Windows(msysGit) ####
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_03/01.png)
+> ![](/figures/TGit/1.4.4_03/02.png)
+> ![](/figures/TGit/1.4.4_03/03.png)
+> ![](/figures/TGit/1.4.4_03/04.png)
+> ![](/figures/TGit/1.4.4_03/05.png)
+> ![](/figures/TGit/1.4.4_03/06.png)
+> ![](/figures/TGit/1.4.4_03/07.png)
+> ![](/figures/TGit/1.4.4_03/08.png)
+> ![](/figures/TGit/1.4.4_03/09.png)
+> 
+
 <!--## First-Time Git Setup ##-->
 ## Git konfigurieren ##
 
@@ -356,6 +384,23 @@ Nachdem Du Git installiert hast, solltest Du als erstes Deinen Namen und Deine E
 
 Du brauchst diese Konfiguration, wie schon erwähnt, nur einmal vorzunehmen, wenn Du die `--global` Option verwendest, weil Git diese Information dann für all Deine Projekte verwenden wird. Wenn Du sie für ein spezielles Projekt mit einem anderen Namen oder einer anderen E-Mail Adresse überschreiben willst, kannst Du dazu den Befehl ohne die `--global` Option innerhalb dieses Projektes ausführen.
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on desktop & Click on **Settings**
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify User Info
+> 
+>     ![](/figures/TGit/1.5.1/02.png)
+> 
+>   * Click **Git** node
+>   * Click **Global** in **Config source**
+>   * Un-check **inherit** checkbox of **Name** and **Email** in User Info group box
+>   * Fill the **Name** and **Email**
+>   * Push **Apply** button
+> 
+
 <!--### Your Editor ###-->
 ### Dein Editor ###
 
@@ -377,6 +422,47 @@ Eine andere nützliche Einstellung, die Du möglicherweise vornehmen willst, ist
 <!--Git accepts kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, and opendiff as valid merge tools. You can also set up a custom tool; see Chapter 7 for more information about doing that.-->
 
 Git kann von Hause aus mit den folgenden Diff Programmen arbeiten: kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, and opendiff. Außerdem kannst Du ein eigenes Programm aufsetzen. Wir werden in Kapitel 7 darauf eingehen, wie das geht.
+
+> #### TortoiseGit - Diff Viewer ####
+> 
+> 1.  Right click on desktop & Click on Settings
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify Diff Viewer
+> 
+>     ![](/figures/TGit/1.5.3/01.png)
+> 
+>   * Click **Diff Viewer**
+>   * Click **External**
+>   * Fill: **C:\Program Files (x86)\WinMerge\WinMergeU.exe -s -e -x -ul -ur -wl -dl %bname -dr %yname %base %mine**
+>   * Push **Apply** button
+> 
+> #### TortoiseGit - Diff Viewer for specific file extension ####
+> 
+> 1.  Click **Diff Viewer** node
+> 2.  Click **External**
+> 3.  Copy **WinMerge setting value**
+> 4.  Push **Advanced** button
+> 
+>     ![](/figures/TGit/1.5.3/03.png)
+> 
+> 5.  Push **Add** button
+> 
+>     ![](/figures/TGit/1.5.3/04.png)
+> 
+> 6.  Fill **Extension**, Paste WinMerge setting value into **External program**, then Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/05.png)
+> 
+> 7.  Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/06.png)
+> 
+> 8.  Click back to "TortoiseGitMerge", Push **Apply** button
+> 
+>     ![](/figures/TGit/1.5.3/07.png)
+> 
 
 <!--### Checking Your Settings ###-->
 ### Deine Einstellungen überprüfen ###
@@ -427,6 +513,31 @@ Beispielsweise erhältst Du die Hilfeseite für den `git config` Befehl so:
 
 Die „manpage“ Dokumentation ist nützlich, weil Du sie Dir jederzeit anzeigen lassen kannst, auch wenn Du offline bist.
 Wenn Dir die manpages und dieses Buch nicht ausreichen, kannst Du Deine Fragen auch in den Chaträumen `#git` oder `#github` auf dem Freenode IRC Server (irc.freenode.net) stellen. Diese Räume sind in der Regel sehr gut besucht. Normalerweise findet sich unter den hunderten von Anwendern, die oft sehr viel Erfahrung mit Git haben, irgendjemand, der Deine Fragen gern beantwortet.
+
+> ### TortoiseGit - Offline Help ###
+> 
+> ![](/figures/TGit/1.6/01.png)
+> 
+> ![](/figures/TGit/1.6/02.png)
+> 
+> ### TortoiseGit - Online Help ###
+> 
+> [TortoiseGit Help Online Doc](http://tortoisegit.org/docs/tortoisegit/)
+> 
+> ![](/figures/TGit/1.6/03.png)
+> 
+> [~~General Group~~](https://groups.google.com/forum/#!forum/tortoisegit)
+> 
+> [Users Group](https://groups.google.com/forum/#!forum/tortoisegit-users)
+> 
+> [Dev Group](https://groups.google.com/forum/#!forum/tortoisegit-dev)
+> 
+> [The Issue List](https://code.google.com/p/tortoisegit/issues/list)
+> 
+> [The Project on Google](https://code.google.com/p/tortoisegit/)
+> 
+> [The Project on GitHub](https://github.com/TortoiseGit/TortoiseGit)
+> 
 
 <!--## Summary ##-->
 ## Zusammenfassung ##

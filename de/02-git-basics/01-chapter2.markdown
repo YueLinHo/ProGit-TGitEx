@@ -1,4 +1,4 @@
-<!--# Git Basics #-->
+﻿<!--# Git Basics #-->
 # Git Grundlagen #
 
 <!--If you can read only one chapter to get going with Git, this is it. This chapter covers every basic command you need to do the vast majority of the things you’ll eventually spend your time doing with Git. By the end of the chapter, you should be able to configure and initialize a repository, begin and stop tracking files, and stage and commit changes. We’ll also show you how to set up Git to ignore certain files and file patterns, how to undo mistakes quickly and easily, how to browse the history of your project and view changes between commits, and how to push and pull from remote repositories.-->
@@ -21,6 +21,23 @@ Wenn Du künftige Änderungen an einem bestehenden Projekt auf Deinem Rechner mi
 
 	$ git init
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click in an existing directory, Click **Git Create repository here...**
+> 
+>   ![](/figures/TGit/2.1.1_01/01.png)
+> 
+> 1.  Push **OK OK**
+> 
+>   ![](/figures/TGit/2.1.1_01/02.png)
+> 
+>   ![](/figures/TGit/2.1.1_01/03.png)
+> 
+> 1.  The **.git** subdirectory & the context menu
+> 
+>   ![](/figures/TGit/2.1.1_01/04.png)
+> 
+
 <!--This creates a new subdirectory named `.git` that contains all of your necessary repository files — a Git repository skeleton. At this point, nothing in your project is tracked yet. (See *Chapter 9* for more information about exactly what files are contained in the `.git` directory you just created.)-->
 
 Das erzeugt ein Unterverzeichnis `.git`, in dem alle relevanten Git Repository Daten enthalten sind, also ein Git Repository Grundgerüst. Zu diesem Zeitpunkt werden noch keine Dateien in Git versioniert. (In Kapitel 9 werden wir genauer darauf eingehen, welche Dateien im .git Verzeichnis enthalten sind und was ihre Aufgabe ist.)
@@ -32,6 +49,26 @@ Wenn in Deinem Projekt bereits Dateien vorhanden sind (und es sich nicht nur um 
 	$ git add *.c
 	$ git add README
 	$ git commit -m 'initial project version'
+
+> 
+> or just commit an empty commit:
+> 
+> 		$ git commit -m 'Head' --allow-empty
+> 
+> #### TortoiseGit ####
+> 
+> 1.  Right Click in the root of repository, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.1.1_02/01_Commit.png)
+> 
+> 1.  Write **Message**, Tick **Message only** checkbox, Push **OK** button
+> 
+>   ![](/figures/TGit/2.1.1_02/02_MsgOnly.png)
+> 
+> 1.  The Git Command Progress dailog running..., Push **Close** button
+> 
+>   ![](/figures/TGit/2.1.1_02/03_Success.png)
+> 
 
 <!--We’ll go over what these commands do in just a minute. At this point, you have a Git repository with tracked files and an initial commit.-->
 
@@ -59,6 +96,33 @@ Git legt dann ein Verzeichnis `grit` an, initialisiert ein `.git` Verzeichnis da
 <!--That command does the same thing as the previous one, but the target directory is called `mygrit`.-->
 
 Dieser Befehl tut das gleiche wie der vorhergehende, aber das Zielverzeichnis ist diesmal `mygrit`.
+
+> #### TortoiseGit ####
+> 
+> 1.  Select URL, and push Ctrl+C (for fill URL automatically)
+> 
+>   ![](/figures/TGit/2.1.2/01.png)
+> 
+> 1.  Right Click **in** the target directory, Click **Git Clone...**
+> 
+>   ![](/figures/TGit/2.1.2/02.png)
+> 
+> 1.  **URL** and **Directory* is filled automatically
+> 
+>   ![](/figures/TGit/2.1.2/03.png)
+> 
+> 1.  Modify **Directory** if needed, Push **OK** button
+> 
+>   ![](/figures/TGit/2.1.2/04.png)
+> 
+> 1.  Cloning..., Success, Push **Close** button
+> 
+>   ![](/figures/TGit/2.1.2/05.png)
+> 
+> 1.  The version control folder
+> 
+>   ![](/figures/TGit/2.1.2/06.png)
+> 
 
 <!--Git has a number of different transfer protocols you can use. The previous example uses the `git://` protocol, but you may also see `http(s)://` or `user@server:/path.git`, which uses the SSH transfer protocol. *Chapter 4* will introduce all of the available options the server can set up to access your Git repository and the pros and cons of each.-->
 
@@ -95,6 +159,17 @@ Das wichtigste Hilfsmittel, um den Zustand zu überprüfen, in dem sich die Date
 	On branch master
 	nothing to commit, working directory clean
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click in/on root directory, Click **Check for modifications**
+> 
+>   ![](/figures/TGit/2.2.1/01.png)
+> 
+> 1.  TGit shows **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.1/02.png)
+> 
+
 <!--This means you have a clean working directory — in other words, no tracked files are modified. Git also doesn’t see any untracked files, or they would be listed here. Finally, the command tells you which branch you’re on. For now, that is always `master`, which is the default; you won’t worry about it here. The next chapter will go over branches and references in detail.-->
 
 Dieser Zustand wird auch als sauberes Arbeitsverzeichnis (engl. clean working directory) bezeichnet. Mit anderen Worten, es gibt keine Dateien, die unter Versionskontrolle stehen und seit dem letzten Commit geändert wurden – andernfalls würden sie hier aufgelistet werden. Außerdem teilt Dir der Befehl mit, in welchem Branch Du Dich gerade befindest. In diesem Beispiel ist dies der Branch `master`. Mach Dir darüber im Moment keine Gedanken, wir werden im nächsten Kapitel auf Branches detailliert eingehen.
@@ -113,6 +188,17 @@ Sagen wir Du fügst eine neue `README` Datei zu Deinem Projekt hinzu. Wenn die D
 
 	nothing added to commit but untracked files present (use "git add" to track)
 
+> #### TortoiseGit ####
+> 
+> 1.  Create **README** file in root directory
+> 
+>   ![](/figures/TGit/2.2.1/03.png)
+> 
+> 1.   Push **Refresh** button or **F5** in **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.1/04.png)
+> 
+
 <!--You can see that your new `README` file is untracked, because it’s under the “Untracked files” heading in your status output. Untracked basically means that Git sees a file you didn’t have in the previous snapshot (commit); Git won’t start including it in your commit snapshots until you explicitly tell it to do so. It does this so you don’t accidentally begin including generated binary files or other files that you did not mean to include. You do want to start including README, so let’s start tracking the file.-->
 
 Alle Dateien, die in der Sektion „Untracked files“ aufgelistet werden, sind Dateien, die bisher nocht nicht versioniert sind. Dort wird jetzt auch die Datei `README` angezeigt. Mit anderen Worten, die Datei `README` wird in diesem Bereich gelistet, weil sie im letzen Snapshot (Commit) von Git nicht enthalten ist. Git nimmt eine solche Datei nicht automatisch in die Versionskontrolle auf, sondern man muss Git dazu ausdrücklich auffordern. Ansonsten würden generierte Binärdateien oder andere Dateien, die Du nicht in Deinem Repository haben willst, automatisch hinzugefügt werden. Das möchte man in den meisten Fällen vermeiden. Jetzt wollen wir aber Änderungen an der Datei `README` verfolgen und fügen sie deshalb zur Versionskontrolle hinzu.
@@ -126,6 +212,25 @@ Um eine neue Datei zur Versionskontrolle hinzuzufügen, verwendest Du den Befehl
 
 	$ git add README
 
+> #### TortoiseGit ####
+> 
+> 1.  Select the file(s) in Explorer, Right click on the file(s), Click **Add**
+> 
+>   ![](/figures/TGit/2.2.2/01.png)
+> 
+> 1.  TGit shows **Add** dialog ( The file(s) is/are ticked automatically ), Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.2/02.png)
+> 
+> 1.  TGit shows **Add Finished!** dialog, then push **OK** button
+> 
+>   ![](/figures/TGit/2.2.2/03.png)
+> 
+> 1.  The overlay icon changed from Blue Question to Blue Added (Perhaps push **F5** to refresh)
+> 
+>   ![](/figures/TGit/2.2.2/04.png)
+> 
+
 <!--If you run your status command again, you can see that your `README` file is now tracked and staged:-->
 
 Wenn Du den `git status` Befehl erneut ausführst, siehst Du, dass sich Deine `README` Datei jetzt unter Versionskontrolle befindet und für den nächsten Commit vorgemerkt ist (gestaged ist):
@@ -137,6 +242,13 @@ Wenn Du den `git status` Befehl erneut ausführst, siehst Du, dass sich Deine `R
 	
 	        new file:   README
 	
+
+> #### TortoiseGit ####
+> 
+> 1.  Open **Working Tree** dialog, the file status is added:
+> 
+>   ![](/figures/TGit/2.2.2/05.png)
+> 
 
 <!--You can tell that it’s staged because it’s under the “Changes to be committed” heading. If you commit at this point, the version of the file at the time you ran `git add` is what will be in the historical snapshot. You may recall that when you ran `git init` earlier, you then ran `git add (files)` — that was to begin tracking files in your directory. The `git add` command takes a path name for either a file or a directory; if it’s a directory, the command adds all the files in that directory recursively.-->
 
@@ -280,6 +392,55 @@ Hier ist ein weiteres Beispiel für eine `.gitignore` Datei:
 
 Die Kombination `**/` wurde in der Git Version 1.8.2 eingeführt.
 
+> #### TortoiseGit ####
+> 
+> ##### no .a files #####
+> 
+> 1.  Right Click on *.a, Click **Add to ignore list -> *.a**
+> 
+>   ![](/figures/TGit/2.2.4/00.png)
+> 
+> 1.  TGit shows **Ignore** dialog, Choose **Ignore item(s) recursively**,Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/01.png)
+> 
+> 1.  The file **.gitignore** is created, and the Result
+> 
+>   ![](/figures/TGit/2.2.4/03.png)
+> 
+> ##### only ignore the root TODO file, not subdir/TODO #####
+> 
+> 1.  Right click on **TODO** directory, Click **Add to ignore list -> TODO**
+> 
+>   ![](/figures/TGit/2.2.4/10.png)
+> 
+> 1.  Choose **Ignore item(s) only in the containing folder(s)**, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/11.png)
+> 
+> 1.  The Result
+> 
+>   ![](/figures/TGit/2.2.4/12.png)
+> 
+>   ![](/figures/TGit/2.2.4/13.png)
+> 
+> ##### Ignore doc/\*.txt, but not doc/server/\*.txt #####
+> 
+> 1.  Right click on notes.txt, Click **Add to ignore list**
+> 
+>   ![](/figures/TGit/2.2.4/30.png)
+> 
+> 1.  Choose **Ignore item(s) only in the containing folder(s)**, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.4/11.png)
+> 
+> 1.  The Result
+> 
+>   ![](/figures/TGit/2.2.4/32.png)
+> 
+>   ![](/figures/TGit/2.2.4/33.png)
+> 
+
 <!--### Viewing Your Staged and Unstaged Changes ###-->
 ### Die Änderungen in der Staging Area durchsehen ###
 
@@ -329,6 +490,21 @@ Um festzustellen, welche Änderungen Du bisher nicht gestaged hast, führe `git 
 <!--That command compares what is in your working directory with what is in your staging area. The result tells you the changes you’ve made that you haven’t yet staged.-->
 
 Dieser Befehl vergleicht die Inhalte Deines Arbeitsverzeichnisses mit den Inhalten Deiner Staging Area. Das Ergebnis zeigt Dir die Änderungen, die Du an Dateien im Arbeitsverzeichnis vorgenommen, aber noch nicht für den nächsten Commit vorgemerkt hast.
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click in root directory, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.2.5/00.png)
+> 
+> 1.  Click **benchmarks.rb** in file list, Click **View Patch>>** link 
+> 
+>   ![](/figures/TGit/2.2.5/01.png)
+> 
+> 1.  The Patch:
+> 
+>   ![](/figures/TGit/2.2.5/02.png)
+> 
 
 <!--If you want to see what you’ve staged that will go into your next commit, you can use `git diff -\-cached`. (In Git versions 1.6.1 and later, you can also use `git diff -\-staged`, which may be easier to remember.) This command compares your staged changes to your last commit:-->
 
@@ -482,6 +658,25 @@ Obwohl die Staging Area unglaublich nützlich ist, um genau diejenigen Commits a
 
 Beachte, dass Du in diesem Fall `git add` zuvor noch nicht ausgeführt hast, die Änderungen an `benchmarks.rb` aber dennoch in den Commit übernommen werden.
 
+> #### TortoiseGit ####
+> 
+> 1.  The file with Red Modified icon, Right click in root directory, Click **Git Commit -> "master"...**
+> 
+>   ![](/figures/TGit/2.2.7/00.png)
+> 
+> 1.  Fill the Message, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.7/02.png)
+> 
+> 1.  Shows **Git Command Progress** dialog, Wait Success, Push **Close** button
+> 
+>   ![](/figures/TGit/2.2.7/03.png)
+> 
+> 1.  The overlay icon
+> 
+>   ![](/figures/TGit/2.2.7/04.png)
+> 
+
 <!--### Removing Files ###-->
 ### Dateien entfernen ###
 
@@ -518,6 +713,29 @@ Wenn Du jetzt `git rm` ausführst, wird diese Änderung für den nächsten Commi
 	        deleted:    grit.gemspec
 	
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Delete**
+> 
+>   ![](/figures/TGit/2.2.8/00.png)
+> 
+> 1.  Popup confirm message box, Click **Remove** button
+> 
+>   ![](/figures/TGit/2.2.8/01.png)
+> 
+> 1.  Popup message box, Click **Ok** button
+> 
+>   ![](/figures/TGit/2.2.8/02.png)
+> 
+> 1.  the directory
+> 
+>   ![](/figures/TGit/2.2.8/03.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.8/04.png)
+> 
+
 <!--The next time you commit, the file will be gone and no longer tracked. If you modified the file and added it to the index already, you must force the removal with the `-f` option. This is a safety feature to prevent accidental removal of data that hasn’t yet been recorded in a snapshot and that can’t be recovered from Git.-->
 
 Nach dem nächsten Anlegen eines Commits, wird die Datei nicht mehr im Arbeitsverzeichnis liegen und sich nicht länger unter Versionskontrolle befinden. Wenn Du die Datei zuvor geändert und diese Änderung bereits zur Staging Area hinzugefügt hattest, musst Du die Option `-f` verwenden, um zu erzwingen, dass sie gelöscht wird. Dies ist eine Sicherheitsmaßnahme, um zu vermeiden, dass Du versehentlich Daten löschst, die sich bisher noch nicht als Commit Snapshot in der Historie Deines Projektes befinden – und deshalb auch nicht wiederhergestellt werden können.
@@ -527,6 +745,29 @@ Nach dem nächsten Anlegen eines Commits, wird die Datei nicht mehr im Arbeitsve
 Ein anderer Anwendungsfall für `git rm` ist, dass Du eine Datei in Deinem Arbeitsverzeichnis behalten, aber aus der Staging Area nehmen willst. In anderen Worten, Du willst die Datei nicht löschen, sondern aus der Versionskontrolle nehmen. Das könnte zum Beispiel der Fall sein, wenn Du vergessen hattest, eine Datei in `.gitignore` anzugeben und sie versehentlich zur Versionskontrolle hinzugefügt hast, beispielsweise eine große Logdatei oder eine Reihe kompilierter `.a` Dateien. Hierzu kannst Du dann die `--cached` Option verwenden:
 
 	$ git rm --cached readme.txt
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Delete(keep local)**
+> 
+>   ![](/figures/TGit/2.2.8/10.png)
+> 
+> 1.  Popup confirm message box, Click **Remove** button
+> 
+>   ![](/figures/TGit/2.2.8/11.png)
+> 
+> 1.  Popup message box, Click **Ok** button
+> 
+>   ![](/figures/TGit/2.2.8/12.png)
+> 
+> 1.  The file is still there with red **X** icon overlay.
+> 
+>   ![](/figures/TGit/2.2.8/13.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.8/14.png)
+> 
 
 <!--You can pass files, directories, and file-glob patterns to the `git rm` command. That means you can do things such as-->
 
@@ -570,6 +811,29 @@ Das funktioniert einwandfrei. Wenn Du diesen Befehl ausführst und danach den `g
 	        renamed:    README.txt -> README
 	
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on the file, Click **Rename...**
+> 
+>   ![](/figures/TGit/2.2.9/00.png)
+> 
+> 1.  Shows **Rename** dialog
+> 
+>   ![](/figures/TGit/2.2.9/01.png)
+> 
+> 1.  Fill new file name, Push **OK** button
+> 
+>   ![](/figures/TGit/2.2.9/02.png)
+> 
+> 1.  The overlay
+> 
+>   ![](/figures/TGit/2.2.9/03.png)
+> 
+> 1.  The **Working Tree** dialog
+> 
+>   ![](/figures/TGit/2.2.9/04.png)
+> 
+
 <!--However, this is equivalent to running something like this:-->
 Allerdings kannst Du genauso folgendes tun:
 
@@ -594,6 +858,21 @@ Die folgende Beispiele beziehen sich auf ein sehr simples Repository mit dem Nam
 
 	git clone git://github.com/schacon/simplegit-progit.git
 
+> #### TortoiseGit ####
+> 
+> 1.  Go to [this page](https://github.com/schacon/simplegit-progit), Copy the URL for clone
+> 
+>   ![](/figures/TGit/2.3.0/00.png)
+> 
+> 1.  Clone
+> 
+>   ![](/figures/TGit/2.3.0/01.png)
+> 
+>   ![](/figures/TGit/2.3.0/02.png)
+> 
+>   ![](/figures/TGit/2.3.0/03.png)
+> 
+
 <!--When you run `git log` in this project, you should get output that looks something like this:-->
 
 Wenn Du in diesem Projekt `git log` ausführst, solltest Du eine Ausgabe wie die folgende sehen:
@@ -616,6 +895,17 @@ Wenn Du in diesem Projekt `git log` ausführst, solltest Du eine Ausgabe wie die
 	Date:   Sat Mar 15 10:31:28 2008 -0700
 
 	    first commit
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click on root directory, Click **Show log**
+> 
+>   ![](/figures/TGit/2.3.0/10.png)
+> 
+> 1.  The Log Message dialog
+> 
+>   ![](/figures/TGit/2.3.0/11.png)
+> 
 
 <!--By default, with no arguments, `git log` lists the commits made in that repository in reverse chronological order. That is, the most recent commits show up first. As you can see, this command lists each commit with its SHA-1 checksum, the author’s name and e-mail, the date written, and the commit message.-->
 
@@ -669,6 +959,17 @@ Eine sehr nützliche Option ist `-p`. Sie zeigt die Änderungen an, die in einem
 	-end
 	\ No newline at end of file
 
+> #### TortoiseGit ####
+> 
+> 1.  Click the commit, Right click the file, Click **Show changes as unified diff**
+> 
+>   ![](/figures/TGit/2.3.0/20.png)
+> 
+> 1.  Shows
+> 
+>   ![](/figures/TGit/2.3.0/21.png)
+> 
+
 <!--This option displays the same information but with a diff directly following each entry. This is very helpful for code review or to quickly browse what happened during a series of commits that a collaborator has added.-->
 
 Diese Option zeigt also im Prinzip die gleiche Information wie zuvor, aber zusätzlich zu jedem Eintrag ein Diff. Das ist nützlich, um einen Code Review zu machen oder eben mal eine Reihe von Commits durchzuschauen, die ein Mitarbeiter angelegt hat.
@@ -692,6 +993,17 @@ Manchmal ist es einfacher Änderungen an Hand der Wörter anstatt zeilenbasiert 
 	    s.name      =   "simplegit"
 	    s.version   =   [-"0.1.0"-]{+"0.1.1"+}
 	    s.author    =   "Scott Chacon"
+
+> #### TortoiseGit ####
+> 
+> 1.  Right click the file, Click **Compare with base** (or **Double click**)
+> 
+>   ![](/figures/TGit/2.3.0/30.png)
+> 
+> 1.  Show Diff
+> 
+>   ![](/figures/TGit/2.3.0/31.png)
+> 
 
 <!--As you can see, there is no added and removed lines in this output as in a normal diff. Changes are shown inline instead. You can see the added word enclosed in `{+ +}` and removed one enclosed in `[- -]`. You may also want to reduce the usual three lines context in diff output to only one line, as the context is now words, not lines. You can do this with `-U1` as we did in the example above.-->
 
@@ -731,6 +1043,17 @@ Außerdem gibt es verschiedene Optionen, die nützlich sind, um Dinge zusammenzu
 	 lib/simplegit.rb |   25 +++++++++++++++++++++++++
 	 3 files changed, 54 insertions(+)
 
+> #### TortoiseGit ####
+> 
+> Click different commit, and shows:
+> 
+>   ![](/figures/TGit/2.3.0/40.png)
+> 
+>   ![](/figures/TGit/2.3.0/41.png)
+> 
+>   ![](/figures/TGit/2.3.0/42.png)
+> 
+
 <!--As you can see, the `-\-stat` option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.-->
 <!--Another really useful option is `-\-pretty`. This option changes the log output to formats other than the default. A few prebuilt options are available for you to use. The `oneline` option prints each commit on a single line, which is useful if you’re looking at a lot of commits. In addition, the `short`, `full`, and `fuller` options show the output in roughly the same format but with less or more information, respectively:-->
 
@@ -741,6 +1064,17 @@ Die `--stat` Option zeigt unterhalb jedes Commits eine kurze Statistik über die
 	085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 removed unnecessary test code
 	a11bef06a3f659402fe7563abf99ad00de2209e6 first commit
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on title, select the info you want to show
+> 
+>   ![](/figures/TGit/2.3.0/50.png)
+> 
+> 1.  The result
+> 
+>   ![](/figures/TGit/2.3.0/51.png)
+> 
+
 <!--The most interesting option is `format`, which allows you to specify your own log output format. This is especially useful when you’re generating output for machine parsing — because you specify the format explicitly, you know it won’t change with updates to Git:-->
 
 Eines der interessantesten Formate ist `format`, das Dir erlaubt, Dein eigenes Format zu verwenden. Dies ist inbesondere nützlich, wenn Du die Ausgabe in ein anderes Programm einlesen willst (da Du das Format explizit angibst, kannst Du sicher sein, dass es sich nicht ändert, wenn Du Git auf eine neuere Version aktualisierst):
@@ -749,6 +1083,29 @@ Eines der interessantesten Formate ist `format`, das Dir erlaubt, Dein eigenes F
 	ca82a6d - Scott Chacon, 11 months ago : changed the version number
 	085bb3b - Scott Chacon, 11 months ago : removed unnecessary test code
 	a11bef0 - Scott Chacon, 11 months ago : first commit
+
+> #### TortoiseGit ####
+> 
+> 1.  Drag Column
+> 
+>   ![](/figures/TGit/2.3.0/60.png)
+> 
+> 1.  Change the settings
+>   * Tick **Relative Times in log**
+>   * Tick **Symbolize ref names**
+>   * Tick **Draw tag/branch labels on right side**
+> 
+>   ![](/figures/TGit/2.3.0/61.png)
+> 
+> 1.  The result
+> 
+>   ![](/figures/TGit/2.3.0/62.png)
+> 
+> Note for **Symbolize ref names**
+>  * ![](/figures/TGit/2.3.0/63.png) -> origin/master
+>  * ![](/figures/TGit/2.3.0/64.png) -> origin/HEAD
+>  * More Info: [TortoiseGit Help 3.35.1.3. TortoiseGit Dialog Settings](http://tortoisegit.org/docs/tortoisegit/tgit-dug-settings.html)
+>
 
 <!--Table 2-1 lists some of the more useful options that format takes.-->
 
@@ -812,6 +1169,22 @@ Die `oneline` und `format` Optionen können außerdem zusammen mit einer weitere
 	|/
 	* d6016bc require time for xmlschema
 	*  11d191e Merge branch 'defunkt' into local
+
+> #### TortoiseGit ####
+> 
+> 1.  clone the [grit](https://github.com/schacon/grit) repository 
+> 1.  Search **2d3acf9**
+> 
+>   ![](/figures/TGit/2.3.0/70.png)
+> 
+> 1.  Click the commit **2d3acf9**, Click **X**
+> 
+>   ![](/figures/TGit/2.3.0/71.png)
+> 
+> 1.  The result:
+> 
+>   ![](/figures/TGit/2.3.0/72.png)
+> 
 
 <!--Those are only some simple output-formatting options to `git log` — there are many more. Table 2-2 lists the options we’ve covered so far and some other common formatting options that may be useful, along with how they change the output of the `log` command.-->
 

@@ -184,6 +184,34 @@ Git 的工作需要调用 curl，zlib，openssl，expat，libiconv 等库的代�
 
 给 Windows 用户的敬告：你应该在 msysGit 提供的 Unix 风格的 shell 来运行 Git。在 Unix 风格的 shell 中，可以使用本书中提及的复杂多行的命令。对于那些需要在 Windows 命令行中使用 Git 的用户，必须注意：在参数中间有空格的时候，必须使用双引号将参数括起来（在 Linux 中是单引号）；另外，如果扬抑符（^）作为参数的结尾，并且作为这一行的最后一个字符，则这个参数也需要用双引号括起来。因为扬抑符在 Windows 命令行中表示续行（译注：即下一行为这一行命令的继续）。
 
+> #### TortoiseGit ####
+> 
+> [TortoiseGit 1.8.7.0 Download Page](https://code.google.com/p/tortoisegit/wiki/Download?tm=2)
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_02/01.png)
+> ![](/figures/TGit/1.4.4_02/02.png)
+> ![](/figures/TGit/1.4.4_02/03.png)
+> ![](/figures/TGit/1.4.4_02/04.png)
+> ![](/figures/TGit/1.4.4_02/05.png)
+> ![](/figures/TGit/1.4.4_02/06.png)
+> 
+> #### Git on Windows(msysGit) ####
+> 
+> Installing Screenshots
+> 
+> ![](/figures/TGit/1.4.4_03/01.png)
+> ![](/figures/TGit/1.4.4_03/02.png)
+> ![](/figures/TGit/1.4.4_03/03.png)
+> ![](/figures/TGit/1.4.4_03/04.png)
+> ![](/figures/TGit/1.4.4_03/05.png)
+> ![](/figures/TGit/1.4.4_03/06.png)
+> ![](/figures/TGit/1.4.4_03/07.png)
+> ![](/figures/TGit/1.4.4_03/08.png)
+> ![](/figures/TGit/1.4.4_03/09.png)
+> 
+
 ## 初次运行 Git 前的配置 ##
 
 一般在新的系统上，我们都需要先配置下自己的 Git 工作环境。配置工作只需一次，以后升级时还会沿用现在的配置。当然，如果需要，你随时可以用相同的命令修改已有的配置。
@@ -205,6 +233,23 @@ Git 提供了一个叫做 git config 的工具（译注：实际是 `git-config`
 
 如果用了 `--global` 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 `--global` 选项重新配置即可，新的设定保存在当前项目的 `.git/config` 文件里。
 
+> #### TortoiseGit ####
+> 
+> 1.  Right click on desktop & Click on **Settings**
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify User Info
+> 
+>     ![](/figures/TGit/1.5.1/02.png)
+> 
+>   * Click **Git** node
+>   * Click **Global** in **Config source**
+>   * Un-check **inherit** checkbox of **Name** and **Email** in User Info group box
+>   * Fill the **Name** and **Email**
+>   * Push **Apply** button
+> 
+
 ### 文本编辑器 ###
 
 接下来要设置的是默认使用的文本编辑器。Git 需要你输入一些额外消息的时候，会自动调用一个外部文本编辑器给你用。默认会使用操作系统指定的默认编辑器，一般可能会是 Vi 或者 Vim。如果你有其他偏好，比如 Emacs 的话，可以重新设置：
@@ -218,6 +263,47 @@ Git 提供了一个叫做 git config 的工具（译注：实际是 `git-config`
 	$ git config --global merge.tool vimdiff
 
 Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff，ecmerge，和 opendiff 等合并工具的输出信息。当然，你也可以指定使用自己开发的工具，具体怎么做可以参阅第七章。
+
+> #### TortoiseGit - Diff Viewer ####
+> 
+> 1.  Right click on desktop & Click on Settings
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  Modify Diff Viewer
+> 
+>     ![](/figures/TGit/1.5.3/01.png)
+> 
+>   * Click **Diff Viewer**
+>   * Click **External**
+>   * Fill: **C:\Program Files (x86)\WinMerge\WinMergeU.exe -s -e -x -ul -ur -wl -dl %bname -dr %yname %base %mine**
+>   * Push **Apply** button
+> 
+> #### TortoiseGit - Diff Viewer for specific file extension ####
+> 
+> 1.  Click **Diff Viewer** node
+> 2.  Click **External**
+> 3.  Copy **WinMerge setting value**
+> 4.  Push **Advanced** button
+> 
+>     ![](/figures/TGit/1.5.3/03.png)
+> 
+> 5.  Push **Add** button
+> 
+>     ![](/figures/TGit/1.5.3/04.png)
+> 
+> 6.  Fill **Extension**, Paste WinMerge setting value into **External program**, then Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/05.png)
+> 
+> 7.  Push **OK** button
+> 
+>     ![](/figures/TGit/1.5.3/06.png)
+> 
+> 8.  Click back to "TortoiseGitMerge", Push **Apply** button
+> 
+>     ![](/figures/TGit/1.5.3/07.png)
+> 
 
 ### 查看配置信息 ###
 
@@ -253,6 +339,31 @@ Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff�
 
 我们随时都可以浏览这些帮助信息而无需连网。
 不过，要是你觉得还不够，可以到 Freenode IRC 服务器（irc.freenode.net）上的 `#git` 或 `#github` 频道寻求他人帮助。这两个频道上总有着上百号人，大多都有着丰富的 git 知识，并且乐于助人。
+
+> ### TortoiseGit - Offline Help ###
+> 
+> ![](/figures/TGit/1.6/01.png)
+> 
+> ![](/figures/TGit/1.6/02.png)
+> 
+> ### TortoiseGit - Online Help ###
+> 
+> [TortoiseGit Help Online Doc](http://tortoisegit.org/docs/tortoisegit/)
+> 
+> ![](/figures/TGit/1.6/03.png)
+> 
+> [~~General Group~~](https://groups.google.com/forum/#!forum/tortoisegit)
+> 
+> [Users Group](https://groups.google.com/forum/#!forum/tortoisegit-users)
+> 
+> [Dev Group](https://groups.google.com/forum/#!forum/tortoisegit-dev)
+> 
+> [The Issue List](https://code.google.com/p/tortoisegit/issues/list)
+> 
+> [The Project on Google](https://code.google.com/p/tortoisegit/)
+> 
+> [The Project on GitHub](https://github.com/TortoiseGit/TortoiseGit)
+> 
 
 ## 小结 ##
 

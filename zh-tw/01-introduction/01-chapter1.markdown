@@ -184,6 +184,34 @@ Git目錄是Git用來儲存讀者的專案的元數據及物件資料庫。 這�
 
 Note on Windows usage: you should use Git with the provided msysGit shell (Unix style), it allows to use the complex lines of command given in this book. If you need, for some reason, to use the native Windows shell / command line console, you have to use double quotes instead of simple quotes (for parameters with spaces in them) and you must quote the parameters ending with the circumflex accent (^) if they are last on the line, as it is a continuation symbol in Windows.
 
+> #### TortoiseGit ####
+> 
+> [TortoiseGit 1.8.7.0 下載頁面](https://code.google.com/p/tortoisegit/wiki/Download?tm=2)
+> 
+> 安裝畫面
+> 
+> ![](/figures/TGit/1.4.4_02/01.png)
+> ![](/figures/TGit/1.4.4_02/02.png)
+> ![](/figures/TGit/1.4.4_02/03.png)
+> ![](/figures/TGit/1.4.4_02/04.png)
+> ![](/figures/TGit/1.4.4_02/05.png)
+> ![](/figures/TGit/1.4.4_02/06.png)
+> 
+> #### Git on Windows(msysGit) ####
+> 
+> 安裝畫面
+> 
+> ![](/figures/TGit/1.4.4_03/01.png)
+> ![](/figures/TGit/1.4.4_03/02.png)
+> ![](/figures/TGit/1.4.4_03/03.png)
+> ![](/figures/TGit/1.4.4_03/04.png)
+> ![](/figures/TGit/1.4.4_03/05.png)
+> ![](/figures/TGit/1.4.4_03/06.png)
+> ![](/figures/TGit/1.4.4_03/07.png)
+> ![](/figures/TGit/1.4.4_03/08.png)
+> ![](/figures/TGit/1.4.4_03/09.png)
+> 
+
 ## 初次設定Git ##
 
 現在讀者的系統已安裝了Git，讀者可能想要做一些客製化的動作。 讀者應只需要做這些工作一次。 這些設定在更新版本時會被保留下來。 讀者可藉由再度執行命令的方式再度修改這些設定。
@@ -205,6 +233,23 @@ Git附帶名為`git config`的工具，允許讀者取得及設定組態參數�
 
 再說一次，若讀者有指定 `--global` 參數，只需要做這工作一次。 因為在此系統，不論Git做任何事都會採用此資訊。 若讀者想指定不同的名字或電子郵件給特定的專案， 只需要在該專案目錄內執行此命令，並確定未加上 `--global` 參數。
 
+> #### TortoiseGit ####
+> 
+> 1.  在桌面按右鍵, 點擊 **Settings**
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  修改 User Info
+> 
+>     ![](/figures/TGit/1.5.1/02.png)
+> 
+>   * 點擊 **Git**
+>   * 點擊 **Config source** 內的 **Global**
+>   * 取消 **Name** 和 **Email** 的 **inherit**
+>   * 填入 **Name** 和 **Email**
+>   * 按 **Apply** 按鈕
+> 
+
 ### 指定編輯器 ###
 
 現在讀者的識別資料已設定完畢，讀者可設定預設的文書編輯器，當Git需要讀者輸入訊息時會叫用它。 預設情況下，Git會使用系統預設的編輯器，一般來說是Vi或Vim。 若讀者想指定不同的編輯器，例如：Emacs。可執行下列指令：
@@ -218,6 +263,47 @@ Git附帶名為`git config`的工具，允許讀者取得及設定組態參數�
 	$ git config --global merge.tool vimdiff
 
 Git能接受kdiff3、tkdiff、meld、xxdiff、emerge、vimdiff、gvimdiff、ecmerge及opendiff做為合併工具。 讀者可設定自訂的工具。 詳情參考第七章。
+
+> #### TortoiseGit - Diff Viewer ####
+> 
+> 1.  在桌面按右鍵, 點擊 **Settings**
+> 
+>     ![](/figures/TGit/1.5.1/01.png)
+> 
+> 1.  修改 Diff Viewer
+> 
+>     ![](/figures/TGit/1.5.3/01.png)
+> 
+>   * 點擊 **Diff Viewer**
+>   * 點擊 **External**
+>   * 填入 **C:\Program Files (x86)\WinMerge\WinMergeU.exe -s -e -x -ul -ur -wl -dl %bname -dr %yname %base %mine**
+>   * 按 **Apply** 按鈕
+> 
+> #### TortoiseGit - Diff Viewer for specific file extension ####
+> 
+> 1.  點擊 **Diff Viewer**
+> 2.  點擊 **External**
+> 3.  複製 **WinMerge 的設定值**
+> 4.  按 **Advanced** 按鈕
+> 
+>     ![](/figures/TGit/1.5.3/03.png)
+> 
+> 5.  按 **Add** 按鈕
+> 
+>     ![](/figures/TGit/1.5.3/04.png)
+> 
+> 6.  **Extension** 填入副檔名, 將 WinMerge 設定值貼到 **External program** 欄位, 再按 **OK** 按鈕
+> 
+>     ![](/figures/TGit/1.5.3/05.png)
+> 
+> 7.  按 **OK** 按鈕
+> 
+>     ![](/figures/TGit/1.5.3/06.png)
+> 
+> 8.  點選回 "TortoiseGitMerge", 按 **Apply** 按鈕
+> 
+>     ![](/figures/TGit/1.5.3/07.png)
+> 
 
 ### 檢查讀者的設定 ###
 
@@ -253,6 +339,31 @@ Git能接受kdiff3、tkdiff、meld、xxdiff、emerge、vimdiff、gvimdiff、ecme
 
 這些命令對讀者是很有幫助的，因為讀者可在任意地方取得它們，即使已離線。
 若手冊及這本書不足以幫助讀者，且讀者需要更進一步的協助。 讀者可試著進入Freenode IRC伺服器（irc.freenode.net）的`#git`或`#github`頻道。 這些頻道平時都有上百位對Git非常瞭解的高手而且通常樂意協助。
+
+> ### TortoiseGit - Offline Help ###
+> 
+> ![](/figures/TGit/1.6/01.png)
+> 
+> ![](/figures/TGit/1.6/02.png)
+> 
+> ### TortoiseGit - Online Help ###
+> 
+> [TortoiseGit Help Online Doc](http://tortoisegit.org/docs/tortoisegit/)
+> 
+> ![](/figures/TGit/1.6/03.png)
+> 
+> [~~General Group~~](https://groups.google.com/forum/#!forum/tortoisegit)
+> 
+> [Users Group](https://groups.google.com/forum/#!forum/tortoisegit-users)
+> 
+> [Dev Group](https://groups.google.com/forum/#!forum/tortoisegit-dev)
+> 
+> [The Issue List](https://code.google.com/p/tortoisegit/issues/list)
+> 
+> [The Project on Google](https://code.google.com/p/tortoisegit/)
+> 
+> [The Project on GitHub](https://github.com/TortoiseGit/TortoiseGit)
+> 
 
 ## 總結 ##
 
