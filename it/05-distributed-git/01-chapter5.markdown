@@ -12,7 +12,7 @@ A differenza dei gestori di versione centralizzati (CVCS), la natura distribuita
 
 Nei sistemi centralizzati, generalmente c'è un solo modo per collaborare: il flusso centralizzato. Un nucleo centrale, c.d. repository, può accettare il codice e tutti sincronizzano il proprio lavoro con questo nucleo. Un numero di sviluppatori sono nodi - utenti del nucleo - e restano sincronizzati con questo nucleo centrale (vedi Figura 5-1).
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Figura 5-1. Worlflow centralizzato
 
 Questo significa che se due sviluppatori clonano dal nucleo ed entrambi fanno dei cambiamenti, il primo sviluppatore che trasmetterà le proprie modifiche al nucleo non avrà problemi. Il secondo, invece, dovrà prima unire al proprio lavoro quello del primo e quindi potrà inviare i suoi cambiamenti, per non sovrascrivere il lavoro del primo. Questo accade in Git come in Subversion (o un altro CVCS), e questo modello funziona tranquillamente in Git.
@@ -31,7 +31,7 @@ Poiché Git permette di avere repository multipli, è possibile avere un workflo
 5.  Il mantenitore aggiunge il repository del contributore come remoto e fa un merge in locale dei cambiamenti.
 6.  Il mantenitore fa una push dei cambiamenti (compresi quelli aggiunti dal contributore) verso il repository principale.
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Figura 5-2. Workflow con manager d'integrazione
 
 Questo è un workflow comune con siti come GitHub, dove è facile eseguire un fork di un progetto e inviare le tue modifiche al tuo fork, in modo che tutti possano accedervi. Uno dei vantaggi principali di questo approccio è che puoi continuare il tuo lavoro mentre il mantenitore del repository principale può eseguire una pull dei tuoi cambiamenti in qualsiasi momento. I contributori non devono aspettare che il progetto incorpori le modifiche: ognuno può lavorare per conto suo.
@@ -45,7 +45,7 @@ Questa è una variante del workflow con repository multipli. Viene generalmente 
 3.  Il dittatore esegue l'unione dei branch master dei tenenti nel proprio branch master.
 4.  Il dittatore esegue una push del proprio ramo master nel repository di riferimento, cosicché gli sviluppatori possano accedervi.
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Figura 5.3. Workflow con dittatore benevolo.
 
 Questo tipo di workflow non è comune ma può essere utile in progetti molto grandi o in ambienti con una gerarchia forte, perché consente al leader del progetto (il dittatore) di delegare molto del lavoro e raccogliere vasti sottoinsiemi di codice in punti diversi prima di integrarli.
@@ -161,7 +161,7 @@ A John non è permesso fare un push perché nel frattempo lo ha già fatto Jessi
 
 A questo punto, il repository locale di John somiglia a quello di figura 5-4.
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Figura 5-4. Il repository iniziale di John.
 
 John sa quali sono le modifiche di Jessica, ma deve unirle alle sue prima poter fare una push:
@@ -173,7 +173,7 @@ John sa quali sono le modifiche di Jessica, ma deve unirle alle sue prima poter 
 
 L'unione fila liscia e ora la cronologia delle commit di John sarà come quella di Figura 5-5.
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Figura 5-5. Il repository di John dopo aver unito origin/master.
 
 John ora può testare il suo codice per essere sicuro che continui a funzionare correttamente e può quindi eseguire la push del tutto sul server:
@@ -185,12 +185,12 @@ John ora può testare il suo codice per essere sicuro che continui a funzionare 
 
 La cronologia dei commit di John somiglierà quindi a quella di figura 5-6.
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Figura 5-6. La cronologia di John dopo avere eseguito la push verso il server.
 
 Jessica nel frattempo sta lavorando a un altro ramo. Ha creato un branch chiamato `problema54` e ha eseguito tre commit su quel branch. Poiché non ha ancora recuperato le modifiche di John la sua cronologia è quella della Figura 5-7.
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Figura 5-7. La cronologia iniziale di Jessica.
 
 Jessica vuole sincronizzarsi con John, quindi esegue:
@@ -203,7 +203,7 @@ Jessica vuole sincronizzarsi con John, quindi esegue:
 
 Con cui recupera il lavoro che nel frattempo John ha eseguito. La cronologia di Jessica ora è quella di Figura 5-8.
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Figura 5-8. La cronologia di Jessica dopo aver recuperato i cambiamenti di John.
 
 Jessica pensa che il suo ramo sia pronto, però vuole sapere con cosa deve unire il suo lavoro prima di eseguire la push. Esegue quindi `git log` per scoprirlo:
@@ -240,7 +240,7 @@ Non ci sono stati problemi: come puoi vedere tutto è stato molto semplice. Quin
 
 Tutto viene unito correttamente, e la cronologia di Jessica è come quella di Figura 5-9.
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Figura 5-9. La cronologia di Jessica dopo aver unito i cambiamenti di John.
 
 Ora `origin/master` è raggiungibile dal ramo `master` di Jessica, cosicché lei sia capace di eseguire delle push con successo (supponendo che John non abbia fatto altre push nel frattempo):
@@ -252,12 +252,12 @@ Ora `origin/master` è raggiungibile dal ramo `master` di Jessica, cosicché lei
 
 Ogni sviluppatore ha eseguito alcune commit ed unito con successo il proprio lavoro con quello degli altri; vedi Figura 5-10.
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Figura 5-10. La cronologia di Jessica dopo aver eseguito il push dei cambiamenti verso il server.
 
 Questo è uno dei workflow più semplici. Lavori per un po', generalmente in un branch, ed unisci il tutto al branch master quando è pronto per essere integrato. Quando vuoi condividere questo lavoro lo unisci al tuo branch master e poi scarichi ed unisci `origin/master`, se è cambiato, e infine esegui la push verso il branch `master` nel server. La sequenza è simile a quella in Figura 5-11.
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Figura 5-11. La sequenza generale di eventi per un workflow semplice con Git a più sviluppatori.
 
 ### Team privato con manager ###
@@ -303,7 +303,7 @@ Quindi Jessica esegue un paio di commit sul branch `funzionalitaB`:
 
 Il repository di Jessica è come quello di Figura 5-12.
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Figura 5.12. La cronologia iniziale delle commit di Jessica
 
 Quando è pronta a eseguire una push del proprio lavoro riceve una e-mail da Josie che le dice che una parte del lavoro era già stato caricato sul server nel branch chiamato `funzionalitaBee`. Jessica deve unire prima le modifiche al server alle sue per poter fare la push verso il server. Può recuperare il lavoro di Josie usando `git fetch`:
@@ -368,17 +368,17 @@ Jessica vuole aggiustare qualcosa e fa un'altro commit ed una push verso il serv
 
 La cronologia delle commit di Jessica ora sarà come quella della Figura 5-13.
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Figura 5-13. La cronologia di Jessica dopo aver eseguito la commit sul branch.
 
 Jessica, Josie e John informano gli integratori che i rami `funzionalitaA` e `funzionalitaB` che sono sul server sono pronti per l'integrazione nel `master`. Dopo l'integrazione di questi branch nel `master`, una fetch scaricherà tutte queste nuove commit, rendendo la cronologia delle commit come quella della Figura 5.14.
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Figura 5.14. La cronologia di Jessica dopo aver unito entrambi i rami.
 
 Molti gruppi migrano a Git per la sua capacità di avere gruppi che lavorino in parallelo, unendo le differenti righe di lavoro alla fine del processo. La possibilità che piccoli sottogruppi del team possano collaborare con branch remoti senza dover necessariamente coinvolgere o ostacolare l'intero team è un grande beneficio di Git. La sequenza del workflow che hai appena visto è rappresentata nella Figura 5-15.
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Figura 5-15. Sequenza base di questo workflow con team separati.
 
 ### Piccolo progetto pubblico ###
@@ -438,7 +438,7 @@ In un progetto dove non sei il mantenitore normalmente è comodo avere un branch
 
 Ora ognuno dei tuoi lavori è separato come in una coda di modifiche che puoi riscrivere, ribasare e modificare senza che gli argomenti interferiscano o dipendano dagli altri, come in Figura 5-16.
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Figura 5-16. Conologia iniziale col lavoro su funzionalitaB.
 
 Supponiamo che il mantenitore del progetto ha inserito una manciata di altre modifiche e provato il tuo primo branch ma non riesce più ad applicare tali modifiche in maniera pulita. In questo caso puoi provare a ribasare il nuovo `origin/master` su quel branch, risolvere i conflitti per poi inviare di nuovo le tue modifiche:
@@ -449,7 +449,7 @@ Supponiamo che il mantenitore del progetto ha inserito una manciata di altre mod
 
 Questo riscrive la tua cronologia per essere come quella di Figura 5-17.
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Fgiura 5-17. La cronologia ddopo il lavoro su funzionalitaA.
 
 Poiché hai eseguito un rebase del branch, per poter sostituire il branch `funzionalitaA` sul server con una commit che non discenda dallo stesso, devi usare l'opzione `-f` perché la push funzioni. Un'alternativa sarebbe fare una push di questo nuovo lavoro su un branch diverso (chiamato per esempio `funzionalitaAv2`).
@@ -466,7 +466,7 @@ L'opzione `--squash` prende tutto il lavoro dal branch da unire e lo aggiunge co
 
 Ora puoi avvisare i mantenitori che hai effettuato le modifiche richieste e che possono trovarle nel branch `funzionalitaBv2` (vedi Figura 5-18).
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Figura 5-18. La cronologia dopo il lavoro su funzionalitaBv2.
 
 ### Grande Progetto Pubblico ###
@@ -754,23 +754,23 @@ Quando tutto il lavoro del tuo branch è pronto per essere integrato in un branc
 
 Un workflow semplice unisce le modifiche nel branch `master`. In questo scenario hai un `master` che contiene del codice stabile. Quando hai del lavoro in un branch funzionale che sia tuo o di un contributore e di cui tu abbia già verificato il buon funzionamento, lo unisci al master, cancelli il branch e così via. Se abbiamo un repository che abbia delle modifiche in due branch  funzionali chiamati `ruby_client` e `php_client` questo apparirà come in Figura 5-19 e se unissimo prima `ruby_client` e poi `php_client` allora la nostra cronologia apparirà come quella in Figura 5-20.
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Figura 5-19. Cronologia con branch funzionali multipli.
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Figura 5-20. Dopo l'unione dei branch funzionali.
 
 Probabilmente questo è il workflow più semplice, ma è anche problematico se stai lavorando con repository o progetti grandi.
 
 Se hai più sviluppatori o lavori in un progetto grande, probabilmente vorrai usare un ciclo d'unione a due fasi. In questo scenario hai due branch principali, `master` e `develop`, e hai deciso che `master` viene aggiornato esclusivamente con un rilascio molto stabile e tutto il codice nuovo viene integrato nel branch `develop`. Condividi regolarmente entrambi i branch su un repository pubblico e ogni volta che hai un nuovo branch funzionale da integrare (Figura 5-21) lo fai in `develop` (Figura 5-22), quindi taggi il rilascio e fai un `fast-forward` di `master` al punto in cui `develop` è stabile (Figura 5-23).
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Figura 5-21. Prima dell'unione del branch funzionale.
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Figura 5-22. Dopo l'unione del branch funzionale.
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Figura 5-23. Dopo il rilascio di un branch funzionale.
 
 In questo modo quando qualcuno clona il repository del tuo progetto, questi può scaricare il master per avere l'ultima versione stabile e tenersi aggiornato, o scaricare la versione di sviluppo che contiene le ultime cose.
@@ -780,12 +780,12 @@ Puoi estendere questo concetto avendo un branch in cui integri tutto il nuovo la
 
 Il progetto Git ha quattro branch principali: `master`, `next`, e `pu` (aggiornamenti suggeriti - `proposed updates`) per il nuovo lavoro, e `maint` per la manutenzione dei backport. Quando un contributore introduce una modifica, questa viene raccolta nei branch funzionali del repository del mantenitore in modo simile a quanto ho già descritto (vedi Figura 5-24). A questo punto le modifiche vengono valutate per deteminare se sono sicure e pronte per essere utilizzate o se hanno bisogno di ulteriore lavoro. Se sono sicure vengono unite in `next` e questo branch viene condiviso perché chiunque possa provarle tutte assieme.
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Figura 5-24. Gestire una serie complessa di branch funzionali paralleli.
 
 Se la funzione ha bisogno di ulteriori modifiche viene unita invece in `pu` e quando viene ritenuta realmente stabile viene unita di nuovo su `master` e viene ricostruita dal codice che era in `next`, ma non è ancora promossa su `master`. Questo significa che `master` va quasi sempre avanti, `next` raramente è ribasato e `pu` viene ribasato molto spesso (see Figura 5-25).
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Figura 5-25. Unire branch di contribuzione nei branch principali.
 
 Quando un branch funzionale viene finalmente unito in `master` viene anche rimosso dal repository. Il progetto Git ha anche un branch `maint` che è un fork dell'ultima release per fornire patch a versioni precedenti nel caso sia necessaria un rilascio di manutenzione. Quindi, quando cloni il repository di Git puoi usare quattro branch per valutare il progetto in stadi diversi dello sviluppo, a seconda che tu voglia le ultime funzionalità o voglia contribuire, e il mantenitore ha strutturato il workflow in modo da favorire nuove contribuzioni.
@@ -796,7 +796,7 @@ Altri mantenitori preferiscono ribasare o usare lo _cherry-pick_ aggiungere i co
 
 L'altro modo per spostare il lavoro dei contributori da un branch all'altro è di usare lo _cherry-pick_. Lo _cherry-pick_ in Git è come una rebase per una commit singola. Prende la patch introdotta nella commit e prova a riapplicarla sul branch dove sei. Questo è utile se hai molte commit in un branch funzionale e vuoi integrarne solo alcune o se hai un'unica commit in un branch funzionale e preferisci usare lo `cherry-pick` piuttosto che ribasare. Immagina di avere un progetto che sembri quello di Figura 5-26.
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Figura 5-26. Cronologia prima dello _cherry pick_.
 
 Se vuoi introdurre la commit `e43a6` nel tuo master puoi eseguire
@@ -808,7 +808,7 @@ Se vuoi introdurre la commit `e43a6` nel tuo master puoi eseguire
 
 Che replica le stesse modifiche introdotte in `e43a6`, ma produce una nuova commit con un suo SHA-1 differente perché le date sono diverse. La tua cronologia ora assomiglia a quella in Figura 5-27.
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Figura 5-27. Cronologia dopo lo _cherry-picking_ dal branch funzionale.
 
 Puoi ora eliminare il branch funzionale e cancellare le commit che non vuoi integrare.

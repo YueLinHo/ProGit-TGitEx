@@ -71,7 +71,7 @@ Au fur et à mesure que vous éditez des fichiers, Git les considère comme modi
 Vous *indexez* ces fichiers modifiés et vous enregistrez toutes les modifications indexées, puis ce cycle se répète.
 Ce cycle de vie est illustré par la figure 2-1.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Figure 2-1. Le cycle de vie des états des fichiers.
 
 ### Vérifier l'état des fichiers ###
@@ -772,7 +772,7 @@ Si vous préférez utiliser un outil plus graphique pour visualiser l'historique
 Gitk est un outil graphique mimant les fonctionnalités de `git log`, et il donne accès à quasiment toutes les options de filtrage de `git log`.
 Si vous tapez `gitk` en ligne de commande, vous devriez voir une interface ressemblant à la figure 2-2.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figure 2-2. Le visualiseur d'historique gitk.
 
 Vous pouvez voir l'historique des *commits* dans la partie supérieure de la fenêtre avec un graphique d'enchaînement.

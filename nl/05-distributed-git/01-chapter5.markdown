@@ -48,7 +48,7 @@ In tegenstelling tot gecentraliseerde versiebeheersystemen (CVCSen), stelt de ge
 
 In gecentraliseerde systemen is er over het algemeen een enkel samenwerkingsmodel - de gecentraliseerde workflow. Één centraal punt, of repository, kan code aanvaarden, en iedereen synchroniseert zijn werk daarmee. Een aantal ontwikkelaars zijn knopen - gebruikers van dat centrale punt - en synchroniseren met die plaats (zie Figuur 5-1).
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Figuur 5-1. Gecentraliseerde workflow.
 
 Dit betekent dat als twee ontwikkelaars clonen van het gecentraliseerde punt en beiden wijzigingen doen, de eerste ontwikkelaar zijn wijzigingen zonder problemen kan pushen. De tweede ontwikkelaar zal het werk van de eerste in het zijne moeten mergen voordat hij het zijne kan pushen, om zo niet het werk van de eerste te overschrijven. Dit concept werkt in Git zoals het ook werkt in Subversion (of ieder ander CVCS), en dit model werkt prima in Git.
@@ -67,7 +67,7 @@ Omdat Git je toestaat om meerdere remote repositories te hebben, is het mogelijk
 5. De eigenaar voegt de repo van de bijdrager toe als een remote en merged lokaal.
 6. De eigenaar pusht de gemergde wijzigingen terug in de hoofdrepository.
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Figuur 5-2. Integratie-manager workflow.
 
 Dit is een veel voorkomende workflow bij websites zoals GitHub, waarbij het eenvoudig is om een project af te splitsen (fork) en je wijzigingen te pushen in jouw afgesplitste project waar iedereen ze kan zien. Een van de grote voordelen van deze aanpak is dat je door kunt gaan met werken, en de eigenaar van de hoofdrepository jouw wijzigingen op ieder moment kan pullen. Bijdragers hoeven niet te wachten tot het project hun bijdragen invoegt - iedere partij kan op zijn eigen tempo werken.
@@ -81,7 +81,7 @@ Dit is een variant op de multi-repository workflow. Het wordt over het algemeen 
 3. De dictator merged de masterbranches van de luitenanten in de masterbranch van de dictator.
 4. De dictator pusht zijn masterbranch terug naar het referentierepository zodat de andere ontwikkelaars kunnen rebasen.
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Figuur 5-3. Welwillende-dictatorwerkwijze.
 
 Deze manier van werken is niet gewoon, maar kan handig zijn in hele grote projecten of in zeer hiërarchische omgevingen, omdat het de projectleider (de dictator) in staat stelt om het meeste werk te delegeren en grote subsets van code te verzamelen op meerdere punten alvorens ze te integreren.
@@ -199,7 +199,7 @@ John mag niet pushen omdat Jessica in de tussentijd gepusht heeft. Dit is belang
 
 Hierna ziet John's lokale repository er ongeveer uit zoals Figuur 5-4.
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Figuur 5-4. John's initiële repository.
 
 John heeft een referentie naar de wijzigingen die Jessica gepusht heeft, maar hij moet ze mergen met zijn eigen werk voordat hij het mag pushen:
@@ -211,7 +211,7 @@ John heeft een referentie naar de wijzigingen die Jessica gepusht heeft, maar hi
 
 Het mergen gaat soepeltjes - de commit historie van John ziet er nu uit als Figuur 5-5.
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Figuur 5-5. John's repository na het mergen van `origin/master`.
 
 Nu kan John zijn code testen om er zeker van te zijn dat alles nog steeds goed werkt, en dan kan hij zijn nieuwe gemergede werk pushen naar de server:
@@ -223,12 +223,12 @@ Nu kan John zijn code testen om er zeker van te zijn dat alles nog steeds goed w
 
 Tenslotte ziet John's commit historie eruit als Figuur 5-6.
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Figuur 5-6. John's historie na gepusht te hebben naar de origin server.
 
 In de tussentijd heeft Jessica gewerkt op een topic branch. Ze heeft een topic branch genaamd `issue54` aangemaakt en daar drie commits op gedaan. Ze heeft John's wijzigingen nog niet opgehaald, dus haar commit historie ziet er uit als Figuur 5-7.
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Figuur 5-7. Jessica's initiële commit historie.
 
 Jessica wil met John synchroniseren, dus ze haalt de wijzigingen op:
@@ -241,7 +241,7 @@ Jessica wil met John synchroniseren, dus ze haalt de wijzigingen op:
 
 Dit haalt het werk op dat John in de tussentijd gepusht heeft. Jessica's historie ziet er nu uit als Figuur 5-8.
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Figuur 5-8. Jessica's historie na het fetchen van John's wijzigingen.
 
 Jessica denkt dat haar topic branch nu klaar is, maar ze wil weten wat ze in haar werk moet mergen zodat ze kan pushen. Ze voert `git log` uit om dat uit te zoeken:
@@ -278,7 +278,7 @@ Er doen zich geen problemen voor, zoals je kunt zien was het een eenvoudige fast
 
 Alles merged netjes, en Jessica's historie ziet er uit als Figuur 5-9.
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Figuur 5-9. Jessica's historie na het mergen van John's wijzigingen.
 
 Nu is `origin/master` bereikbaar vanuit Jessica's `master` branch, dus ze zou in staat moeten zijn om succesvol te pushen (even aangenomen dat John in de tussentijd niets gepusht heeft):
@@ -290,12 +290,12 @@ Nu is `origin/master` bereikbaar vanuit Jessica's `master` branch, dus ze zou in
 
 Iedere ontwikkelaar heeft een paar keer gecommit en elkaars werk succesvol samengevoegd, zie Figuur 5-10.
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Figuur 5-10. Jessica's historie na alle wijzigingen teruggezet te hebben op de server.
 
 Dit is één van de eenvoudigste workflows. Je werkt een tijdje, over het algemeen in een topic branch, en merged dit in je `master` branch als het klaar is om te worden geïntegreerd. Als je dat werk wilt delen, dan merge je het in je eigen `master` branch, en vervolgens fetch je `origin/master` en merge je deze als het gewijzigd is, en als laatste push je deze naar de `master` branch op de server. De algemene volgorde is zoiets als die getoond in Figuur 5-11.
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Figuur 5-11. Algemene volgorde van gebeurtenissen voor een eenvoudige multi-ontwikkelaar Git workflow.
 
 ### Besloten aangestuurd team ###
@@ -341,7 +341,7 @@ Nu doet Jessica een paar commits op de `featureB` branch:
 
 Jessica's repository ziet eruit als Figuur 5-12.
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Figuur 5-12. Jessica's initiële commit historie.
 
 Ze is klaar om haar werk te pushen, maar ze krijgt een mail van Josie dat een branch met wat initieel werk erin al gepusht is naar de server in de `featureBee` branch. Jessica moet die wijzigingen eerst mergen met die van haar voordat ze kan pushen naar de server. Ze kan dan Josie's wijzigingen ophalen met `git fetch`:
@@ -406,18 +406,18 @@ Jessica wil iets kleins wijzigen, dus doet ze nog een commit en pusht dit naar d
 
 Jessica's commit historie ziet er nu uit zoals Figuur 5-13.
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Figuur 5-13. Jessica's historie na het committen op een feature branch.
 
 Jessica, Josie en John informeren de integrators nu dat de `featureA` en `featureBee` branches op de server klaar zijn voor integratie in de hoofdlijn. Nadat zij die branches in de hoofdlijn geïntegreerd hebben, zal een fetch de nieuwe merge commits ophalen, waardoor de commit historie er uit ziet zoals Figuur 5-14.
 
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Figuur 5-14. Jessica's historie na het mergen van allebei haar onderwerp branches.
 
 Veel groepen schakelen om naar Git juist vanwege de mogelijkheid om meerdere teams in parallel te kunnen laten werken, waarbij de verschillende lijnen van werk laat in het proces gemerged worden. De mogelijkheid van kleinere subgroepen of een team om samen te werken via remote branches zonder het hele team erin te betrekken of te hinderen is een enorm voordeel van Git. De volgorde van de workflow die je hier zag is ongeveer zoals Figuur 5-15.
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Figuur 5-15. Eenvoudige volgorde in de workflow van dit aangestuurde team.
 
 ### Klein openbaar project ###
@@ -477,7 +477,7 @@ Bij een project waarvan je niet de beheerder bent, is het over het algemeen eenv
 
 Nu zijn al je onderwerpen opgeslagen in een silo - vergelijkbaar met een patch reeks (queue) - die je kunt herschrijven, rebasen en wijzigen zonder dat de onderwerpen elkaar beïnvloeden of van elkaar afhankelijk zijn zoals in Figuur 5-16.
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Figuur 5-16. Initiële commit historie met werk van featureB.
 
 Stel dat de project-beheerder een verzameling andere patches binnengehaald heeft en jouw eerste branch geprobeerd heeft, maar dat die niet meer netjes merged. In dat geval kun je proberen die branch te rebasen op `origin/master`, de conflicten op te lossen voor de beheerder, en dan je wijzigingen opnieuw aanbieden:
@@ -488,7 +488,7 @@ Stel dat de project-beheerder een verzameling andere patches binnengehaald heeft
 
 Dit herschrijft je geschiedenis zodat die eruit ziet als in Figuur 5-17.
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Figuur 5-17. Commit historie na werk van featureA.
 
 Omdat je de branch gerebased hebt, moet je de `-f` specificeren met je push commando om in staat te zijn de `featureA` branch op de server te vervangen met een commit die er geen afstammeling van is. Een alternatief zou zijn dit nieuwe werk naar een andere branch op de server te pushen (misschien `featureAv2` genaamd).
@@ -505,7 +505,7 @@ De `--squash` optie pakt al het werk op de gemergde branch en perst dat samen in
 
 Je kunt de beheerder nu een bericht sturen dat je de gevraagde wijzigingen gemaakt hebt en dat ze die wijzigingen kunnen vinden in je `featureBv2` branch (zie Figuur 5-18).
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Figuur 5-18. Commit historie na het featureBv2 werk.
 
 ### Openbaar groot project ###
@@ -810,23 +810,23 @@ Als al het werk in je onderwerp branch klaar is om te worden geïntegreerd in ee
 
 Een eenvoudige workflow merged je werk in de `master` branch. In dit scenario heb je een `master` branch die feitelijk de stabiele code bevat. Als je werk in een topic branch hebt waaraan je gewerkt hebt, of dat iemand anders heeft bijgedragen en je hebt dat nagekeken, dan merge je het in de master branch, verwijdert de topic branch en vervolgt het proces. Als we een repository hebben met werk in twee branches genaamd `ruby_client` en `php_client`, wat eruit ziet zoals Figuur 5-19 en mergen eerst `ruby_client` en daarna `php_client`, dan zal je historie er uit gaan zien zoals in Figuur 5-20.
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Figuur 5-19. Historie met een aantal topic branches.
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Figuur 5-20. Na het mergen van een topic branch.
 
 Dat is waarschijnlijk de eenvoudigste workflow, maar het wordt problematisch als je werkt met grotere repositories of projecten.
 
 Als je meer ontwikkelaars hebt of een groter project, dan zul je waarschijnlijk minstens een twee-fasen merge cyclus willen toepassen. In dat geval heb je twee langlopende branches, `master` en `develop`, waarbij je bepaalt dat `master` alleen vernieuwd wordt als een zeer stabiele release is gemaakt en alle nieuwe code geïntegreerd is in de `develop` branch. Je pusht beide branches op regelmatige basis naar de publieke repository. Iedere keer als je een nieuw topic branch hebt om te mergen (Figuur 5-21), merge je het in `develop` (Figuur 5-22). En als je een tag gemaakt heb van een release, doe je een fast-forward van `master` naar waar de nu stabiele `develop` branch is (Figuur 5-23).
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Figuur 5-21. Voor een merge van een topic branch.
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Figuur 5-22. Na een merge van een topic branch.
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Figuur 5-23. Na een release van een topic branch.
 
 Op deze manier, als mensen de repository van je project clonen, dan kunnen ze kiezen om master uit checken en daarmee de laatste stabiele versie te bouwen en die eenvoudig up-to-date te houden, of ze kunnen develop uit checken waar het nieuwere materiaal in staat.
@@ -836,12 +836,12 @@ Je kunt dit concept ook verder doorvoeren, waarbij je een integratie branch hebt
 
 Het Git project heeft vier langlopende branches: `master`, `next`, en `pu` (proposed updates, voorgestelde vernieuwingen) voor nieuw spul, en `maint` voor onderhoudswerk (maintenance backports). Als nieuw werk wordt geïntroduceerd door bijdragers, wordt het samengeraapt in topic branches in de repository van de beheerder op een manier die lijkt op wat ik omschreven heb (zie Figuur 5-24). Hier worden de topics geëvalueerd om te bepalen of ze veilig zijn en klaar voor verdere verwerking of dat ze nog wat werk nodig hebben. Als ze veilig zijn, worden ze in `next` gemerged, en wordt die branch gepusht zodat iedereen de geïntegreerde topics kan uitproberen.
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Figuur 5-24. Een complexe serie van parallel bijgedragen topic branches beheren.
 
 Als de topics nog werk nodig hebben, dan worden ze in plaats daarvan gemerged in `pu`. Zodra vastgesteld is dat ze helemaal stabiel zijn, dan worden de topics opnieuw gemerged in `master` en worden dan herbouwd van de topics die in `next` waren, maar nog niet gepromoveerd waren naar `master`. Dit betekent dat `master` vrijwel altijd vooruit beweegt, `next` eens in de zoveel tijd gerebased wordt, en `pu` nog vaker gerebased wordt (zie Figuur 5-25).
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Figuur 5-25. Bijgedragen topic branches mergen in langlopende integratie branches.
 
 Als een onderwerp branch uiteindelijk is gemerged in `master`, dan wordt het verwijderd van de repository. Het Git project heeft ook een `maint` branch, die geforked is van de laatste release om teruggewerkte (backported) patches te leveren in het geval dat een onderhoudsrelease nodig is. Dus als je de Git repository cloned, dan heb je vier branches die je kunt uitchecken om het project in verschillende stadia van ontwikkeling te evalueren, afhankelijk van hoe nieuw je alles wilt hebben of hoe je wil bijdragen. En de beheerders hebben een gestructureerde workflow om ze te helpen nieuwe bijdragen aan de tand te voelen.
@@ -852,7 +852,7 @@ Andere beheerders geven de voorkeur aan rebasen of bijgedragen werk te cherry pi
 
 De andere manier om geïntroduceerd werk van de ene naar de andere branch te verplaatsen is om het te cherry picken. Een cherry-pick in Git is een soort rebase voor een enkele commit. Het pakt de patch die was geïntroduceerd in een commit en probeert die weer toe te passen op de branch waar je nu op zit. Dit is handig als je een aantal commits op een topic branch hebt en je er slechts één van wilt integreren, of als je alleen één commit op een topic branch hebt en er de voorkeur aan geeft om het te cherry-picken in plaats van rebase uit te voeren. Bijvoorbeeld, stel dat je een project hebt dat eruit ziet als Figuur 5-26.
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Figuur 5-26. Voorbeeld historie voor een cherry pick.
 
 Als je commit `e43a6` in je master branch wilt pullen, dan kun je dit uitvoeren
@@ -864,7 +864,7 @@ Als je commit `e43a6` in je master branch wilt pullen, dan kun je dit uitvoeren
 
 Dit pulled dezelfde wijziging zoals geïntroduceerd in `e43a6`, maar je krijgt een nieuwe SHA-1 waarde, omdat de gegevens op een andere manier toegepast zijn. Nu ziet je historie eruit als Figuur 5-27.
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Figuur 5-27. Historie na het cherry-picken van een commit op een topic branch.
 
 Nu kun je de topic branch verwijderen en de commits die je niet wilde pullen weggooien.

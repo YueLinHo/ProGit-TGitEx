@@ -116,7 +116,7 @@ La sentencia `master^{tree}` indica el objeto árbol apuntado por la última con
 
 Conceptualmente, la información almacenada por Git es algo similar a la Figura 9-1.
 
-Insert 18333fig0901.png 
+![](/figures/18333fig0901-tn.png) 
 Figura 9-1. Versión simplificada del modelo de datos de Git.
 
 Puedes crear tu propio árbol. Habitualmente Git suele crear un árbol a partir del estado de tu área de preparación (staging area) o índice, escribiendo un objeto árbol con él. Por tanto, para crear un objeto árbol, previamente has de crear un índice preparando algunos archivos para ser almacenados. Puedes utilizar el comando de "fontaneria" `update-index` para crear un índice con una sola entrada, --la primera version de tu archivo text.txt--. Este comando se utiliza para añadir artificialmente la versión anterior del archivo test.txt. a una nueva área de preparación  Has de utilizar la opción `--add`, porque el archivo no existe aún en tu área de preparación (es más, ni siquiera tienes un área de preparación). Y has de utilizar también la opción `--cacheinfo`, porque el archivo que estas añadiendo no está en tu carpeta, sino en tu base de datos.  Para terminar, has de indicar el modo, la clave SHA-1 y el nombre de archivo:
@@ -164,7 +164,7 @@ Aquí se vén las entradas para los dos archivos y también el que la suma de co
 
 Si crearas una carpeta de trabajo a partir de este nuevo árbol que acabas de escribir, obtendrías los dos archivos en el nivel principal de la carpeta de trabajo y una subcarpeta llamada `bak` conteniendo la primera versión del archivo test.txt.  Puedes pensar en algo parecido a la Figura 9-2 para representar los datos guardados por Git para estas estructuras.
 
-Insert 18333fig0902.png 
+![](/figures/18333fig0902-tn.png) 
 Figura 9-2. La estructura del contenido Git para tus datos actuales.
 
 ### Objetos de confirmación de cambios ###
@@ -240,7 +240,7 @@ Cada uno de estos tres objetos de confirmación de cambios apunta a uno de los t
 
 Siguiendo todos los enlaces internos, puedes llegar a un gráfico similar al de la figura 9-3.
 
-Insert 18333fig0903.png 
+![](/figures/18333fig0903-tn.png) 
 Figura 9-3. Todos los objetos en tu carpeta Git.
 
 ### Almacenamiento de los objetos ###
@@ -325,7 +325,7 @@ Y la rama contendrá únicamente trabajo desde esa confirmación de cambios haci
 
 En estos momentos, tu base de datos Git se parecerá conceptualmente a la figura 9-4.
 
-Insert 18333fig0904.png 
+![](/figures/18333fig0904-tn.png) 
 Figura 9-4. Objetos en la carpeta Git, con referencias a las cabeceras de las ramas.
 
 Cuando lanzas comandos como `git branch (nombrederama)`. Lo que hace Git es añadir, a cualquier nueva referencia que vayas a crear, el valor SHA-1 de la última confirmación de cambios en esa rama.

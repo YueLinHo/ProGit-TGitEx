@@ -46,7 +46,7 @@ Git มีโพรโทคอลสำหรับโอนข้อมูล�
 
 เมื่อคุณทำการแก้ไข แฟ้มที่ถูกแก้ไขจะอยู่ในสถานะถูกแก้ไขเพราะเนื้อหาได้ถูกเปลี่ยนไป ถ้าคุณต้องการจัดเก็บการแก้ไข คุณต้อง stage แฟ้มเหล่านั้นและ commit สิ่งที่คุณ stage เอาไว้ ตามรูป 2-1
 
-Insert 18333fig0201.png 
+![](/figures/18333fig0201-tn.png) 
 รูปที่ 2-1. วงจรสถานะของแฟ้ม
 
 ### การตรวจสอบสถานะของแฟ้ม ###
@@ -623,7 +623,7 @@ Of the nearly 20,000 commits in the Git source code history, this command shows 
 
 If you like to use a more graphical tool to visualize your commit history, you may want to take a look at a Tcl/Tk program called gitk that is distributed with Git. Gitk is basically a visual `git log` tool, and it accepts nearly all the filtering options that `git log` does. If you type gitk on the command line in your project, you should see something like Figure 2-2.
 
-Insert 18333fig0202.png 
+![](/figures/18333fig0202-tn.png) 
 Figure 2-2. The gitk history visualizer.
 
 You can see the commit history in the top half of the window along with a nice ancestry graph. The diff viewer in the bottom half of the window shows you the changes introduced at any commit you click.

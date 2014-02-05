@@ -82,7 +82,7 @@ Onthoud dat elk bestand in je werkdirectory in een van twee statussen kan verker
 
 Zodra je bestanden wijzigt, ziet Git ze als modified omdat je ze veranderd hebt sinds je laatste commit. Je *staget* deze gewijzigde bestanden en commit al je gestagede wijzigingen, en de cyclus begint weer van voor af aan. Deze cyclus wordt in Figuur 2-1 geïllustreerd.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Figuur 2-1. De levenscyclus van de status van je bestanden.
 
 ### De status van je bestanden controleren ###
@@ -704,7 +704,7 @@ Van de bijna 20.000 commits in de Git broncode historie, laat dit commando de 6 
 
 Als je een meer grafische applicatie wilt gebruiken om je commit historie te visualiseren, wil je misschien een kijkje nemen naar het Tcl/Tk programma genaamd `gitk` dat met Git meegeleverd wordt. Gitk is eigenlijk een visuele `git log` tool, en het accepteert bijna alle filter opties die `git log` ook accepteert. Als je `gitk` in op de commandoregel in je project typt, zou je zoiets als in Figuur 2-2 moeten zien.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figuur 2-2. De gitk historie-visualiseerder.
 
 Je kunt de commit-historie in de bovenste helft van het scherm zien, samen met een afkomst graaf. De diff in de onderste helft van het scherm laat je de veranderingen zien die geïntroduceerd zijn bij iedere commit die je aanklikt.

@@ -444,7 +444,7 @@ Après avoir réglé les accès de base en lecture/écriture et en lecture seule
 Git fournit un script CGI appelé GitWeb qui est souvent utilisé à cette fin.
 Vous pouvez voir GitWeb en action sur des sites tels que `http://git.kernel.org` (voir figure 4-1).
 
-Insert 18333fig0401.png
+![](/figures/18333fig0401-tn.png)
 Figure 4-1. L'interface web de visualisation GitWeb.
 
 Si vous souhaitez vérifier à quoi GitWeb ressemblerait pour votre projet, Git fournit une commande pour démarrer une instance temporaire de serveur si vous avez un serveur léger tel que `lighttpd` ou `webrick` sur votre système.
@@ -984,12 +984,12 @@ Nous allons détailler comment faire.
 La première chose à faire, c'est de créer un compte utilisateur gratuit.
 Visitez la page « Plans & Pricing » (plans et prix) à `http://github.com/plans` et cliquez sur le bouton « Create a free account » (créer un compte gratuit) de la zone  « Free for open source » (gratuit pour l'open source) (voir figure 4-2) qui vous amène à la page d'enregistrement.
 
-Insert 18333fig0402.png
+![](/figures/18333fig0402-tn.png)
 Figure 4-2. La page des différents plans de GitHub.
 
 Vous devez choisir un nom d'utilisateur qui n'est pas déjà utilisé dans le système et saisir une adresse e-mail qui sera associée au compte et un mot de passe (voir figure 4-3).
 
-Insert 18333fig0403.png
+![](/figures/18333fig0403-tn.png)
 Figure 4-3. La page d'enregistrement de GitHub.
 
 Si vous l'avez, c'est le bon moment pour ajouter votre clé publique SSH.
@@ -998,7 +998,7 @@ Copiez le contenu de la clé publique et collez-le dans la boîte à texte « S
 En cliquant sur le lien « Need help with public keys? » (besoin d'aide avec les clés publiques ?), vous aurez accès aux instructions (en anglais) pour créer des clés sur la majorité des systèmes d'exploitation.
 Cliquez sur le bouton « I agree, sign me up » (j'accepte, enregistrez-moi) pour avoir accès à votre tableau de bord de nouvel utilisateur (voir figure 4-4).
 
-Insert 18333fig0404.png
+![](/figures/18333fig0404-tn.png)
 Figure 4-4. Le tableau de bord d'utilisateur de GitHub.
 
 Vous pouvez ensuite procéder à la création d'un nouveau dépôt.
@@ -1008,19 +1008,19 @@ Vous pouvez ensuite procéder à la création d'un nouveau dépôt.
 Commencez en cliquant sur le bouton gris « New Repository » juste à côté de « Your Repositories » (vos dépôts) sur le tableau de bord utilisateur.
 Un formulaire « Create a New Repository » (créer un nouveau dépôt) apparaît pour vous guider dans la création d'un nouveau dépôt (voir figure 4-5).
 
-Insert 18333fig0405.png
+![](/figures/18333fig0405-tn.png)
 Figure 4-5. Création d'un nouveau dépôt sur GitHub.
 
 Le strict nécessaire consiste à fournir un nom au projet, mais vous pouvez aussi ajouter une description.
 Ensuite, cliquez sur le bouton « Create Repository » (créer un dépôt).
 Voilà un nouveau dépôt sur GitHub (voir figure 4-6).
 
-Insert 18333fig0406.png
+![](/figures/18333fig0406-tn.png)
 Figure 4-6. Information principale d'un projet GitHub.
 
 Comme il n'y a pas encore de code, GitHub affiche les instructions permettant de créer un nouveau projet, de pousser un projet Git existant ou d'importer un projet depuis un dépôt Subversion public (voir figure 4-7).
 
-Insert 18333fig0407.png
+![](/figures/18333fig0407-tn.png)
 Figure 4-7. Instructions pour un nouveau dépôt.
 
 Ces instructions sont similaires à ce que nous avons déjà décrit.
@@ -1039,7 +1039,7 @@ Votre projet est à présent hébergé sur GitHub et vous pouvez fournir l'URL �
 Dans notre cas, il s'agit de `http://github.com/testinguser/iphone_projet`.
 Vous pouvez aussi voir dans l'en-tête de la page de chaque projet qu'il y a deux URL Git (voir figure 4-8).
 
-Insert 18333fig0408.png
+![](/figures/18333fig0408-tn.png)
 Figure 4-8. En-tête de projet avec une URL publique et une URL privée.
 
 L'URL « Git Read-Only » (Git en lecture seule) est une URL Git publique en lecture seule que tout le monde peut cloner.
@@ -1054,7 +1054,7 @@ Si vous souhaitez importer un projet public sous Subversion dans Git, GitHub peu
 Il y a un lien  « Importing a SVN Repo? Click here » (Vous importez un dépôt Subversion ? Cliquez ici) au bas de la page d'instructions.
 En le cliquant, vous accédez à un formulaire contenant des informations sur le processus d'import et une boîte à texte où vous pouvez coller l'URL de votre dépôt public Subversion (voir figure 4-9).
 
-Insert 18333fig0409.png
+![](/figures/18333fig0409-tn.png)
 Figure 4-9. Interface d'import depuis Subversion.
 
 Si votre projet est très gros, ne suit pas les standards de nommage ou est privé, cette méthode risque de ne pas fonctionner.
@@ -1068,7 +1068,7 @@ Cela leur permettra de pousser leur travail sur le dépôt avec leurs clés priv
 
 Cliquez sur le bouton « Admin » dans l'en-tête du projet pour accéder à la page d'administration de votre projet GitHub (voir figure 4-10).
 
-Insert 18333fig0410.png
+![](/figures/18333fig0410-tn.png)
 Figure 4-10. Page d'administration GitHub.
 
 Pour accorder à un autre utilisateur l'accès en écriture au projet, cliquez sur l'onglet « Collaborators » (Collaborateurs).
@@ -1076,12 +1076,12 @@ Vous pouvez entrer le nom de l'utilisateur dans la boîte à texte qui apparaît
 Au fur et à mesure de votre frappe, une liste déroulante affiche les noms qui correspondent aux caractères tapés.
 Lorsque vous avez trouvé l'utilisateur correct, cliquez sur le bouton « Add » (Ajouter) pour ajouter l'utilisateur comme collaborateur au projet (voir figure 4-11).
 
-Insert 18333fig0411.png
+![](/figures/18333fig0411-tn.png)
 Figure 4-11. Ajout d'un collaborateur à votre projet.
 
 Lorsque vous avez fini d'ajouter des collaborateurs, vous devriez les voir en liste dans la boîte « Repository Collaborators » (voir figure 4-12).
 
-Insert 18333fig0412.png
+![](/figures/18333fig0412-tn.png)
 Figure 4-12. Une liste des collaborateurs sur votre projet.
 
 Si vous devez révoquer l'accès à certaines personnes, vous pouvez cliquer sur la croix rouge leur correspondant et leur accès en écriture sera effacé.
@@ -1091,7 +1091,7 @@ Pour des projets futurs vous pouvez aussi copier des groupes de collaborateurs e
 
 Une fois que vous avez poussé votre projet ou l'avez importé depuis Subversion, votre page principale de projet ressemble à la figure 4-13.
 
-Insert 18333fig0413.png
+![](/figures/18333fig0413-tn.png)
 Figure 4-13. Un page principale de projet GitHub.
 
 Lorsqu'on visite votre projet, on voit cette page.
@@ -1114,12 +1114,12 @@ On peut dupliquer un projet et pousser dessus, et le mainteneur principal du pro
 
 Pour dupliquer un projet, visitez la page du projet (par exemple mojombo/chronic), et cliquez sur le bouton « Fork » (dupliquer) dans l'en-tête (voir figure 4-14).
 
-Insert 18333fig0414.png
+![](/figures/18333fig0414-tn.png)
 Figure 4-14. Obtenir un copie modifiable et publiable d'un dépôt en cliquant sur le bouton « Fork ».
 
 Quelques secondes plus tard, vous êtes redirigé vers une nouvelle page de projet qui indique que ce projet est un duplicata d'un autre (voir figure 4-15).
 
-Insert 18333fig0415.png
+![](/figures/18333fig0415-tn.png)
 Figure 4-15. Votre duplicata d'un projet.
 
 ### Résumé sur GitHub ###

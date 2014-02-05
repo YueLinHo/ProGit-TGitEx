@@ -501,7 +501,7 @@ Da Du jetzt sowohl einen einfachen Lese- und Schreibzugriff, als auch einen schr
 
 <!--Figure 4-1. The GitWeb web-based user interface.-->
 
-Insert 18333fig0401.png
+![](/figures/18333fig0401-tn.png)
 Abbildung 4-1. Die webbasierte Benutzeroberfläche von GitWeb.
 
 <!--If you want to check out what GitWeb would look like for your project, Git comes with a command to fire up a temporary instance if you have a lightweight server on your system like `lighttpd` or `webrick`. On Linux machines, `lighttpd` is often installed, so you may be able to get it to run by typing `git instaweb` in your project directory. If you’re running a Mac, Leopard comes preinstalled with Ruby, so `webrick` may be your best bet. To start `instaweb` with a non-lighttpd handler, you can run it with the `-\-httpd` option.-->
@@ -1123,7 +1123,7 @@ Um loslegen zu können, musst Du Dir einen Benutzeraccount erstellen. Gib dazu d
 
 <!--Figure 4-2. The GitHub plan page.-->
 
-Insert 18333fig0402.png
+![](/figures/18333fig0402-tn.png)
 Abbildung 4-2. Die Angebotsseite von GitHub.
 
 <!--Here you must choose a username that isn’t yet taken in the system and enter an e-mail address that will be associated with the account and a password (see Figure 4-3).-->
@@ -1132,7 +1132,7 @@ Auf dieser Seite musst Du einen Nutzernamen auswählen, der bisher im System nic
 
 <!--Figure 4-3. The GitHub user signup form.-->
 
-Insert 18333fig0403.png
+![](/figures/18333fig0403-tn.png)
 Abbildung 4-3. Das Formular für die GitHub Benutzerregistrierung.
 
 <!--If you have it available, this is a good time to add your public SSH key as well. We covered how to generate a new key earlier, in the "Simple Setups" section. Take the contents of the public key of that pair, and paste it into the SSH Public Key text box. Clicking the "explain ssh keys" link takes you to detailed instructions on how to do so on all major operating systems.-->
@@ -1143,7 +1143,7 @@ Wenn Du auf den „I agree, sign me up“ Button drückst, landest Du in Deinem 
 
 <!--Figure 4-4. The GitHub user dashboard.-->
 
-Insert 18333fig0404.png
+![](/figures/18333fig0404-tn.png)
 Abbildung 4-4. Das GitHub Benutzer-Dashboard.
 
 <!--Next you can create a new repository.-->
@@ -1159,7 +1159,7 @@ Um ein neues Repository anzulegen, musst Du auf den „create a new one“-Link,
 
 <!--Figure 4-5. Creating a new repository on GitHub.-->
 
-Insert 18333fig0405.png
+![](/figures/18333fig0405-tn.png)
 Abbildung 4-5. Erzeugen eines Repositorys auf GitHub.
 
 <!--All you really have to do is provide a project name, but you can also add a description. When that is done, click the "Create Repository" button. Now you have a new repository on GitHub (see Figure 4-6).-->
@@ -1168,7 +1168,7 @@ Im Prinzip musst Du nur einen Projektnamen und wenn Du es für nötig erachtest 
 
 <!--Figure 4-6. GitHub project header information.-->
 
-Insert 18333fig0406.png
+![](/figures/18333fig0406-tn.png)
 Abbildung 4-6. GitHub Projektinformationen.
 
 <!--Since you have no code there yet, GitHub will show you instructions for how create a brand-new project, push an existing Git project up, or import a project from a public Subversion repository (see Figure 4-7).-->
@@ -1177,7 +1177,7 @@ Da in dem Repository noch kein Code enthalten ist, gibt Dir GitHub ein paar Hinw
 
 <!--Figure 4-7. Instructions for a new repository.-->
 
-Insert 18333fig0407.png
+![](/figures/18333fig0407-tn.png)
 Abbildung 4-7. Anleitung zum Erzeugen eines neuen Repository.
 
 <!--These instructions are similar to what we’ve already gone over. To initialize a project if it isn’t already a Git project, you use-->
@@ -1201,7 +1201,7 @@ Das war es schon. Dein Projekt ist nun auf GitHub erreichbar. Du kannst jetzt di
 
 <!--Figure 4-8. Project header with a public URL and a private URL.-->
 
-Insert 18333fig0408.png
+![](/figures/18333fig0408-tn.png)
 Abbildung 4-8. Projekt Header mit der Angabe der öffentlichen und privaten URL.
 
 <!--The Public Clone URL is a public, read-only Git URL over which anyone can clone the project. Feel free to give out that URL and post it on your web site or what have you.-->
@@ -1221,7 +1221,7 @@ Wenn Du bereits ein Subversion Projekt hast und dieses in Git importieren möcht
 
 <!--Figure 4-9. Subversion importing interface.-->
 
-Insert 18333fig0409.png
+![](/figures/18333fig0409-tn.png)
 Abbildung 4-9. Import-Schnittstelle für Subversion Projekte.
 
 <!--If your project is very large, nonstandard, or private, this process probably won’t work for you. In Chapter 7, you’ll learn how to do more complicated manual project imports.-->
@@ -1241,7 +1241,7 @@ Klicke auf die „edit“-Schaltfläche in der Projektübersicht oder wähle den
 
 <!--Figure 4-10. GitHub administration page.-->
 
-Insert 18333fig0410.png
+![](/figures/18333fig0410-tn.png)
 Abbildung 4-10. GitHub Administrationsoberfläche.
 
 <!--To give another user write access to your project, click the “Add another collaborator” link. A new text box appears, into which you can type a username. As you type, a helper pops up, showing you possible username matches. When you find the correct user, click the Add button to add that user as a collaborator on your project (see Figure 4-11).-->
@@ -1250,7 +1250,7 @@ Um einem anderen Benutzer Schreibrechte zu Deinem Projekt zu gewähren, kannst D
 
 <!--Figure 4-11. Adding a collaborator to your project.-->
 
-Insert 18333fig0411.png
+![](/figures/18333fig0411-tn.png)
 Abbildung 4-11. Ein Mitarbeiter zu Deinem Projekt hinzufügen.
 
 <!--When you’re finished adding collaborators, you should see a list of them in the Repository Collaborators box (see Figure 4-12).-->
@@ -1259,7 +1259,7 @@ Wenn Du Dein Team fertig zusammengestellt hast, solltest Du eine Liste aller Mit
 
 <!--Figure 4-12. A list of collaborators on your project.-->
 
-Insert 18333fig0412.png
+![](/figures/18333fig0412-tn.png)
 Abbildung 4-12. Übersicht über alle Mitarbeiter in Deinem Projekt.
 
 <!--If you need to revoke access to individuals, you can click the "revoke" link, and their push access will be removed. For future projects, you can also copy collaborator groups by copying the permissions of an existing project.-->
@@ -1275,7 +1275,7 @@ Nachdem Du das erste mal auf das GitHub Repository gepusht hast oder es von Subv
 
 <!--Figure 4-13. A GitHub main project page.-->
 
-Insert 18333fig0413.png
+![](/figures/18333fig0413-tn.png)
 Abbildung 4-13. Beispiel einer Hauptseite eines GitHub-Projekts.
 
 <!--When people visit your project, they see this page. It contains tabs to different aspects of your projects. The Commits tab shows a list of commits in reverse chronological order, similar to the output of the `git log` command. The Network tab shows all the people who have forked your project and contributed back. The Downloads tab allows you to upload project binaries and link to tarballs and zipped versions of any tagged points in your project. The Wiki tab provides a wiki where you can write documentation or other information about your project. The Graphs tab has some contribution visualizations and statistics about your project. The main Source tab that you land on shows your project’s main directory listing and automatically renders the README file below it if you have one. This tab also shows a box with the latest commit information.-->
@@ -1299,7 +1299,7 @@ Um einen Fork von einem Projekt zu erstellen, kannst Du die jeweilige Projektsei
 
 <!--Figure 4-14. Get a writable copy of any repository by clicking the "fork" button.-->
 
-Insert 18333fig0414.png
+![](/figures/18333fig0414-tn.png)
 Abbildung 4-14. Durch Betätigen der „Fork“-Schaltfläche erhält man eine Kopie eines Repositorys, auf welches man Schreibrechte hat.
 
 <!--After a few seconds, you’re taken to your new project page, which indicates that this project is a fork of another one (see Figure 4-15).-->
@@ -1308,7 +1308,7 @@ Nach ein paar Sekunden wirst Du zu der neuen Projektseite weitergeleitet. Dort s
 
 <!--Figure 4-15. Your fork of a project.-->
 
-Insert 18333fig0415.png
+![](/figures/18333fig0415-tn.png)
 Abbildung 4-15. Dein Fork eines Projekts.
 
 <!--### GitHub Summary ###-->

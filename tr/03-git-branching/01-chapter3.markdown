@@ -19,17 +19,17 @@ Bunu görselleştirmek için, üç dosyadan oluşan bir klasörünüzün olduğu
 
 Şimdi, Git yazılım havuzunuzda beş nesne bulunuyor: üç dosyanızın her biri için bir içerik _blob_'u, klasörün içeriğini listeleyen ve hangi dosyanın hangi _blob_'da depolandığı bilgisini içeren bir ağaç nesnesi ve o ağaç nesnesini gösteren bir imleci ve bütün kayıt üstverisini içeren bir kayıt nesnesi. Kavramsal olarak, Git yazılım havuzunuzdaki veri Figür 3-1'deki gibi görünür.
 
-Insert 18333fig0301.png 
+![](/figures/18333fig0301-tn.png) 
 Figür 3-1. Tek kayıtlı yazılım havuzundaki veri.
 
 Yeniden değişiklik yapıp kaydederseniz, yeni kayıt kendisinden hemen önce gelen kaydı gösteren bir imleci de depolar. İki ya da daha fazla kaydın sonunda tarihçeniz Figür 3-2'deki gibi görünür.
 
-Insert 18333fig0302.png 
+![](/figures/18333fig0302-tn.png) 
 Figür 3-2. Birden çok kayıt sonunda Git nesne verisi.
 
 Git'te bir dal, bu kayıtlardan birine işaret eden, yer değiştirebilen kıvrak bir imleçten ibarettir. Git'teki varsayılan dal adı `master`'dır. İlk kaydı yaptığınızda, son yaptığınız kaydı gösteren bir `master` dalına sahip olursunuz. Her kayıt yaptığınızda dal otomatik olarak son kaydı göstermek üzere hareket eder.
 
-Insert 18333fig0303.png 
+![](/figures/18333fig0303-tn.png) 
 Figür 3-3. Dal kayıt verisinin tarihçesini gösteriyor.
 
 Yeni bir dal oluşturduğunuzda ne olur? Yeni kayıtlarla ilerlemenizi sağlayan yeni bir imleç yaratılır. Söz gelimi, `testing` adında yeni bir dal oluşturalım. Bunu, `git branch` komutuyla yapabilirsiniz:
@@ -39,12 +39,12 @@ Yeni bir dal oluşturduğunuzda ne olur? Yeni kayıtlarla ilerlemenizi sağlayan
 Bu, şu an bulunduğunuz kayıttan hareketle yeni bir imleç yaratır (bkz. Figür 3-4).
 
 
-Insert 18333fig0304.png 
+![](/figures/18333fig0304-tn.png) 
 Figür 3-4. Birden çok dal kayıt verisinin tarihçesini gösteriyor.
 
 Git şu an hangi dalın üzerinde olduğunuzu nereden biliyor? `HEAD` adında özel bir imleç tutuyor. Unutmayın, buradaki `HEAD` Subversion ya da CVS gibi başka SKS'lerden alışık olduğunuz `HEAD`'den çok farklıdır. Git'te bu, üzerinde bulunduğunuz yerel dalı gösterir. Bu örnekte hâlâ `master` dalındasınız. `git branch` komutu yalnızca yeni bir dal yarattı —o dala atlamadı (bkz. Figür 3-5).
 
-Insert 18333fig0305.png 
+![](/figures/18333fig0305-tn.png) 
 Figür 3-5. HEAD dosyası üzerinde bulunduğunuz dalı gösteriyor.
 
 Varolan bir dala atlamak için `git checkout` komutunu çalıştırmalısınız. Gelin, `testing` dalına atlayalım:
@@ -53,7 +53,7 @@ Varolan bir dala atlamak için `git checkout` komutunu çalıştırmalısınız.
 
 Bu, `HEAD`'in `testing` dalını göstermesiyle sonuçlanır (bkz. Figür 3-6).
 
-Insert 18333fig0306.png
+![](/figures/18333fig0306-tn.png)
 Figür 3-6. Dal değiştirdiğinizde HEAD üzerinde olduğunuz dalı gösterir.
 
 Bunun ne önemi var? Gelin bir kayıt daha yapalım:
@@ -63,7 +63,7 @@ Bunun ne önemi var? Gelin bir kayıt daha yapalım:
 
 Figür 3-7 sonucu resmediyor.
 
-Insert 18333fig0307.png 
+![](/figures/18333fig0307-tn.png) 
 Figür 3-7. HEAD'in gösterdiği dal her kayıtla ileri doğru hareket eder.
 
 Burada ilginç olan `testing` dalı ilerlediği halde `master` dalı hâlâ dal değiştirmek için `git checkout` komutunu çalıştırdığınız zamanki yerinde duruyor. Gelin yeniden `master` dalına dönelim.
@@ -72,7 +72,7 @@ Burada ilginç olan `testing` dalı ilerlediği halde `master` dalı hâlâ dal 
 
 Figür 3-8 sonucu gösteriyor.
 
-Insert 18333fig0308.png 
+![](/figures/18333fig0308-tn.png) 
 Figür 3-8. Seçme (checkout) işlemi yapıldığında HEAD başka bir dalı gösterir.
 
 Örnekteki komut iki şey yaptı. `HEAD` imlecini yeniden `master` dalını gösterecek şekilde hareket ettirdi ve çalışma klasörünüzdeki dosyaları `master`'ın gösterdiği bellek kopyasındaki hallerine getirdi. Bu demek oluyor ki, bu noktada yapacağınız değişiklikler projenin daha eski bir sürümünü baz alacak. Özünde, başka bir yöne gidebilmek için `testing` dalında yaptığınız değişiklikleri geçici olarak geri almış oldunuz.
@@ -84,7 +84,7 @@ Gelin bir değişiklik daha yapıp kaydedelim:
 
 Şimdi proje tarihçeniz iki ayrı dala ıraksadı (bkz. Figür 3-9). Yeni bir dal yaratıp ona geçtiniz, bazı değişiklikler yaptınız; sonra ana dalınıza geri döndünüz ve başka bazı değişiklikler yaptınız. Bu iki değişiklik iki ayrı dalda birbirinden yalıtık durumdalar: iki dal arasında gidip gelebilir, hazır olduğunuzda bu iki dalı birleştirebilirsiniz. Bütün bunları yalnızca `branch` ve `checkout` komutlarını kullanarak yaptınız.
 
-Insert 18333fig0309.png 
+![](/figures/18333fig0309-tn.png) 
 Figür 3-9. Dal tarihçeleri birbirinden ıraksadı.
 
 Git'te bir dal işaret ettiği kaydın 40 karakterlik SHA-1 sınama toplamını içeren basit bir dosyadan ibaret olduğu için dalları yaratmak ve yok etmek oldukça masrafsızdır. Yeni bir dal yaratmak bir dosyaya 41 karakter (40 karakter ve bir satır sonu) yazmak kadar hızlıdır.
@@ -112,7 +112,7 @@ Bu noktada, sizden kritik önemde başka sorun üzerinde çalışıp hızlıca b
 
 Önce, diyelim ki bir projede çalışıyorsunuz ve halihazırda birkaç tane kaydınız var (bkz. Figür 3-10).
 
-Insert 18333fig0310.png 
+![](/figures/18333fig0310-tn.png) 
 Figür 3-10. Kısa ve basit bir kayıt tarihçesi.
 
 Şirketinizin kullandığı sorun izleme programındaki #53 numaralı sorun üzerinde çalışmaya karar verdiniz. Açıklığa kavuşturmak için söyleyelim: Git herhangi bir sorun izleme programına bağlı değildir; ama #53 numaralı sorun üzerinde çalışmak istediğiniz başı sonu belli bir konu olduğu için, çalışmanızı bir dal üzerinde yapacaksınız. Bir dalı yaratır yaratmaz hemen ona geçiş yapmak için `git checkout` komutunu `-b` seçeneğiyle birlikte kullanabilirsiniz:
@@ -127,7 +127,7 @@ Bu, aşağıdaki iki komutun yerine kullanabileceğiniz bir kısayoldur:
 
 Figür 3-11 sonucu resmediyor.
 
-Insert 18333fig0311.png 
+![](/figures/18333fig0311-tn.png) 
 Figür 3-11. Yeni bir dal imleci yaratmak.
 
 Web sitesi üzerinde çalışıp bazı kayıtlar yapıyorsunuz. Bunu yaptığınızda `iss53` dalı ilerliyor, çünkü seçtiğiniz dal o (yani `HEAD` onu gösteriyor; bkz. Figür 3-12).
@@ -135,7 +135,7 @@ Web sitesi üzerinde çalışıp bazı kayıtlar yapıyorsunuz. Bunu yaptığın
 	$ vim index.html
 	$ git commit -a -m 'added a new footer [issue 53]'
 
-Insert 18333fig0312.png 
+![](/figures/18333fig0312-tn.png) 
 Figür 3-12. Çalışmamız sonucunda iss53 dalı ilerledi.
 
 Şimdi, sizden web sitesindeki bir sorun için acilen bir yama hazırlamanız istensin. Git kullanıyorsanız, yamayı daha önce `iss53` dalında yaptığınız yaptığınız değişikliklerle birlikte yayına sokmanız gerekmez; yama üzerinde çalışmaya başlamadan önce söz konusu değişiklikleri geri alıp yayındaki web sitesini kaynak koduna ulaşabilmek için fazla çabalamanıza da gerek yok. Tek yapmanız gereken `master` dalına geri dönmek.
@@ -156,7 +156,7 @@ Sırada, hazırlanacak yama var. Şimdi yama üzerinde çalışmak için bir `ho
 	[hotfix]: created 3a0874c: "fixed the broken email address"
 	 1 files changed, 0 insertions(+), 1 deletions(-)
 
-Insert 18333fig0313.png 
+![](/figures/18333fig0313-tn.png) 
 Figür 3-13. hotfix dalı master dalını baz alıyor.
 
 Testlerinizi uygulayabilir, yamanızın istediğiniz gibi olduğundan emin olduktan sonra yayına sokabilmek için `master` dalıyla birleştirebilirsiniz. Bunun için `git merge` komutu kullanılır:
@@ -172,7 +172,7 @@ Birleştirme çıktısındaki "Fast forward" ifadesine dikkat. Birleştirdiğini
 
 Yaptığınız değişiklik artık `master` dalı tarafından işaret edilen kaydın bellek kopyasındadır ve yayımlanabilir (bkz. Figür 3-14).
 
-Insert 18333fig0314.png 
+![](/figures/18333fig0314-tn.png) 
 Figür 3-14. Birleştirmeden sonra master dalınız hotfix dalınızla aynı yeri gösterir.
 
 Bu çok önemli yama yayımlandıktan sonra, kaldığınız yere geri dönebilirsiniz. Fakat önce `hotfix` dalını sileceksiniz, çünkü artık ona ihtiyacınız kalmadı —`master` dalı aynı yeri gösteriyor. `git branch` komutunu `-d` seçeneğiyle birlikte kullanarak silme işlemini yapabilirsiniz:
@@ -189,7 +189,7 @@ Bu çok önemli yama yayımlandıktan sonra, kaldığınız yere geri dönebilir
 	[iss53]: created ad82d7a: "finished the new footer [issue 53]"
 	 1 files changed, 1 insertions(+), 0 deletions(-)
 
-Insert 18333fig0315.png 
+![](/figures/18333fig0315-tn.png) 
 Figür 3-15. iss53 dalınız bağımsız olarak ilerleyebilir.
 
 Şunu belirtmekte yarar var: `hotfix` dalında yaptığınız düzeltme `iss53` dalındaki dosyalarda bulunmuyor. Eğer bu değişikliği çekmek isterseniz, `git merge master` komutunu çalıştırarak `master` dalınızı `iss53` dalınızla birleştirebilirsiniz; alternatif olarak `iss53` dalındaki değişiklikleri `master`dalıyla birleştirmeye hazır hale getirene kadar bekleyebilirsiniz.
@@ -206,14 +206,14 @@ Diyelim ki #53 numaralı sorunla ilgili çalışmanızı tamamladınız ve `mast
 
 Bu daha önce yaptığınız `hotfix` birleştirmesinden biraz farklı görünüyor. Burada, kayıt tarihçeniz daha eski bir noktadan ıraksamıştı. Üzerinde bulunduğunuz dalın gösterdiği kayıt birleştirmekte olduğunuz dalın doğrudan atası olmadığından Git'in biraz iş yapması gerekiyor. Bu örnekte Git, iki dalın en uç noktası ve ikisinin ortak atasının kullanıldığı üç taraflı basit bir birleştirme yapıyor. Figür 3-16, bu birleştirmede kullanılan üç farklı bellek kopyasını vurguluyor.
 
-Insert 18333fig0316.png 
+![](/figures/18333fig0316-tn.png) 
 Figür 3-16. Git, dalları birleştirmek için en uygun ortak atayı buluyor.
 
 Git, yalnızca dal imlecini ileri kaydırmak yerine üç taraflı birleştirmenin sonucunda ortaya çıkan bellek kopyası için otomatik bir kayıt oluşturuyor (bkz. Figür 3-17). Buna birleştirme kaydı denir ve özelliği birden çok atasının olmasıdır.
 
 Git'in en uygun ortak atayı otomatik olarak bulduğunu vurgulamakta yarar var; bu kullanıcının en uygun ortak paydayı bulmak zorunda olduğu CVS ve Subversion'daki durumdan (1.5 sürümünden önceki haliyle) farklıdır. Bu Git kullanarak birleştirme yapmayı söz konusu diğer sistemlere göre çok daha kolay bir hale getirir.
 
-Insert 18333fig0317.png 
+![](/figures/18333fig0317-tn.png) 
 Figür 3-17. Git, otomatik olarak, birleştirilmiş çalışmayı içeren yeni bir kayıt nesnesi yaratır.
 
 Çalışmanız birleştirildiğine göre, artık `iss53` dalına ihtiyacınız kalmadı. Dalı silip, sorun izleme sisteminizdeki sorunu da kapatabilirsiniz:
@@ -348,12 +348,12 @@ Git'i kullanan pek çok yazılımcı bu yaklaşımı benimser, `master` dalında
 
 Gerçekte, yazılım tarihçesinde ileri doğru hareket eden imleçlerden söz ediyoruz. Kararlı dallar eski kayıtları, güncel dallar çok daha yenilerini gösterir (bkz. Figür 3-18).
 
-Insert 18333fig0318.png 
+![](/figures/18333fig0318-tn.png) 
 Figür 3-18. Daha kararlı dallar genellikle kayıt tarihçesinde daha geride bulunurlar.
 
 Bu dalları, çalışma ambarları olarak hayal ediliriz, bir dizi kayıt bütünüyle test ediltikten sonra daha kararlı başka br ambara konulurlar (bkz. Figür 3-19).
 
-Insert 18333fig0319.png 
+![](/figures/18333fig0319-tn.png) 
 Figure 3-19. Dalların ambarlar gibi olduğunu düşünebilirsiniz.
 
 Çeşitli kararlılık seviyeleri tanımlayıp bu işleyişi o şekilde kullanabilirsiniz. Büyük projelerde `proposed` (önerilen) ya da `pu` (proposed updates - önerilen güncellemeler) adında bir dal daha olabilir. Bu dala, `next` ya da `master` dalına birleştirilecek kadar kararlı aşamada bulunmayan dallar birleştirilir. Sonuçta, dallar farklı kararlılık seviyelerinde bulunurlar; daha kararlı bir seviyeye ulaştıklarında, bir üstlerindeki dala birleştirilirler.
@@ -367,12 +367,12 @@ Bunu bir önceki alt bölümde `iss53` ve `hotfix` dalları üzerinde çalışı
 
 Diyelim ki `master` dalında çalışıyorsunuz, sonra bir hatayı gidermek için yeni bir dal oluşturuyorsunuz (`iss91`), derken aynı hatayı başka türlü gidermek için yeni bir dal oluşturuyorsunuz (`iss91v2`), sonra `master`'a geri dönüp biraz daha çalışıyorsunuz, sonra aklınıza gelen ama çok da gerekli olmadığını düşündüğünüz bir şeyle ilgili çalışmak için yeni bir dal oluşturuyorsunuz (`dumbidea`)... Kayıt tarihçeniz Figür 3-20'deki gibi görünecektir.
 
-Insert 18333fig0320.png 
+![](/figures/18333fig0320-tn.png) 
 Figür 3-20. Birden çok işlev dalının bulunduğu kayıt tarihçeniz.
 
 Şimdi diyelim ki, hatanın giderilmesinde ikinci çözümü (`iss91v2`) kullanmaya karar veriyorsunuz ve iş arkadaşlarınız `dumbidea` dalında yaptıklarınızı dahice buluyor. `iss91` dalınızı çöpe atabilir (C5 ve C6 kayıtlarını kaybedeceksiniz) diğer iki dalı birleştirebilirsiniz. Bu durumda tarihçeniz Figür 3-21'deki gibi görünecektir.
 
-Insert 18333fig0321.png 
+![](/figures/18333fig0321-tn.png) 
 Figür 3-21. dumbidea ve iss91v2'yi birleştirdikten sonra kayıt tarihçeniz.
 
 Unutmayın, bütün bunları yerel dallarda yapıyorsunuz. Dal yaratırken ve birleştirme yaparken her şey yalnızca yerel yazılım havuzunda gerçekleşiyor —hiçbir sunucu iletişimi olmuyor.
@@ -385,27 +385,27 @@ Yerel yazılım havuzunuzdaki uzak uçbirim dalları, uzak uçbirimlerdeki yazı
 
 Bu biraz kafa karıştırıcı olabilir, gelin bir örnekle açıklayalım. Diyelim ki `git.şirketimiz.com` adresinde bir Git sunucunuz var. Buradan klonlama yaparsanız, Git bu yazılım havuzunu otomatik olarak `origin` olarak adlandıracak, bütün veriyi indirecek, onun `master` dalının gösterdiği kaydı gösteren `origin/master` adında hareket ettiremeyeceğiniz bir yerel dal oluşturacaktır. Git ayrıca,  üzerinde çalışabilmeniz için `origin`in `master` dalının olduğu yeri gösteren `master` adında yerel bir dal da oluşturacaktır (bkz. Figür 3-22).
 
-Insert 18333fig0322.png 
+![](/figures/18333fig0322-tn.png) 
 Figür 3-22. Bir Git klonladığınızda hem yerel bir master dalınız hem de origin'in master dalını gösteren origin/master adında bir dalınız olur.
 
 Eğer siz kendi master dalınızda çalışırken biir başkası `git.şirketimiz.com`'a itme yapıp `master` dalını güncellerse, tarihçeleriniz birbirinden farklılaşacaktır. Üstelik, `origin` sunucusuyla iletişime geçmediğiniz sürece sizin `origin/master` dalınız hareket etmeyecektir (bkz. Figür 3-23).
 
-Insert 18333fig0323.png 
+![](/figures/18333fig0323-tn.png) 
 Figür 3-23. Siz yerelde çalışıyorken bir başkası sunucuya itme yaparsa, tarihçeleriniz birbirinden farklı hareket etmeye başlar.
 
 Çalışmalarınızı eşitlemek için `git fetch origin` komutunu çalıştırabilirsiniz. Bu komut `origin` sunucusunun hangisi olduğuna bakar (bu örnekte `git.şirketimiz.com`), orada bulunup da sizde olmayan her türlü veriyi indirir, yerel veritabanınızı güncelleyip yerelinizdeki `origin/master` dalını yeni, güncel konumuna taşır (bkz. Figür 3-24).
 
-Insert 18333fig0324.png 
+![](/figures/18333fig0324-tn.png) 
 Figür 3-24. git fetch komutu uzak uçbirim imleçlerinizi günceller.
 
 Birden çok uzak uçbirime sahip bir projede uzak uçbirim imleçlerinin nasıl görüneceğini incelemek için, Scrum takımlarınızdan birisi tarafından kullanılan başka bir sunucunuzun daha olduğunu varsayalım. Bu sunucunun adresi `git.team1.şirketimiz.com` olsun. 2. Bölüm'de incelediğimiz gibi, bu sunucuyu projenize uzak uçbirim olarak eklemek için `git remote add` komutunu kullanabilirsiniz. Bu uçbirimin adı `teamone` olsun, ki bu adı daha sonra bütün URL yerine kısaltma olarak kullanacaksınız (bkz. Figür 3-25).
 
-Insert 18333fig0325.png 
+![](/figures/18333fig0325-tn.png) 
 Figür 3-25. Başka bir sunucuyu uzak uçbirim olarak eklemek.
 
 `teamone` uzak uçbiriminde bulunup da sizde bulunmayan şeyleri getirmek için `git fetch teamone` komutunu çalıştırabilirsiniz. O sunucuda bulunan veriler `origin` sunucusunda bulunanların alt kümesi olduğundan, Git herhangi bir veri çekmez, ama `teamone/master` adında, `teamone` sunucusunun `master` dalının gösterdiği kaydı gösteren bir uzak uçbirim dalı oluşturur (bkz. Figür 3-26).
 
-Insert 18333fig0326.png 
+![](/figures/18333fig0326-tn.png) 
 Figür 3-26. teamone'nin master dalının pozisyonunu gösteren bir yerel imleciniz oluyor.
 
 ### İtme İşlemi ###
@@ -480,12 +480,12 @@ Git içerisinde, değişiklikleri bir daldan diğerine bütünleştirmek için i
 
 If you go back to an earlier example from the Merge section (see Figure 3-27), you can see that you diverged your work and made commits on two different branches.
 
-Insert 18333fig0327.png 
+![](/figures/18333fig0327-tn.png) 
 Figure 3-27. Your initial diverged commit history.
 
 The easiest way to integrate the branches, as we’ve already covered, is the `merge` command. It performs a three-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit), as shown in Figure 3-28.
 
-Insert 18333fig0328.png 
+![](/figures/18333fig0328-tn.png) 
 Figure 3-28. Merging a branch to integrate the diverged work history.
 
 However, there is another way: you can take the patch of the change that was introduced in C3 and reapply it on top of C4. In Git, this is called _rebasing_. With the `rebase` command, you can take all the changes that were committed on one branch and replay them on another one.
@@ -499,12 +499,12 @@ In this example, you’d run the following:
 
 It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn. Figure 3-29 illustrates this process.
 
-Insert 18333fig0329.png 
+![](/figures/18333fig0329-tn.png) 
 Figure 3-29. Rebasing the change introduced in C3 onto C4.
 
 At this point, you can go back to the master branch and do a fast-forward merge (see Figure 3-30).
 
-Insert 18333fig0330.png 
+![](/figures/18333fig0330-tn.png) 
 Figure 3-30. Fast-forwarding the master branch.
 
 Now, the snapshot pointed to by C3' is exactly the same as the one that was pointed to by C5 in the merge example. There is no difference in the end product of the integration, but rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
@@ -517,7 +517,7 @@ Note that the snapshot pointed to by the final commit you end up with, whether i
 
 You can also have your rebase replay on something other than the rebase branch. Take a history like Figure 3-31, for example. You branched a topic branch (`server`) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes (`client`) and committed a few times. Finally, you went back to your server branch and did a few more commits.
 
-Insert 18333fig0331.png 
+![](/figures/18333fig0331-tn.png) 
 Figure 3-31. A history with a topic branch off another topic branch.
 
 Suppose you decide that you want to merge your client-side changes into your mainline for a release, but you want to hold off on the server-side changes until it’s tested further. You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the `--onto` option of `git rebase`:
@@ -526,7 +526,7 @@ Suppose you decide that you want to merge your client-side changes into your mai
 
 This basically says, “Check out the client branch, figure out the patches from the common ancestor of the `client` and `server` branches, and then replay them onto `master`.” It’s a bit complex; but the result, shown in Figure 3-32, is pretty cool.
 
-Insert 18333fig0332.png 
+![](/figures/18333fig0332-tn.png) 
 Figure 3-32. Rebasing a topic branch off another topic branch.
 
 Now you can fast-forward your master branch (see Figure 3-33):
@@ -534,7 +534,7 @@ Now you can fast-forward your master branch (see Figure 3-33):
 	$ git checkout master
 	$ git merge client
 
-Insert 18333fig0333.png 
+![](/figures/18333fig0333-tn.png) 
 Figure 3-33. Fast-forwarding your master branch to include the client branch changes.
 
 Let’s say you decide to pull in your server branch as well. You can rebase the server branch onto the master branch without having to check it out first by running `git rebase [basebranch] [topicbranch]` — which checks out the topic branch (in this case, `server`) for you and replays it onto the base branch (`master`):
@@ -543,7 +543,7 @@ Let’s say you decide to pull in your server branch as well. You can rebase the
 
 This replays your `server` work on top of your `master` work, as shown in Figure 3-34.
 
-Insert 18333fig0334.png 
+![](/figures/18333fig0334-tn.png) 
 Figure 3-34. Rebasing your server branch on top of your master branch.
 
 Then, you can fast-forward the base branch (`master`):
@@ -556,7 +556,7 @@ You can remove the `client` and `server` branches because all the work is integr
 	$ git branch -d client
 	$ git branch -d server
 
-Insert 18333fig0335.png 
+![](/figures/18333fig0335-tn.png) 
 Figure 3-35. Final commit history.
 
 ### The Perils of Rebasing ###
@@ -571,22 +571,22 @@ When you rebase stuff, you’re abandoning existing commits and creating new one
 
 Let’s look at an example of how rebasing work that you’ve made public can cause problems. Suppose you clone from a central server and then do some work off that. Your commit history looks like Figure 3-36.
 
-Insert 18333fig0336.png 
+![](/figures/18333fig0336-tn.png) 
 Figure 3-36. Clone a repository, and base some work on it.
 
 Now, someone else does more work that includes a merge, and pushes that work to the central server. You fetch them and merge the new remote branch into your work, making your history look something like Figure 3-37.
 
-Insert 18333fig0337.png 
+![](/figures/18333fig0337-tn.png) 
 Figure 3-37. Fetch more commits, and merge them into your work.
 
 Next, the person who pushed the merged work decides to go back and rebase their work instead; they do a `git push --force` to overwrite the history on the server. You then fetch from that server, bringing down the new commits.
 
-Insert 18333fig0338.png 
+![](/figures/18333fig0338-tn.png) 
 Figure 3-38. Someone pushes rebased commits, abandoning commits you’ve based your work on.
 
 At this point, you have to merge this work in again, even though you’ve already done so. Rebasing changes the SHA-1 hashes of these commits so to Git they look like new commits, when in fact you already have the C4 work in your history (see Figure 3-39).
 
-Insert 18333fig0339.png 
+![](/figures/18333fig0339-tn.png) 
 Figure 3-39. You merge in the same work again into a new merge commit.
 
 You have to merge that work in at some point so you can keep up with the other developer in the future. After you do that, your commit history will contain both the C4 and C4' commits, which have different SHA-1 hashes but introduce the same work and have the same commit message. If you run a `git log` when your history looks like this, you’ll see two commits that have the same author date and message, which will be confusing. Furthermore, if you push this history back up to the server, you’ll reintroduce all those rebased commits to the central server, which can further confuse people.

@@ -25,7 +25,7 @@ In einem zentralisierten System gibt es grob gesagt ein einziges Modell der Zusa
 
 <!--Figure 5-1. Centralized workflow.-->
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Bild 5-1. Zentralisierter Workflow
 
 <!--This means that if two developers clone from the hub and both make changes, the first developer to push their changes back up can do so with no problems. The second developer must merge in the first one’s work before pushing changes up, so as not to overwrite the first developer’s changes. This concept is true in Git as it is in Subversion (or any CVCS), and this model works perfectly in Git.-->
@@ -62,7 +62,7 @@ Weil Git ermöglicht, eine Vielzahl von externen Repositories zu betreiben, ist 
 
 <!--Figure 5-2. Integration-manager workflow.-->
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Bild 5-2. Integration-Manager Workflow
 
 <!--This is a very common workflow with sites like GitHub, where it’s easy to fork a project and push your changes into your fork for everyone to see. One of the main advantages of this approach is that you can continue to work, and the maintainer of the main repository can pull in your changes at any time. Contributors don’t have to wait for the project to incorporate their changes — each party can work at their own pace.-->
@@ -88,7 +88,7 @@ Dies ist Variante eines Workflows mit zahlreichen Repositories, die normalerweis
 
 <!--Figure 5-3. Benevolent dictator workflow.-->
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Bild 5-3. Wohlwollender Diktator Workflow
 
 <!--This kind of workflow isn’t common but can be useful in very big projects or in highly hierarchical environments, as it allows the project leader (the dictator) to delegate much of the work and collect large subsets of code at multiple points before integrating them.-->
@@ -255,7 +255,7 @@ Zu diesem Zeitpunkt sieht Johns lokales Repository jetzt aus wie in Bild 5-4.
 
 <!--Figure 5-4. John’s initial repository.-->
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Bild 5-4. Johns ursprüngliches Repository
 
 <!--John has a reference to the changes Jessica pushed up, but he has to merge them into his own work before he is allowed to push:-->
@@ -273,7 +273,7 @@ Der Merge verläuft glatt: Johns Commit Historie sieht jetzt aus wie in Bild 5-5
 
 <!--Figure 5-5. John’s repository after merging origin/master.-->
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Johns Repository nach dem Merge mit origin/master
 
 <!--Now, John can test his code to make sure it still works properly, and then he can push his new merged work up to the server:-->
@@ -291,7 +291,7 @@ Johns Commit Historie sieht schließlich aus wie in Bild 5-6.
 
 <!--Figure 5-6. John’s history after pushing to the origin server.-->
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Johns Commit Historie nach dem pushen auf den origin Server
 
 <!--In the meantime, Jessica has been working on a topic branch. She’s created a topic branch called `issue54` and done three commits on that branch. She hasn’t fetched John’s changes yet, so her commit history looks like Figure 5-7.-->
@@ -300,7 +300,7 @@ In der Zwischenzeit hat Jessica auf einem Topic Branch (xxx) gearbeitet. Sie hat
 
 <!--Figure 5-7. Jessica’s initial commit history.-->
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Bild 5-7. Jessicas ursprüngliche Commit Historie
 
 <!--Jessica wants to sync up with John, so she fetches:-->
@@ -319,7 +319,7 @@ Das lädt die Änderungen, die John in der Zwischenzeit hochgeladen hat. Jessica
 
 <!--Figure 5-8. Jessica’s history after fetching John’s changes.-->
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Bild 5-8. Jessicas Historie nachdem sie Johns Änderungen geladen hat
 
 <!--Jessica thinks her topic branch is ready, but she wants to know what she has to merge her work into so that she can push. She runs `git log` to find out:-->
@@ -368,7 +368,7 @@ Auch hier treten keine Konflikte auf. Jessicas Historie sieht jetzt wie folgt au
 
 <!--Figure 5-9. Jessica’s history after merging John’s changes.-->
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Bild 5-9. Jessicas Historie nach dem Merge mit Johns Änderungen
 
 <!--Now `origin/master` is reachable from Jessica’s `master` branch, so she should be able to successfully push (assuming John hasn’t pushed again in the meantime):-->
@@ -386,7 +386,7 @@ Beide Entwickler haben jetzt einige Male committed und die Arbeit des jeweils an
 
 <!--Figure 5-10. Jessica’s history after pushing all changes back to the server.-->
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Bild 5-10. Jessicas Historie nachdem sie sämtliche Änderungen auf den Server gepusht hat
 
 <!--That is one of the simplest workflows. You work for a while, generally in a topic branch, and merge into your `master` branch when it’s ready to be integrated. When you want to share that work, you merge it into your own `master` branch, then fetch and merge `origin/master` if it has changed, and finally push to the `master` branch on the server. The general sequence is something like that shown in Figure 5-11.-->
@@ -395,7 +395,7 @@ Dies ist eine der simpelsten Workflow Varianten. Du arbeitest eine Weile, normal
 
 <!--Figure 5-11. General sequence of events for a simple multiple-developer Git workflow.-->
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Bild 5-11. Ablauf eines einfachen Workflows für mehrere Entwickler
 
 <!--### Private Managed Team ###-->
@@ -458,7 +458,7 @@ Jessicas Repository entspricht jetzt Bild 5-12.
 
 <!--Figure 5-12. Jessica’s initial commit history.-->
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Bild 5-12. Jessicas ursprüngliche Commit Historie
 
 <!--She’s ready to push up her work, but gets an e-mail from Josie that a branch with some initial work on it was already pushed to the server as `featureBee`. Jessica first needs to merge those changes in with her own before she can push to the server. She can then fetch Josie’s changes down with `git fetch`:-->
@@ -543,7 +543,7 @@ Jessicas Commit Historie sieht jetzt wie folgt aus (Bild 5-13).
 
 <!--Figure 5-13. Jessica’s history after committing on a feature branch.-->
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Bild 5-13. Jessicas Historie mit dem neuen Commit im Feature Branch
 
 <!--Jessica, Josie, and John inform the integrators that the `featureA` and `featureBee` branches on the server are ready for integration into the mainline. After they integrate these branches into the mainline, a fetch will bring down the new merge commits, making the commit history look like Figure 5-14.-->
@@ -552,7 +552,7 @@ Jessica, Josie und John informieren jetzt ihre Integration Manager, dass die Än
 
 <!--Figure 5-14. Jessica’s history after merging both her topic branches.-->
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Bild 5-14. Jessicas Historie nachdem beide Feature Branches gemerged wurden
 
 <!--Many groups switch to Git because of this ability to have multiple teams working in parallel, merging the different lines of work late in the process. The ability of smaller subgroups of a team to collaborate via remote branches without necessarily having to involve or impede the entire team is a huge benefit of Git. The sequence for the workflow you saw here is something like Figure 5-15.-->
@@ -561,7 +561,7 @@ Viele Teams wechseln zu Git, weil es auf einfache Weise ermöglicht, verschieden
 
 <!--Figure 5-15. Basic sequence of this managed-team workflow.-->
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Bild 5-15. Workflow mit Teil-Teams und Integration Manager
 
 <!--### Public Small Project ###-->
@@ -644,7 +644,7 @@ Deine Arbeit an den verschiedenen Patches sind jetzt in Deine Topic Branches iso
 
 <!--Figure 5-16. Initial commit history with featureB work.-->
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Bild 5-16. Ursprüngliche Commit Historie mit dem `featureB` Branch
 
 <!--Let’s say the project maintainer has pulled in a bunch of other patches and tried your first branch, but it no longer cleanly merges. In this case, you can try to rebase that branch on top of `origin/master`, resolve the conflicts for the maintainer, and then resubmit your changes:-->
@@ -661,7 +661,7 @@ Das schreibt Deine Commit Historie neu, sodass sie jetzt so aussieht (Bild 5-17)
 
 <!--Figure 5-17. Commit history after featureA work.-->
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Bild 5-17. Commit Historie nach dem rebase von `featureA`
 
 <!--Because you rebased the branch, you have to specify the `-f` to your push command in order to be able to replace the `featureA` branch on the server with a commit that isn’t a descendant of it. An alternative would be to push this new work to a different branch on the server (perhaps called `featureAv2`).-->
@@ -688,7 +688,7 @@ Jetzt kannst Du dem Projekt Betreiber eine Nachricht schicken, dass Du die angef
 
 <!--Figure 5-18. Commit history after featureBv2 work.-->
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Bild 5-18. Commit Historie mit dem neuen `featureBv2` Branch
 
 <!--### Public Large Project ###-->
@@ -1112,12 +1112,12 @@ Eine einfache Möglichkeit besteht darin, Deine Arbeit einfach in den `master` B
 
 <!--Figure 5-19. History with several topic branches.-->
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Bild 5-19. Historie mit verschiedenen Topic Branches
 
 <!--Figure 5-20. After a topic branch merge.-->
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Bild 5-20. Nach dem Merge mit verschiedenen Topic Branches
 
 <!--That is probably the simplest workflow, but it’s problematic if you’re dealing with larger repositories or projects.-->
@@ -1130,17 +1130,17 @@ Wenn Du mehr Entwickler oder ein größeres Projekt hast, wirst Du in der Regel 
 
 <!--Figure 5-21. Before a topic branch merge.-->
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Bild 5-21. Vor dem Topic Branch Merge
 
 <!--Figure 5-22. After a topic branch merge.-->
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Bild 5-22. Nach dem Topic Branch Merge
 
 <!--Figure 5-23. After a topic branch release.-->
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Bild 5-23. Nach dem Topic Branch Release
 
 <!--This way, when people clone your project’s repository, they can either check out master to build the latest stable version and keep up to date on that easily, or they can check out develop, which is the more cutting-edge stuff.-->
@@ -1158,7 +1158,7 @@ Das Git Projekt selbst hat view dauerhafte Branches: `master`, `next`, `pu` („
 
 <!--Figure 5-24. Managing a complex series of parallel contributed topic branches.-->
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Bild 5-24. Komplexe, parallel entwickelte Topic Branches verwalten
 
 <!--If the topics still need work, they’re merged into `pu` instead. When it’s determined that they’re totally stable, the topics are re-merged into `master` and are then rebuilt from the topics that were in `next` but didn’t yet graduate to `master`. This means `master` almost always moves forward, `next` is rebased occasionally, and `pu` is rebased even more often (see Figure 5-25).-->
@@ -1167,7 +1167,7 @@ Wenn die Topic Branches noch weiter bearbeitet werden müssen, werden sie statt 
 
 <!--Figure 5-25. Merging contributed topic branches into long-term integration branches.-->
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Bild 5-25. Topic Branches in dauerhafte Integrationsbranches mergen
 
 <!--When a topic branch has finally been merged into `master`, it’s removed from the repository. The Git project also has a `maint` branch that is forked off from the last release to provide backported patches in case a maintenance release is required. Thus, when you clone the Git repository, you have four branches that you can check out to evaluate the project in different stages of development, depending on how cutting edge you want to be or how you want to contribute; and the maintainer has a structured workflow to help them vet new contributions.-->
@@ -1187,7 +1187,7 @@ Eine andere Möglichkeit, Commits aus einem Branch in einen anderen zu übernehm
 
 <!--Figure 5-26. Example history before a cherry pick.-->
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Bild 5-26. Beispiel Historie vor einem cherry-pick
 
 <!--If you want to pull commit `e43a6` into your master branch, you can run-->
@@ -1205,7 +1205,7 @@ Das wendet dieselben Änderungen, die in `e43a6` eingeführt wurden, auf den `ma
 
 <!--Figure 5-27. History after cherry-picking a commit on a topic branch.-->
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Bild 5-27. Historie nach dem cherry-pick eines Commits aus einem Topic Branch
 
 <!--Now you can remove your topic branch and drop the commits you didn’t want to pull in.-->

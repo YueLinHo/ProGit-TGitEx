@@ -323,7 +323,7 @@ HTTP 協議的消極面在於，相對來說用戶端效率更低。克隆或者
 
 現在我們的項目已經有了可讀可寫和唯讀的連接方式，不過如果能有一個簡單的 web 介面訪問就更好了。Git 自帶一個叫做 GitWeb 的 CGI 腳本，運行效果可以到 `http://git.kernel.org` 這樣的網站體驗下（見圖 4-1）。
 
-Insert 18333fig0401.png
+![](/figures/18333fig0401-tn.png)
 Figure 4-1. 基於網頁的 GitWeb 使用者介面
 
 如果想看看自己項目的效果，不妨用 Git 自帶的一個命令，可以使用類似 `lighttpd` 或 `webrick` 這樣羽量級的伺服器啟動一個臨時進程。如果是在 Linux 主機上，通常都預裝了 `lighttpd` ，可以到專案目錄中鍵入 `git instaweb` 來啟動。如果用的是 Mac ，Leopard 預裝了 Ruby，所以 `webrick` 應該是最好的選擇。如果要用 lighttpd 以外的程式來啟動 `git instaweb`，可以通過 `--httpd` 選項指定：
@@ -745,18 +745,18 @@ GitHub 同時也是一個向使用私有倉庫的用戶收取費用的商業公�
 
 首先註冊一個免費帳戶。訪問 Pricing and Signup 頁面 `http://github.com/plans` 並點擊 Free acount 裡的 Sign Up 按鈕（見圖 4-2），進入註冊頁面。
 
-Insert 18333fig0402.png
+![](/figures/18333fig0402-tn.png)
 圖 4-2. GitHub 服務簡介頁面
 
 選擇一個系統中尚未使用的用戶名，提供一個與之相關聯的電郵位址，並輸入密碼（見圖 4-3）：
 
-Insert 18333fig0403.png
+![](/figures/18333fig0403-tn.png)
 圖 4-3. GitHub 用戶註冊表單
 
 如果方便，現在就可以提供你的 SSH 公開金鑰。我們在前文的"小型安裝" 一節介紹過生成新公開金鑰的方法。把新生成的公開金鑰複製粘貼到 SSH Public Key 文字方塊中即可。要是對生成公開金鑰的步驟不太清楚，也可以點擊 "explain ssh keys" 連結，會顯示各個主流作業系統上完成該步驟的介紹。
 點擊 "I agree，sign me up" 按鈕完成使用者註冊，並轉到該使用者的 dashboard 頁面（見圖 4-4）:
 
-Insert 18333fig0404.png
+![](/figures/18333fig0404-tn.png)
 圖 4-4. GitHub 的用戶面板
 
 接下來就可以建立新倉庫了。
@@ -765,17 +765,17 @@ Insert 18333fig0404.png
 
 點擊用戶面板上倉庫旁邊的 "create a new one" 連結，顯示 Create a New Repository 的表單（見圖 4-5）：
 
-Insert 18333fig0405.png
+![](/figures/18333fig0405-tn.png)
 圖 4-5. 在 GitHub 上建立新倉庫
 
 當然，項目名稱是必不可少的，此外也可以適當描述一下專案的情況或者給出官方網站的位址。然後點擊 "Create Repository" 按鈕，新倉庫就建立起來了（見圖 4-6）：
 
-Insert 18333fig0406.png
+![](/figures/18333fig0406-tn.png)
 圖 4-6. GitHub 上各個專案的概要資訊
 
 由於尚未提交代碼，點擊專案位址後 GitHub 會顯示一個簡要的指南，告訴你如何新建一個專案並推送上來，如何從現有項目推送，以及如何從一個公共的 Subversion 倉庫導入項目（見圖 4-7）：
 
-Insert 18333fig0407.png
+![](/figures/18333fig0407-tn.png)
 圖 4-7. 新倉庫指南
 
 該指南和本書前文介紹的類似，對於新的專案，需要先在本地初始化為 Git 專案，添加要管理的檔並作首次提交：
@@ -791,7 +791,7 @@ Insert 18333fig0407.png
 
 現在該項目就託管在 GitHub 上了。你可以把它的 URL 分享給每位對此項目感興趣的人。本例的 URL 是 `http://github.com/testinguser/iphone_project`。而在專案頁面的摘要部分，你會發現有兩個 Git URL 位址（見圖 4-8）：
 
-Insert 18333fig0408.png
+![](/figures/18333fig0408-tn.png)
 圖 4-8. 項目摘要中的公共 URL 和私有 URL
 
 Public Clone URL 是一個公開的，唯讀的 Git URL，任何人都可以通過它克隆該專案。可以隨意散播這個 URL，比如發佈到個人網站之類的地方等等。
@@ -802,7 +802,7 @@ Your Clone URL 是一個基於 SSH 協議的可讀可寫 URL，只有使用與�
 
 如果想把某個公共 Subversion 項目導入 Git，GitHub 可以幫忙。在指南的最後有一個指嚮導入 Subversion 頁面的連結。點擊它會看到一個表單，包含有關導入流程的資訊以及一個用來粘貼公共 Subversion 項目連接的文字方塊（見圖 4-9）：
 
-Insert 18333fig0409.png
+![](/figures/18333fig0409-tn.png)
 圖 4-9. Subversion 導入介面
 
 如果專案很大，採用非標準結構，或者是私有的，那就無法借助該工具實現導入。到第 7 章，我們會介紹如何手工導入複雜工程的具體方法。
@@ -813,17 +813,17 @@ Insert 18333fig0409.png
 
 點擊專案頁面上方的 "edit" 按鈕或者頂部的 Admin 標籤，進入該專案的管理頁面（見圖 4-10）：
 
-Insert 18333fig0410.png
+![](/figures/18333fig0410-tn.png)
 圖 4-10. GitHub 的專案管理頁面
 
 為了給另一個用戶添加項目的寫許可權，點擊 "Add another collaborator" 連結，出現一個用於輸入用戶名的表單。在輸入的同時，它會自動跳出一個符合條件的候選名單。找到正確用戶名之後，點 Add 按鈕，把該使用者設為專案協作者（見圖 4-11）：
 
-Insert 18333fig0411.png
+![](/figures/18333fig0411-tn.png)
 圖 4-11. 為專案添加協作者
 
 添加完協作者之後，就可以在 Repository Collaborators 區域看到他們的名單（見圖 4-12）：
 
-Insert 18333fig0412.png
+![](/figures/18333fig0412-tn.png)
 圖 4-12. 專案協作者名單
 
 如果要取消某人的訪問權，點擊 "revoke" 即可取消他的推送許可權。對於將來的專案，你可以從現有專案複製協作者名單，或者直接借用協作者群組。
@@ -832,7 +832,7 @@ Insert 18333fig0412.png
 
 在推送或從 Subversion 導入項目之後，你會看到一個類似圖 4-13 的項目主頁：
 
-Insert 18333fig0413.png
+![](/figures/18333fig0413-tn.png)
 圖 4-13. GitHub 上的項目主頁
 
 別人訪問你的專案時看到的就是這個頁面。它有若干導航標籤，Commits 標籤用於顯示提交歷史，最新的提交位於最上方，這和 `git log` 命令的輸出類似。Network 標籤展示所有派生了該專案並做出貢獻的用戶的關係圖譜。Downloads 標籤允許你上傳項目的二進位檔案，提供下載該項目各個版本的 tar/zip 包。Wiki 標籤提供了一個用於撰寫文檔或其他專案相關資訊的 wiki 網站。Graphs 標籤包含了一些視覺化的專案資訊與資料。預設打開的 Source 標籤頁面，則列出了該專案的目錄結構和概要資訊，並在下方自動展示 README 檔的內容（如果該檔存在的話），此外還會顯示最近一次提交的相關資訊。
@@ -845,12 +845,12 @@ Insert 18333fig0413.png
 
 要派生一個專案，到原始專案的頁面（本例中是 mojombo/chronic）點擊 "fork" 按鈕（見圖 4-14）：
 
-Insert 18333fig0414.png
+![](/figures/18333fig0414-tn.png)
 圖 4-14. 點擊 "fork" 按鈕獲得任意專案的可寫副本
 
 幾秒鐘之後，你將進入新建的專案頁面，會顯示該專案派生自哪一個項目（見圖 4-15）：
 
-Insert 18333fig0415.png
+![](/figures/18333fig0415-tn.png)
 圖 4-15. 派生後得到的項目副本
 
 ### GitHub 小結 ###

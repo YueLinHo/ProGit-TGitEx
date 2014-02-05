@@ -190,7 +190,7 @@ Ora che sai come specificare singole commit, vediamo come specificare intervalli
 
 Il modo più comune per specificare un intervallo è con i due punti che, praticamente, chiede a Git di risolvere l’intervallo tra commit che sia raggiungibile da una commit, ma non dall’altra. Immaginiamo di avere la cronologia dell’immagine 6-1
 
-Insert 18333fig0601.png
+![](/figures/18333fig0601-tn.png)
 Figure 6-1. Esempio di cronologia per la selezione di intervalli.
 
 Vuoi vedere cosa sia nella tua diramazione sperimentale che non sia ancora stato incorporato nella master: puoi chiedere a Git di mostrarti solo il registro delle commit con `master..experiment`: questo significa “tutte le commit raggiungibili da experiment che non lo siano da master”. Affinché questi esempi siano sintetici ma chiari, invece del registro effettivo di Git, userò le lettere degli oggetti commit del diagramma:

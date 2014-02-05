@@ -50,7 +50,7 @@ Veel mensen hebben hun eigen versiebeheer methode: ze kopiëren bestanden naar e
 
 Om met dit probleem om te gaan hebben programmeurs lang geleden lokale VCSen ontwikkeld die een simpele database gebruikten om alle veranderingen aan bestanden te beheren (zie Figuur 1-1).
 
-Insert 18333fig0101.png
+![](/figures/18333fig0101-tn.png)
 Figuur 1-1. Een diagram van een lokaal versiebeheersysteem.
 
 Een populair gereedschap voor VCS was een systeem genaamd rcs, wat vandaag de dag nog steeds met veel computers wordt meegeleverd. Zelfs het populaire besturingssysteem Mac OS X heeft rcs als je de Developer Tools installeert. Dit gereedschap werkt in principe door verzamelingen van ‘patches’ (de verschillen tussen bestanden) van de opvolgende bestandsversies in een speciaal formaat op de harde schijf op te slaan. Zo kan je een bestand reproduceren zoals deze er uitzag op enig moment in tijd door alle patches bij elkaar op te tellen.
@@ -59,7 +59,7 @@ Een populair gereedschap voor VCS was een systeem genaamd rcs, wat vandaag de da
 
 De volgende belangrijke uitdaging waar mensen tegenaan lopen is dat ze samen moeten werken met ontwikkelaars op andere computers. Om deze uitdaging aan te gaan ontwikkelde men Gecentraliseerde Versiebeheersystemen (Centralized Version Control Systems, afgekort CVCSs). Deze systemen, zoals CVS, Subversion en Perforce, hebben één centrale server waarop alle versies van de bestanden staan en een aantal clients die de bestanden daar van ophalen (‘check out’). Vele jaren was dit de standaard voor versiebeheer (zie Figuur 1-2).
 
-Insert 18333fig0102.png
+![](/figures/18333fig0102-tn.png)
 Figuur 1-2. Een diagram van een gecentraliseerd versiebeheersysteem.
 
 Deze manier van versiebeheer biedt veel voordelen, zeker ten opzichte van lokale VCSen. Bijvoorbeeld weet iedereen, tot op zekere hoogte, wat de overige project-medewerkers aan het doen zijn. Beheerders hebben een hoge mate van controle over wie wat kan doen, en het is veel eenvoudiger om een CVCS te beheren dan te moeten werken met lokale databases op elke client.
@@ -70,7 +70,7 @@ Maar helaas, deze methode heeft ook behoorlijke nadelen. De duidelijkste is de �
 
 En hier verschijnen Gedistribueerde versiebeheersystemen (Distributed Version Control Systems, DVCSs) ten tonele. In een DVCS (zoals Git, Mercurial, Bazaar en Darcs) downloaden clients niet simpelweg de laatste momentopnames van de bestanden: de hele opslagplaats (de ‘repository’) wordt gekopiëerd. Dus als een server neergaat en deze systemen werkten via die server samen dan kan de repository van elke willekeurige client terug worden gekopiëerd naar de server om deze te herstellen. Elke checkout is dus in feite een complete backup van alle data (zie Figuur 1-3).
 
-Insert 18333fig0103.png
+![](/figures/18333fig0103-tn.png)
 Figuur 1-3. Diagram van een gedistribueerd versiebeheersysteem
 
 Bovendien kunnen veel van deze systemen behoorlijk goed omgaan met meerdere (niet-lokale) repositories tegelijk, zodat je met verschillende groepen mensen op verschillende manieren tegelijk aan hetzelfde project kan werken. Hierdoor kan je verschillende werkprocessen (‘workflows’) opzetten die niet mogelijk waren geweest met gecentraliseerde systemen zoals hiërarchische modellen.
@@ -97,12 +97,12 @@ Dus, wat is Git in een notendop? Dit is een belangrijke paragraaf om in je op te
 
 Een groot verschil tussen Git en elke andere VCS (inclusief Subversion en consorten) is hoe Git denkt over zijn data. Conceptueel bewaren de meeste andere systemen informatie als een lijst van veranderingen per bestand. Deze systemen (CVS, Subversion, Perforce, Bazaar, enzovoort) zien de informatie die ze bewaren als een aantal bestanden en de veranderingen die aan die bestanden zijn aangebracht over de tijd, zoals geïllustreerd in Figuur 1-4.
 
-Insert 18333fig0104.png
+![](/figures/18333fig0104-tn.png)
 Figuur 1-4. Andere systemen bewaren data meestal als veranderingen aan een basisversie van elk bestand.
 
 Git ziet en bewaart zijn data heel anders. De kijk van Git op zijn data kan worden uitgelegd als een reeks momentopnames (snapshots) van een miniatuurbestandssysteem. Elke keer dat je ‘commit’ (de status van je project in Git opslaat) neemt het een soort van foto van hoe al je bestanden er op dat moment uitzien en slaat een verwijzing naar die foto op. Voor efficiëntie slaat Git ongewijzigde bestanden niet elke keer opnieuw op, alleen een verwijzing naar het eerdere identieke bestand dat het eerder al opgeslagen had. In Figuur 1-5 kan je zie hoe Git ongeveer over zijn data denkt.
 
-Insert 18333fig0105.png
+![](/figures/18333fig0105-tn.png)
 Figuur 1-5. Git bewaart data als momentopnames van het project.
 
 Dat is een belangrijk onderscheid tussen Git en bijna alle overige VCSen. Hierdoor moet Git bijna elk aspect van versiebeheer heroverwegen, terwijl de meeste andere systemen het hebben overgenomen van voorgaande generaties. Dit maakt Git meer een soort mini-bestandssysteem met een paar ongelooflijk krachtige gereedschappen, in plaats van niets meer of minder dan een VCS. We zullen een paar van de voordelen die je krijgt als je op die manier over data denkt gaan onderzoeken, als we ‘branching’ (gesplitste ontwikkeling) toelichten in Hoofdstuk 3.
@@ -137,7 +137,7 @@ Let nu goed op. Dit is het belangrijkste dat je over Git moet weten als je wilt 
 
 Dit brengt ons tot de drie hoofdonderdelen van een Gitproject: de Git directory, de werk-directory, en de wachtrij voor een commit (‘staging area’)
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figuur 1-6. Werk-directory, wachtrij en Git directory
 
 De Git directory is waar Git de metadata en objectdatabase van je project opslaat. Dit is het belangrijkste deel van Git. Deze directory wordt gekopiëerd wanneer je een repository kloont vanaf een andere computer.
@@ -201,7 +201,7 @@ Er zijn twee makkelijke manieren om Git op een Mac te installeren. De simpelste 
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png
+![](/figures/18333fig0107-tn.png)
 Figuur 1-7. Gitinstallatieprogramma voor OS X.
 
 De andere veelgebruikte manier is om Git via MacPorts (`http://www.macports.org`) te installeren. Als je MacPorts geïnstalleerd hebt, kun je Git installeren met

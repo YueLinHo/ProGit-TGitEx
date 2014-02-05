@@ -188,7 +188,7 @@ Depois que tudo isso seja definido, se você executar comandos diff como este:
 
 Em vez de ter a saída do diff na linha de comando, Git inicia o P4Merge, como mostra a Figura 7-1.
 
-Insert 18333fig0701.png
+![](/figures/18333fig0701-tn.png)
 Figura 7-1. P4Merge
 
 Se você tentar mesclar dois branches e, posteriormente, ter conflitos de mesclagem, você pode executar o comando `git mergetool`, que iniciará o P4Merge para deixá-lo resolver os conflitos através dessa ferramenta gráfica.
@@ -447,10 +447,10 @@ No entanto, este resultado é de uso limitado. Se você já usou a substituiçã
 
 Acontece que você pode escrever seus próprios filtros para fazer substituições em arquivos no commit/checkout. Estes são os filtros "clean" e "smudge". No arquivo `.gitattributes`, você pode definir um filtro para determinados paths e configurar os scripts que irão processar os arquivos antes que seja feito um checkout ("smudge", ver Figura 7-2) e pouco antes do commit ("clean", veja a Figura 7-3). Estes filtros podem ser configurados para fazer todo tipo de coisas divertidas.
 
-Insert 18333fig0702.png
+![](/figures/18333fig0702-tn.png)
 Figura 7-2. O filtro “smudge” é rodado no checkout.
 
-Insert 18333fig0703.png
+![](/figures/18333fig0703-tn.png)
 Figura 7-3. O filtro “clean” é rodado quando arquivos passam para o estado staged.
 
 A mensagem original do commit para esta funcionalidade dá um exemplo simples de como passar todo o seu código fonte C através do programa `indent` antes de fazer o commit. Você pode configurá-lo, definindo o atributo de filtro no arquivo `.gitattributes` para filtrar arquivos `*.c` com o filtro "indent":

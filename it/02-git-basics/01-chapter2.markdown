@@ -46,7 +46,7 @@ Ricorda che ogni file della tua directory di lavoro può essere in uno dei due s
 
 Quando editi dei file, Git li vede come modificati, perché sono cambiati rispetto all'ultima commit. Metti nell'area di stage i file modificati e poi fai la commit di tutto ciò che è in quest'area, e quindi il ciclo si ripete. Questo ciclo di vita è illustrato nella Figura 2-1.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Figura 2-1. Il ciclo di vita dello stato dei tuoi file.
 
 ### Controlla lo stato dei tuoi file ###
@@ -674,7 +674,7 @@ Ci sono circa 20,000 commit nella cronologia dei sorgenti di git, questo comando
 
 Se vuoi usare uno strumento più grafico per visualizzare la cronologia delle tuoe commit, puoi provare un programma in Tck/Tk chiamato `gitk` che viene distribuito con Git. Gitk è fondamentalmente uno strumento grafico come `git log`, e accetta quasi tutte le opzioni di filtro supportate da `git log`. Se digiti `gitk` dalla riga di comando nel tuo progetto, dovresti vedere qualcosa di simile alla Figura 2-2.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figura 2-2. Il grafico della cronologia con gitk.
 
 Puoi vedere la cronologia delle commit, nella metà superiore, della finestra come un albero genealogico carino. La finestra delle differenza, nella metà inferiore, mostra le modifiche introdotte con ciascuna commit che selezioni.

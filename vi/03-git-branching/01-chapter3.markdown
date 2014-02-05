@@ -19,17 +19,17 @@ Lệnh `git commit` khi chạy sẽ băm tất cả các thư mục trong dự �
 
 Kho chứa Git của bạn bây giờ có chứa năm đối tượng: một blob cho nội dung của từng tập tin, một "cây" liệt kê nội dung của thư mục và chỉ rõ tên tập tin nào được lưu trữ trong blob nào, và một commit có con trỏ trỏ tới cây gốc và tất cả các thông tin mô tả commit. Về mặt lý thuyết, dữ liệu trong kho chứa Git có hình dạng như trong Hình 3-1. 
 
-Insert 18333fig0301.png
+![](/figures/18333fig0301-tn.png)
 Hình 3-1. Dữ liệu trong kho chứa với một commit.
 
 Nếu bạn thực hiện một số thay đổi và commit lại thì commit tiếp theo sẽ lưu một con trỏ tới commit ngay trước nó. Sau hai commit, lịch sử của dự án sẽ tương tự như trong Hình 3-2.
 
-Insert 18333fig0302.png
+![](/figures/18333fig0302-tn.png)
 Hình 3-2. Các đối tượng dữ liệu của Git trong kho chứa nhiều commit. 
 
 Một nhánh trong Git đơn thuần là một con trỏ có khả năng di chuyển được, trỏ đến một trong những commit này. Tên nhánh mặc định của Git là master. Như trong những lần commit đầu tiên, chúng đều được trỏ tới nhánh `master`. Và mỗi lần bạn thực hiện commit, nó sẽ được tự động ghi vào theo hướng tiến lên. (move forward)
 
-Insert 18333fig0303.png
+![](/figures/18333fig0303-tn.png)
 Hình 3-3. Nhánh trỏ tới dữ liệu commit.
 
 Chuyện gì xảy ra nếu bạn tạo một nhánh mới? Làm như vậy sẽ tạo ra một con trỏ mới cho phép bạn di chuyển vòng quanh. Ví dụ bạn tạo một nhánh mới có tên testing. Việc này được thực hiện bằng lệnh `git branch`:
@@ -38,12 +38,12 @@ Chuyện gì xảy ra nếu bạn tạo một nhánh mới? Làm như vậy sẽ
 
 Nó sẽ tạo một con trỏ mới, cùng trỏ tới commit hiện tại (mới nhất) của bạn (xem Hình 3-4).
 
-Insert 18333fig0304.png
+![](/figures/18333fig0304-tn.png)
 Hình 304. Nhiều nhánh cùng trỏ vào dữ liệu commit.
 
 Vậy làm sao Git có thể biết được rằng bạn đang làm việc trên nhánh nào? Git giữ một con trỏ đặc biệt có tên HEAD. Lưu ý khái niệm về HEAD ở đây khác biệt hoàn toàn với các VCS khác mà bạn có thể đã sử dụng qua, như là Subversion hoặc CVS. Trong Git, đây là một con trỏ tới nhánh nội bộ mà bạn đang làm việc. Trong trường hợp này, bạn vẫn đang trên nhánh master. Lệnh git branch chỉ tạo một nhánh mới chứ không tự chuyển sang nhánh đó cho bạn (xem Hình 3-5).
 
-Insert 18333fig0305.png
+![](/figures/18333fig0305-tn.png)
 Hình 3-5. Tập tin HEAD trỏ tới nhánh mà bạn đang làm việc.
 
 Để chuyển sang một nhánh đang tồn tại, bạn sử dụng lệnh `git checkout`. Hãy cùng chuyển sang nhánh testing mới:
@@ -52,7 +52,7 @@ Hình 3-5. Tập tin HEAD trỏ tới nhánh mà bạn đang làm việc.
 
 Lệnh này sẽ chuyển con trỏ HEAD sang nhánh testing (xem Hình 3-6).
 
-Insert 18333fig0306.png
+![](/figures/18333fig0306-tn.png)
 Hình 3-6. HEAD trỏ tới nhánh khác khi bạn chuyển nhánh.
 
 Ý nghĩa của việc này là gì? Hãy cùng thực hiện một commit khác:
@@ -62,7 +62,7 @@ Hình 3-6. HEAD trỏ tới nhánh khác khi bạn chuyển nhánh.
 
 Hình 3-7 minh họa kết quả.
 
-Insert 18333fig0307.png
+![](/figures/18333fig0307-tn.png)
 Hình 3-7. Nhánh mà HEAD trỏ tới di chuyển tiến lên phía trước theo từng commit.
 
 Điều này thật thú vị, bởi vì nhánh testing của bạn bây giờ đã tiển hẳn lên phía trước, nhưng nhánh `master` thì vẫn trỏ tới commit ở thời điểm khi bạn chạy lệnh `git checkout` để chuyển nhánh. Hãy cùng chuyển trở lại nhánh `master`:
@@ -71,7 +71,7 @@ Hình 3-7. Nhánh mà HEAD trỏ tới di chuyển tiến lên phía trước th
 
 Hình 3-8 hiển thị kết quả.
 
-Insert 18333fig0308.png
+![](/figures/18333fig0308-tn.png)
 Hình 3-8. HEAD chuyển sang nhánh khác khi checkout.
 
 Lệnh này vừa thực hiện hai việc. Nó di chuyển lại con trỏ về nhánh `master`, và sau đó nó phục hồi lại các tập tin trong thư mục làm việc của bạn trở lại snapshot mà `master` trỏ tới. Điều này cũng có nghĩa là các thay đổi bạn thực hiện từ thời điểm này trở đi sẽ tách ra so với phiên bản cũ hơn của dự án. Nó "tua lại" các thay đổi cần thiết mà bạn đã thực hiện trên nhánh `testing` một cách tạm thời để bạn có thể đi theo một hướng khác.
@@ -83,7 +83,7 @@ Hãy cùng tạo một vài thay đổi và commit lại một lần nữa:
 
 Bây giờ lịch sử của dự án đã bị tách ra (xem Hình 3-9). Bạn tạo mới và chuyển sang một nhánh, thực hiện một số thay đổi trên đó, và rồi chuyển ngược lại nhánh chính và tạo thêm các thay đổi khác. Cả hai sự thay đổi này bị cô lập với nhau ở hai nhánh riêng biệt: bạn có thể chuyển đi hoặc lại giữa cách nhánh và tích hợp chúng lại với nhau khi cần thiết. Và bạn đã thực hiện những việc trên một cách đơn giản với lệnh `branch` và `checkout`.
 
-Insert 18333fig0309.png
+![](/figures/18333fig0309-tn.png)
 Hình 3-9. Lịch sử các nhánh đã bị phân tách.
 
 Bởi vì một nhánh trong Git thực tế là một tập tin đơn giản chứa một mã băm SHA-1 có độ dài 40 ký tự của commit mà nó trỏ tới, chính vì thế tạo mới cũng như hủy các nhánh đi rất đơn giản. Tạo mới một nhánh nhanh tương đương với việc ghi 41 bytes vào một tập tin (40 ký tự cộng thêm một dòng mới).
@@ -111,7 +111,7 @@ Hãy cùng xem qua một ví dụ đơn giản về phân nhánh và tích hợp
 
 Đầu tiên, giả sử bạn đang làm việc trên một dự án đã có một số commit từ trước (xem Hình 3-10).
 
-Insert 18333fig0310.png
+![](/figures/18333fig0310-tn.png)
 Hình 3-10. Một lịch sử commit ngắn và đơn giản.
 
 Bạn quyết định sẽ giải quyết vấn đề số #53 sử dụng bất kỳ hệ thống giám sát vấn đề (issue-tracking) nào mà công ty bạn đang dùng. Để cho rõ ràng, Git không cung cấp kèm bất kỳ hệ thống giám sát vấn đề nào; nhưng bởi vì vấn đề số #53 là cái mà bạn sẽ tập trung vào nên bạn sẽ tạo một nhánh mới để làm việc trên đó. Để tạo một nhánh và chuyển sang nhánh đó đồng thời, bạn có thể chạy lệnh `git checkout` với tham số `-b`:
@@ -126,7 +126,7 @@ Bạn quyết định sẽ giải quyết vấn đề số #53 sử dụng bất
 
 Hình 3-11 minh họa kết quả.
 
-Insert 18333fig0311.png
+![](/figures/18333fig0311-tn.png)
 Hình 3-11. Tạo con trỏ nhánh mới.
 
 Bạn làm việc trên đó và sau đó thực hiện một số commit. Làm như vậy sẽ khiến nhánh `iss53` di chuyển tiến lên, vì bạn đã checkout nó (hay, HEAD đang trỏ đến nó; xem Hình 3-12):
@@ -134,7 +134,7 @@ Bạn làm việc trên đó và sau đó thực hiện một số commit. Làm 
 	$ vim index.html
 	$ git commit -a -m 'added a new footer [issue 53]'
 
-Insert 18333fig0312.png
+![](/figures/18333fig0312-tn.png)
 Hình 3-12. Nhánh iss53 đã di chuyển tiến lên cùng với thay đổi của bạn.
 
 Bây giờ bạn nhận được thông báo rằng có một vấn đề với trang web, và bạn cần khắc phục nó ngay lập tức. Với Git, bạn không phải triển khai bản vá lỗi cùng với các thay đổi bạn đã thực hiện trên nhánh `iss53`, và bạn không phải tốn quá nhiều công sức để khôi phục lại các thay đổi đó trước khi áp dụng bản vá vào sản xuất. Tất cả những gì bạn cần phải làm là chuyển lại nhánh master.
@@ -155,7 +155,7 @@ Tiếp theo, bạn có mỗi lỗi cần phải sửa. Hãy tạo mỗi nhánh �
 	[hotfix]: created 3a0874c: "fixed the broken email address"
 	 1 files changed, 0 insertions(+), 1 deletions(-)
 
-Insert 18333fig0313.png
+![](/figures/18333fig0313-tn.png)
 Hình 3-13. Nhánh hotfix dựa trên nhánh master.
 
 Bạn có thể chạy để kiểm tra, để chắc chắn rằng bản vá lỗi hoạt động đúng theo ý bạn muốn, và sau đó tích hợp nó lại nhánh chính để triển khai. Bạn có thể làm sử dụng lệnh `git merge` để làm việc này:
@@ -171,7 +171,7 @@ Bạn sẽ nhận thấy rằng cụm từ "Fast forward" trong lần tích hợ
 
 Thay đổi của bạn bây giờ ở trong snapshot của commit được trỏ tới bởi nhánh `master`, và bạn có thể triển khai thay đổi này (xem Hình 3-14).
 
-Insert 18333fig0314.png
+![](/figures/18333fig0314-tn.png)
 Hình 3-14. Nhánh master và nhánh hotfix cùng trỏ tới một điểm sau khi tích hợp.
 
 Sau khi triển khai xong bản vá lỗi quan trọng đó, bạn đã sẵn sàng để quay lại với công việc bị gián đoạn trước đó. Tuy nhiên, việc đầu tiên cần làm là xóa nhánh `hotfix` đi, vì bạn không còn cần tới nó nữa - nhánh `master` trỏ tới cùng một điểm. Bạn có thể xóa nó đi bằng cách sử dụng tham số `-d` cho lệnh `git branch`:
@@ -188,7 +188,7 @@ Bây giờ bạn đã có thể chuyển lại nhánh mà bạn đang làm việ
 	[iss53]: created ad82d7a: "finished the new footer [issue 53]"
 	 1 files changed, 1 insertions(+), 0 deletions(-)
 
-Insert 18333fig0315.png
+![](/figures/18333fig0315-tn.png)
 Hình 3-15. Nhánh iss53 có thể di chuyển về phía trước một cách độc lập.
 
 Điều đáng chú ý ở đây là những công việc bạn đã thực hiện ở nhánh `hotfix` không bao gồm trong nhánh `iss53`. Nếu bạn muốn đưa chúng vào, bạn có thể tích hợp nhánh `master` vào nhánh `iss53` bằng cách chạy lệnh `git merge master`, hoặc bạn có thể chờ đợi đến khi bạn quyết định tích hợp nhánh `iss53` ngược trở lại nhánh `master` về sau.
@@ -205,14 +205,14 @@ Giả sử bạn đã quyết định việc giải quyết vấn đề #53 đã
 
 Lần này có hơi khác so với lần tích hợp `hotfix` trước đó. Trong trường hợp này, lịch sử phát triển của bạn đã bị phân nhánh tại một thời điểm nào đó trước kia. Bởi vì commit trên nhánh mà bạn đang làm việc (master) không phải là "cha" trực tiếp của nhánh mà bạn đang tích hợp vào, Git phải làm một số việc. Trường hợp này, Git thực hiện một tích hợp 3-chiều, sử dụng hai snapshot được trỏ tới bởi các đầu mút của nhánh và "cha chung" của cả hai. Hình 3-16 minh họa ba snapshot mà Git sử dụng để thực hiện phép tích hợp trong trường hợp này.
 
-Insert 18333fig0316.png
+![](/figures/18333fig0316-tn.png)
 Hình 3-16. Git tự động nhận dạng "cha chung" phù hợp nhất để tích hợp các nhánh lại với nhau.
 
 Thay vì việc chỉ di chuyển con trỏ về phía trước, Git tạo một snapshot mới - được hợp thành từ lần tích hợp 3-chiều này và cũng tự tạo một commit mới trỏ tới nó (xem Hình 3-17). Nó được biết tới như là "commit tích hợp" (merge commit) và nó đặc biệt vì có nhiều hơn một cha.
 
 Đáng để chỉ ra rằng Git tự quyết định cha chung phù hợp nhất để sử dụng làm cơ sở cho việc tích hợp; điểm này khác với CVS hay Subversion (các phiên bản trước 1.5), khi mà các lập trình viên phải tự xác định cơ sở phù hợp nhất để tích hợp. Điều này khiến cho việc tích hợp trong Git trở nên dễ dàng hơn rất nhiều so với các hệ quản trị phiên bản khác.
 
-Insert 18333fig0317.png
+![](/figures/18333fig0317-tn.png)
 Hình 3-17. Git tự động tạo đối tượng commit mới chứa đựng các thay đổi đã tích hợp.
 
 Bây giờ công việc của bạn đã được tích hợp lại với nhau, bạn không cần thiết phải giữ lại nhánh `iss53` nữa. Bạn có thể xóa nó đi và sau đó tự xóa vấn đề này trong hệ thống quản lý vấn đề của bạn:
@@ -347,12 +347,12 @@ Nhiều lập trình viên Git sử dụng quy trình làm việc dựa theo ph�
 
 Trong thực tế, chúng ta đang nói về các con trỏ di chuyển dọc theo đường thẳng của các commit. Các nhánh ổn định hơn thường ở phía cuối của đường thẳng, còn các nhánh đang phát triển thường ở phía đầu hàng (xem Hình 3-18).
 
-Insert 18333fig0318.png
+![](/figures/18333fig0318-tn.png)
 Hình 3-18. Nhánh ổn định hơn thường ở phía cuối hàng trong lịch sử commit.
 
 Sẽ dễ hình dung hơn khi nghĩ về chúng như là các xi-lô, nơi mà tập hợp các commit cô đặc dần thành một xi-lô ổn định hơn khi đã được kiểm tra đầy đủ (xem Hình 3-19).
 
-Insert 18333fig0319.png
+![](/figures/18333fig0319-tn.png)
 Hình 3-19. Có lẽ sẽ dễ hiểu hơn khi coi các nhánh là các xi-lô.
 
 Bạn có thể tiếp tục làm theo cách này cho nhiều tầng ổn định khác nhau. Nhiều dự án lớn có nhánh `proposed` hoặc `pu` (proposed updates) được sử dụng cho các nhánh chưa đủ điều kiện để tích hợp vào `next` hoặc `master`. Ý tưởng ở đây là, các nhánh ở các tầng khác nhau của sự ổn định; khi chúng đạt tới một mức ổn định hơn nào đó, chúng sẽ được tích hợp vào tầng trên nó. 
@@ -366,12 +366,12 @@ Như bạn đã thấy trong phần trước với các nhánh `iss53` và `hotf
 
 Hãy cùng xét một ví dụ về thực hiện một số công việc (trên nhánh `master`), tạo nhánh cho một vấn đề cần giải quyết (`iss91`), làm việc trên đó một chút, tạo một nhánh thứ hai cùng giải quyết vấn đề đó nhưng theo một cách khác (`iss91v2`), quay trở lại nhánh `master` và làm việc trong một khoảng thời gian nhất định, sau đó tạo một nhánh khác từ đó cho một ý tưởng mà bạn không chắc chắn là nó có phải là ý hay hay không (nhánh `dumbidea`). Lúc này lịch sử commit của bạn sẽ giống Hình 3-20.
 
-Insert 18333fig0320.png
+![](/figures/18333fig0320-tn.png)
 Hình 3-20. Lịch sử commit với nhiều nhánh chủ đề.
 
 Bây giờ, giả sử bạn quyết định lựa chọn cách giải quyết thứ hai (`iss91v2`); và bạn trình bày ý tưởng `dumbidea` cho các đồng nghiệp, điều mà bạn không ngờ tới rằng mọi người lại cho đó là một ý tưởng tuyệt vời. Bạn đã có thể bỏ đi nhánh ban đầu `iss91` (mất commit C5 và C6) và tích hợp hai commit còn lại. Lịch sử của bạn lúc này sẽ giống Hình 3-21.
 
-Insert 18333fig0321.png
+![](/figures/18333fig0321-tn.png)
 Hình 3-21. Lịch sử commit sau khi tích hợp dumbidea và iss91v2.
 
 Ghi nhớ một điều quan trọng là khi bạn làm tất cả những việc này, các nhánh hoàn toàn nằm ở máy nội bộ. Khi bạn phân nhánh và tích hợp, tất cả mọi thứ xảy ra trên kho chứa Git của bạn - không có giao tiếp tới máy chủ nào xảy ra.
@@ -384,27 +384,27 @@ Chúng có dạng `(remote)/(branch)`. Ví dụ, nếu bạn muốn xem nhánh `
 
 Điều này có thể hơi khó hiểu một chút, vậy hãy cùng xem một ví dụ. Giả sử bạn có một máy chủ Git trên mạng của bạn tại địa chỉ `git.ourcompany.com`. Nếu bạn tạo bản sao từ đây, Git sẽ tự động đặt tên nó là `origin` cho bạn, tải về toàn bộ dữ liệu, tạo một con trỏ tới nhánh `master` và đặt tên nội bộ cho nó là `origin/master`; và bạn không thể di chuyển nó. Git cũng cung cấp cho bạn nhánh `master` riêng, bắt đầu cùng một vị trí với `master` của origin để cho bạn có thể bắt đầu làm việc (xem Hình 3-22).
 
-Insert 18333fig0322.png
+![](/figures/18333fig0322-tn.png)
 Hình 3-22. Một bản sao Git cung cấp cho bạn nhánh master riêng và nhánh origin/master trỏ tới nhánh master của origin.
 
 Nếu bạn thực hiện một số thay đổi trên nhánh `master` nội bộ, và cùng thời điểm đó, một người nào đó đẩy lên `git.ourcompany.com` và cập nhật nhánh master của nó, thì lịch sử của bạn sẽ di chuyển về phía trước khác đi. Miễn là bạn không kết nối tới máy chủ thì con trỏ `origin/master` sẽ vẫn không đổi (xem Hình 3-23).
 
-Insert 18333fig0323.png
+![](/figures/18333fig0323-tn.png)
 Hình 3-23. Làm việc nội bộ và ai đó đẩy lên máy chủ khiến cho lịch sử thay đổi khác biệt nhau.
 
 Để đồng bộ hóa các thay đổi, bạn chạy lệnh `git fetch origin`. Lệnh này sẽ tìm kiếm máy chủ nào là origin (trong trường hợp này là `git.ourcompany.com`), truy xuất toàn bộ dữ liệu mà bạn chưa có từ đó, và cập nhật cơ sở dữ liệu nội bộ của bạn, di chuyển con trỏ `origin/master` tới vị trí mới được cập nhật (xem Hình 3-24).
 
-Insert 18333fig0324.png
+![](/figures/18333fig0324-tn.png)
 Hình 3-24. Lệnh git fetch cập nhật các tham chiếu từ xa.
 
 Để minh họa cho việc có nhiều máy chủ từ xa và các nhánh từ xa của các dự án thuộc các máy chủ đó, giả sử bạn có một máy chủ Git nội bộ khác sử dụng riêng cho các nhóm "thần tốc". Máy chủ này có địa chỉ là `git.team1.ourcompany.com`. Bạn có thể thêm nó như là một tham chiếu từ xa tới dự án bạn đang làm việc bằng cách chạy lệnh `git remote add` như đã giới thiệu ở Chương 2. Đặt tên cho remote đó là `teamone`, đó sẽ là tên rút gọn thay thế cho địa chỉ đầy đủ kia (xem Hình 3-25).
 
-Insert 18333fig0325.png
+![](/figures/18333fig0325-tn.png)
 Hình 3-25. Thêm một máy chủ từ xa khác.
 
 Bây giờ bạn có thể chạy lệnh `git fetch teamone` để truy xất toàn bộ nội dung mà bạn chưa có từ máy chủ `teamone`. Bởi vì máy chủ đó có chứa một tập con dữ liệu từ máy chủ `origin` đang có, Git không truy xuất dữ liệu nào cả mà thiết lập một nhánh từ xa mới là `teamone/master` để trỏ tới commit mà `teamone` đang có như là nhánh `master` (xem Hình 3-26).
 
-Insert 18333fig0326.png
+![](/figures/18333fig0326-tn.png)
 Hình 3-26. Bạn sẽ có một tham chiếu tới vị trí nội bộ của nhánh `master` của teamone.
 
 ### Đẩy Lên ###
@@ -479,12 +479,12 @@ Trong Git, có hai cách chính để tích hợp các thay đổi từ nhánh n
 
 Nếu bạn xem lại ví dụ trước trong phần Tích Hợp (xem Hình 3-27), bạn có thể thấy rằng bạn đã phân nhánh công việc của bạn và thực hiện commit trên hai nhánh khác nhau.
 
-Insert 18333fig0327.png
+![](/figures/18333fig0327-tn.png)
 Hình 3-17. Lần phân nhánh đầu tiên.
 
 Cách đơn giản nhất để tích hợp các nhánh, như chúng ta đã đề cập từ trước, đó là lệnh `merge`. Nó thực hiện tích hợp 3-chiều giữa hai snapshot mới nhất của hai nhánh (C3 và C4) và cha chung gần nhất của cả hai (C2), tạo mới một snapshot khác (và commit), như trong Hình 3-28.
 
-Insert 18333fig0328.png
+![](/figures/18333fig0328-tn.png)
 Hình 3-28. Gộp nhánh lại để hợp nhất công việc bị tách ra trước đây.
 
 Tuy nhiên, còn có một cách khác: bạn có thể sử dụng bản vá của thay đổi được đưa ra ở C3 và áp dụng nó lên trên C4. Trong Git, đây được gọi là _rebasing_. Bằng cách sử dụng lệnh `rebase`, bạn có thể sử dụng tất cả các thay đổi được commit ở một nhánh và "chạy lại" (replay) chúng trên một nhánh khác.
@@ -498,12 +498,12 @@ Trong ví dụ này, bạn thực hiện như sau:
 
 Nó thực hiện bằng cách đi tới commit cha chung của hai nhánh (nhánh bạn đang làm việc và nhánh bạn đang muốn rebase), tìm sự khác biệt trong mỗi commit của nhánh mà bạn đang làm việc, lưu lại các thay đổi đó vào một tập tin tạm thời, khôi phục lại nhánh hiện tại về cùng một commit với nhánh bạn đang rebase, và cuối cùng áp dụng lần lượt các thay đổi. Hình 3-29 minh họa toàn bộ quá trình này.
 
-Insert 18333fig0329.png
+![](/figures/18333fig0329-tn.png)
 Hình 3-29. Quá trình rebase thay đổi ở C3 vào C4.
 
 Đến lúc này, bạn có thể quay lại nhánh `master` và thực hiện fast-forward merge (xem Hình 3-30).
 
-Insert 18333fig0330.png
+![](/figures/18333fig0330-tn.png)
 Hình 3-30. Di chuyển nhánh master lên phía trước.
 
 Bây giờ snapshot mà C3' trỏ tới cũng giống như snapshot được trở tới bởi C5 trong ví dụ sử dụng merge. Không có sự khác biệt nào khi so sánh kết quả của hai phương pháp này, nhưng sử dụng rebase sẽ cho chúng ta lịch sử rõ ràng hơn. Nếu bạn xem xét lịch sử của nhánh mà chúng ta rebase vào, nó giống như một đường thẳng: mọi thứ dường như xảy ra theo trình tự, thậm chí ban đầu nó diễn ra song song.
@@ -517,7 +517,7 @@ Lưu ý rằng snapshot được trỏ tới bởi commit cuối cùng, cho dù 
 
 Bạn cũng có thể thực hiện rebase trên một đối tượng khác mà không phải là nhánh rebase. Xem ví dụ Hình 3-31. Bạn tạo một nhánh chủ để (`server`) để thêm một số tính năng server-side vào dự án, và thực hiện một số commit. Sau đó bạn tạo một nhánh khác để thực hiện một số thay đổi cho phía client (`client`) và cũng commit vài lần. Cuối cùng, bạn quay trở lại nhánh server và thực hiện thêm một số commit nữa.
 
-Insert 18333fig0331.png
+![](/figures/18333fig0331-tn.png)
 Hình 3-31. Nhánh chủ đề được tạo từ một nhánh chủ đề khác.
 
 Giả sử bạn quyết định tích hợp các thay đổi phía client vào nhánh chính cho bản phát hành sắp tới, nhưng bạn vẫn muốn giữ các thay đổi server-side cho đến khi nó được kiểm tra kỹ lưỡng. Bạn có thể lấy các thay đổi ở client mà không có mặt ở server (C8 và C9) sau đó chạy lại (replay) chúng trên nhánh master bằng cách sử dụng lựa chọn `--onto` cho lệnh `git rebase`:
@@ -526,7 +526,7 @@ Giả sử bạn quyết định tích hợp các thay đổi phía client vào 
 
 Lệnh này cơ bản nói rằng, "Hãy check out nhánh client, tìm ra các bản vá từ commit chung của nhánh `client` và `server`, sau đó thực thi lại vào nhánh `master`." Nó hơi phức tạp một chút nhưng kết quả như Hình 3-32 thì lại rất tuyệt.
 
-Insert 18333fig0332.png
+![](/figures/18333fig0332-tn.png)
 Hình 3-32. Quá trình rebase nhánh chủ đề khỏi một nhánh chủ đề khác.
 
 Bây giờ bạn có thể di chuyển con trỏ của nhánh master tiến lên phía trước (xem Hình 3-33):
@@ -534,7 +534,7 @@ Bây giờ bạn có thể di chuyển con trỏ của nhánh master tiến lên
 	$ git checkout master
 	$ git merge client
 
-Insert 18333fig0333.png
+![](/figures/18333fig0333-tn.png)
 Hình 3-33. Di chuyển nhánh master lên phía trước để bao gồm các thay đổi của nhánh client.
 
 Giả sử rằng bạn quyết định kéo về cả nhánh trên máy chủ. Bạn có thể rebase nhánh trên máy chủ đó vào nhánh master mà không phải checkout trước bằng lệnh `git rebase [basebranch] [topicbranch]` - lệnh này sẽ checkout nhánh chủ để (trong trường hợp này là `server`) cho bạn và áp dụng lại các thay đổi vào nhánh cơ sở (base) `master`:
@@ -543,7 +543,7 @@ Giả sử rằng bạn quyết định kéo về cả nhánh trên máy chủ. 
 
 Lệnh này sẽ thực hiện lại các thay đổi trên nhánh `server` chèn vào nhánh `master` như trong Hình 3-34.
 
-Insert 18333fig0334.png
+![](/figures/18333fig0334-tn.png)
 Hình 3-34. Rebase nhánh server chèn lên nhánh master. 
 
 Sau đó bạn có thể di chuyển con trỏ nhánh base (`master`):
@@ -556,7 +556,7 @@ Bạn có thể xóa nhánh `client` và `server` vì tất cả công việc đ
 	$ git branch -d client
 	$ git branch -d server
 
-Insert 18333fig0335.png
+![](/figures/18333fig0335-tn.png)
 Hình 3-35. Lịch sử commit cuối cùng.
 
 ### Rủi Ro của Rebase ###
@@ -571,22 +571,22 @@ Khi bạn thực hiện rebase, bạn đang bỏ đi các commit đã tồn tạ
 
 Hãy cùng xem một ví dụ làm sao việc rebase công khai có thể gây sự cố. Giả sử bạn tạo bản sao từ một máy chủ trung tâm và thực hiện một số thay đổi từ đó. Lịch sử commit của bạn sẽ giống như Hình 3-36.
 
-Insert 18333fig0336.png
+![](/figures/18333fig0336-tn.png)
 Hình 3-36. Tạo bản sao một kho chứa, và base một số thay đổi vào đó.
 
 Bây giờ, một người khác thực hiện một số thay đổi khác có kèm theo một lần tích hợp (merge), và đẩy lên máy chủ trung tâm. Bạn truy xuất chúng và tích hợp nhánh trung tâm mới đó vào của bạn, lúc này lịch sử của bạn sẽ giống như Hình 3-37.
 
-Insert 18333fig0337.png
+![](/figures/18333fig0337-tn.png)
 Hình 3-37. Truy xuất thêm các commit và tích hợp lại.
 
 Tiếp theo, người đã đẩy tích hợp đó quyết định lại và rebase lại những thay đổi của họ; họ thực hiện `git push --force` để ghi đè lịch sử trên máy chủ. Sau đó bạn truy xuất lại dữ liệu từ máy chủ, đưa về các commit mới.
 
-Insert 18333fig0338.png
+![](/figures/18333fig0338-tn.png)
 Hình 3-38. Một người nào đó đẩy lên các commit rebase, bỏ đi các commit có chứa thay đổi của bạn.
 
 Lúc này, bạn phải tích hợp lại một lần nữa các thay đổi này, mặc dù trước đó bạn đã làm rồi. Quá trình rebase thay đổi mã băm SHA-1 của các commit này vì thế đối với Git chúng giống như các commit mới, mà thực tế thì bạn đã có C4 trong lịch sử của bạn (xem Hình 3-39).
 
-Insert 18333fig0339.png
+![](/figures/18333fig0339-tn.png)
 Hình 3-39. Bạn tích hợp các thay đổi tương tự lại một lần nữa vào một commit tích hợp mới.
 
 Bạn phải tích hợp thay đổi đó để có thể theo kịp với các lập trình viên khác về sau này. Sau khi thực hiện việc này, lịch sử commit của bạn sẽ bao gồm cả hai commit C4 và C4' có mã SHA-1 khác nhau nhưng lại có cùng chung nội dung thay đổi cũng như thông điệp commit. Nếu bạn chạy lệnh `git log` trong trường hợp này bạn sẽ thấy hai commit cùng chung ngày commit và thông điệp, điều này sẽ gây khó hiểu cho bạn. Hơn nữa, nếu bạn đẩy chúng ngược lên máy chủ, bạn sẽ đưa vào một lần nữa tất cả các commit đã rebase đó và sẽ gây khó hiểu cho nhiều người khác nữa.

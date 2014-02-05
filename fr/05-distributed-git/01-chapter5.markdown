@@ -20,7 +20,7 @@ Dans les systèmes centralisés, il n'y a généralement qu'un seul modèle de c
 Un concentrateur ou dépôt central accepte le code et tout le monde doit synchroniser son travail avec.
 Les développeurs sont des nœuds, des consommateurs du concentrateur, seul endroit où ils se synchronisent (voir figure 5-1).
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Figure 5-1. La gestion centralisée.
 
 Cela signifie que si deux développeurs clonent depuis le concentrateur et qu'ils introduisent tous les deux des modifications, le premier à pousser ses modifications le fera sans encombre.
@@ -50,7 +50,7 @@ Le processus se passe comme ceci (voir figure 5-2) :
 5. Le mainteneur ajoute le dépôt du contributeur comme dépôt distant et fusionne localement.
 6. Le mainteneur pousse les modifications fusionnées sur le dépôt principal.
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Figure 5-2. Le mode du gestionnaire d'intégration.
 
 C'est une gestion très commune sur des sites tels que GitHub où il est aisé de dupliquer un projet et de pousser ses modifications pour les rendre publiques.
@@ -74,7 +74,7 @@ Le processus se déroule comme suit (voir figure 5-3) :
 3. Le dictateur fusionne les branches master de ses lieutenants dans sa propre branche `master`.
 4. Le dictateur pousse sa branche `master` sur le dépôt de référence pour que les développeurs se rebasent dessus.
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Figure 5-3. Le processus du dictateur bienveillant.
 
 Ce schéma de processus n'est pas très utilisé mais s'avère utile dans des projets très gros ou pour lesquels un ordre hiérarchique existe, car il permet au chef de projet (le dictateur) de déléguer une grande partie du travail et de collecter de grands sous-ensembles de codes à différents points avant de les intégrer.
@@ -242,7 +242,7 @@ John doit récupérer les modifications de Jessica et les fusionner avant d'êtr
 
 À présent, le dépôt local de John ressemble à la figure 5-4.
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Figure 5-4. État initial du dépôt de John.
 
 John a une référence aux modifications que Jessica a poussées, mais il doit les fusionner dans sa propre branche avant de pouvoir pousser :
@@ -254,7 +254,7 @@ John a une référence aux modifications que Jessica a poussées, mais il doit l
 
 Cette fusion se passe sans problème — l'historique de *commits* de John ressemble à présent à la figure 5-5.
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Figure 5-5. Le dépôt local de John après la fusion d'origin/master.
 
 Maintenant, John peut tester son code pour s'assurer qu'il fonctionne encore correctement et peut pousser son travail nouvellement fusionné sur le serveur :
@@ -266,14 +266,14 @@ Maintenant, John peut tester son code pour s'assurer qu'il fonctionne encore cor
 
 À la fin, l'historique des *commits* de John ressemble à la figure 5-6.
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Figure 5-6. L'historique de John après avoir poussé sur le serveur origin.
 
 Dans l'intervalle, Jessica a travaillé sur une branche thématique.
 Elle a créé une branche thématique nommée `prob54` et réalisé trois validations sur cette branche.
 Elle n'a pas encore récupéré les modifications de John, ce qui donne un historique semblable à la figure 5-7.
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Figure 5-7. L'historique initial des *commits* de Jessica.
 
 Jessica souhaite se synchroniser sur le travail de John.
@@ -288,7 +288,7 @@ Elle récupère donc ses modifications :
 Cette commande tire le travail que John avait poussé dans l'intervalle.
 L'historique de Jessica ressemble maintenant à la figure 5-8.
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Figure 5-8. L'historique de Jessica après avoir récupéré les modifications de John.
 
 Jessica pense que sa branche thématique est prête mais elle souhaite savoir si elle doit fusionner son travail avant de pouvoir pousser.
@@ -332,7 +332,7 @@ Maintenant, Jessica fusionne le travail de John (`origin/master`) :
 
 Tout a fusionné proprement et l'historique de Jessica ressemble à la figure 5-9.
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Figure 5-9. L'historique de Jessica après avoir fusionné les modifications de John.
 
 Maintenant `origin/master` est accessible depuis la branche `master` de Jessica, donc elle devrait être capable de pousser (en considérant que John n'a pas encore poussé dans l'intervalle) :
@@ -344,7 +344,7 @@ Maintenant `origin/master` est accessible depuis la branche `master` de Jessica,
 
 Chaque développeur a validé quelques fois et fusionné les travaux de l'autre avec succès (voir figure 5-10).
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Figure 5-10. L'historique de Jessica après avoir poussé toutes ses modifications sur le serveur.
 
 C'est un des schémas les plus simples.
@@ -352,7 +352,7 @@ Vous travaillez pendant quelque temps, généralement sur une branche thématiqu
 Quand vous souhaitez partager votre travail, vous récupérez `origin/master` et la fusionnez si elle a changé, puis finalement vous poussez le résultat sur la branche `master` du serveur.
 La séquence est illustrée par la figure 5-11.
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Figure 5-11. Séquence générale des évènements pour une utilisation simple multi-développeur de Git.
 
 ### Équipe privée importante ###
@@ -406,7 +406,7 @@ Pour commencer, elle crée une nouvelle branche thématique, à partir de la bas
 
 Le dépôt de Jessica ressemble à la figure 5-12.
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Figure 5-12. L'historique initial de Jessica.
 
 Elle est prête à pousser son travail, mais elle reçoit un mail de Josie indiquant qu'une branche avec un premier travail a déjà été poussé sur le serveur en tant que `fonctionBee`.
@@ -476,13 +476,13 @@ Elle valide donc encore et pousse ses changements sur le serveur :
 
 L'historique des *commits* de Jessica ressemble à présent à la figure 5-13.
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Figure 5-13. L'historique de Jessica après la validation dans la branche thématique.
 
 Jessica, Josie et John informent les intégrateurs que les branches `fonctionA` et `fonctionB` du serveur sont prêtes pour une intégration dans la branche principale.
 Après cette intégration, une synchronisation apportera les *commits* de fusion, ce qui donnera un historique comme celui de la figure 5-14.
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Figure 5-14. L'historique de Jessica après la fusion de ses deux branches thématiques.
 
 De nombreuses équipes basculent vers Git du fait de cette capacité à gérer plusieurs équipes travaillant en parallèle, fusionnant plusieurs lignes de développement très tard dans le processus de livraison.
@@ -490,7 +490,7 @@ La capacité donnée à plusieurs sous-groupes d'équipes de collaborer au moyen
 La séquence de travail qui vous a été décrite ressemble à la figure 5-15.
 
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Figure 5-15. Une séquence simple de gestion orientée équipe.
 
 ### Petit projet public ###
@@ -563,7 +563,7 @@ Par exemple, si vous souhaitez soumettre un second sujet de travail au projet, n
 
 À présent, chaque sujet est contenu dans son propre silo — similaire à une file de patchs — que vous pouvez réécrire, rebaser et modifier sans que les sujets n'interfèrent ou ne dépendent les uns des autres, comme sur la figure 5-16.
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Figure 5-16. Historique initial des *commits* avec les modifications de fonctionB.
 
 Supposons que le mainteneur du projet a tiré une poignée d'autres patchs et essayé par la suite votre première branche, mais celle-ci ne s'applique plus proprement.
@@ -575,7 +575,7 @@ Dans ce cas, vous pouvez rebaser cette branche au sommet de `origin/master`, ré
 
 Cette action réécrit votre historique pour qu'il ressemble à la figure 5-17.
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Figure 5-17. Historique des validations après le travail sur fonctionA.
 
 Comme vous avez rebasé votre branche, vous devez spécifier l'option `-f` à votre commande pour pousser, pour forcer le remplacement de la branche `fonctionA` sur le serveur par la suite de *commits* qui n'en est pas descendante.
@@ -598,7 +598,7 @@ Cela permet de reporter toutes les modifications d'une autre branche, puis de r�
 À présent, vous pouvez envoyer au mainteneur un message indiquant que vous avez réalisé les modifications demandées et qu'il peut trouver cette nouvelle mouture sur votre branche `fonctionBv2` (voir figure 5-18).
 
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Figure 5-18. Historique des validations après le travail sur fonctionBv2.
 
 ### Grand projet public ###
@@ -957,10 +957,10 @@ Dans ce scénario, vous avez une branche `master` qui contient le code stable.
 Quand vous avez des modifications prêtes dans une branche thématique, vous la fusionnez dans votre branche `master` puis effacez la branche thématique, et ainsi de suite.
 Si vous avez un dépôt contenant deux branches nommées `ruby_client` et `php_client` qui ressemble à la figure 5-19 et que vous fusionnez `ruby_client` en premier, suivi de `php_client`, alors votre historique ressemblera à la fin à la figure 5-20.
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Figure 5-19. Historique avec quelques branches thématiques.
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Figure 5-20. Après fusion d'une branche thématique.
 
 C'est probablement le mode le plus simple mais cela peut s'avérer problématique si vous avez à gérer des dépôts ou des projets plus gros.
@@ -971,13 +971,13 @@ Vous poussez régulièrement ces deux branches sur le dépôt public.
 Chaque fois que vous avez une nouvelle branche thématique à fusionner (figure 5-21), vous la fusionnez dans `develop` (figure 5-22).
 Puis, lorsque vous étiquetez une version majeure, vous mettez `master` à niveau avec l'état stable de `develop` en avance rapide (figure 5-23).
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Figure 5-21. Avant la fusion d'une branche thématique.
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Figure 5-22. Après la fusion d'une branche thématique.
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Figure 5-23. Après une publication d'une branche thématique.
 
 Ainsi, lorsque l'on clone le dépôt de votre projet, on peut soit extraire la branche `master` pour construire la dernière version stable et mettre à jour facilement ou on peut extraire la branche `develop` qui représente le nec plus ultra du développement.
@@ -993,14 +993,14 @@ Quand une nouvelle contribution est proposée, elle est collectée dans des bran
 À ce point, les fonctionnalités sont évaluées pour déterminer si elles sont stables et prêtes à être consommées ou si elles nécessitent un peaufinage.
 Si elles sont stables, elles sont fusionnées dans `next` et cette branche est poussée sur le serveur public pour que tout le monde puisse essayer les fonctionnalités intégrées ensemble.
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Figure 5-24. Série complexe de branches thématiques contribuées en parallèle.
 
 Si les fonctionnalités nécessitent encore du travail, elles sont fusionnées plutôt dans `pu`.
 Quand elles sont considérées comme totalement stables, elles sont re-fusionnées dans `master` et sont alors reconstruites à partir des fonctionnalités qui résidaient dans `next` mais n'ont pu intégrer `master`.
 Cela signifie que `master` évolue quasiment toujours en mode avance rapide, tandis que `next` est rebasé assez souvent et `pu` est rebasé encore plus souvent (voir figure 5-25).
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Figure 5-25. Fusion des branches thématiques dans les branches à long terme.
 
 Quand une branche thématique a finalement été fusionnée dans `master`, elle est effacée du dépôt.
@@ -1020,7 +1020,7 @@ Cela consiste à prendre le patch qui a été introduit lors d'une validation et
 C'est très utile si on a un certain nombre de *commits* sur une branche thématique et que l'on veut n'en intégrer qu'un seul, ou si on n'a qu'un *commit* sur une branche thématique et qu'on préfère le sélectionner plutôt que de lancer `rebase`.
 Par exemple, supposons que vous ayez un projet ressemblant à la figure 5-26.
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Figure 5-26. Historique d'exemple avant une sélection.
 
 Si vous souhaitez tirer le *commit* `e43a6` dans votre branche `master`, vous pouvez lancer :
@@ -1033,7 +1033,7 @@ Si vous souhaitez tirer le *commit* `e43a6` dans votre branche `master`, vous po
 La même modification que celle introduite en `e43a6` est tirée mais vous obtenez une nouvelle valeur de SHA-1 car les dates d'application sont différentes.
 À présent, votre historique ressemble à la figure 5-27.
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Figure 5-27. Historique après sélection d'un *commit* dans une branche thématique.
 
 Maintenant, vous pouvez effacer votre branche thématique et abandonner les *commits* que vous n'avez pas tirés dans `master`.

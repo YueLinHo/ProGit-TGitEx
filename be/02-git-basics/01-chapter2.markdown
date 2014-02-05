@@ -46,7 +46,7 @@ Git падтрымлівае некалькі транспартных прат�
 
 Як толькі вы зменіце файлы, Git будзе разглядаць іх як мадыфікаваныя, таму што вы змянілі іх з моманту апошняга каміта. Вы *падрыхтоўваеце* гэтыя мадыфікаваныя файлы і затым фіксуеце ўсе вашы падрыхтаваныя змены, затым цыкл паўтараецца. Гэта жыццёвы цыкл адлюстраваны на Малюнку 2-1.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Малюнак 2-1. Жыццевы цыкл станаў вашых файлаў.
 
 ### Праверка стану вашых файлаў ###
@@ -623,7 +623,7 @@ Of the nearly 20,000 commits in the Git source code history, this command shows 
 
 If you like to use a more graphical tool to visualize your commit history, you may want to take a look at a Tcl/Tk program called `gitk` that is distributed with Git. Gitk is basically a visual `git log` tool, and it accepts nearly all the filtering options that `git log` does. If you type `gitk` on the command line in your project, you should see something like Figure 2-2.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figure 2-2. The gitk history visualizer.
 
 You can see the commit history in the top half of the window along with a nice ancestry graph. The diff viewer in the bottom half of the window shows you the changes introduced at any commit you click.

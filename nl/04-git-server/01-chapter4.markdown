@@ -359,7 +359,7 @@ Op deze manier kun je HTTP-gebaseerde toegang voor elk van je projecten voor een
 
 Nu je gewone lees/schrijf en alleen-lezen toegang tot je project hebt, wil je misschien een eenvoudige web-gebaseerde visualisatie instellen. Git levert een CGI script genaamd GitWeb mee, dat normaalgesproken hiervoor gebruikt wordt. Je kunt GitWeb in actie zien bij sites zoals `http://git.kernel.org` (zie Figuur 4-1).
 
-Insert 18333fig0401.png
+![](/figures/18333fig0401-tn.png)
 Figuur 4-1. De GitWeb web-gebaseerde gebruikers interface.
 
 Als je wil zien hoe GitWeb er voor jouw project uitziet, dan heeft Git een commando waarmee je een tijdelijke instantie op kunt starten als je een lichtgewicht server op je systeem hebt zoals `lighttpd` of `webrick`. Op Linux machines is `lighttpd` vaak geïnstalleerd, dus je kunt het misschien draaiend krijgen door `git instaweb` in te typen in je project directory. Als je op een Mac werkt: Leopard heeft Ruby voorgeïnstalleerd, dus `webrick` zou je de meeste kans geven. Om `instaweb` met een server anders dan lighttpd te starten, moet je het uitvoeren met de `--httpd` optie.
@@ -781,18 +781,18 @@ GitHub is ook een commercieel bedrijf dat geld vraagt voor accounts die privé r
 
 Het eerste dat je moet doen is een gratis gebruikers account aanvragen. Als je de Pricing and Signup pagina op `http://github.com/plans` bezoekt en de "Sign Up" knop aanklikt op het Free account (zie figuur 4-2), dan wordt je naar de inteken pagina gebracht.
 
-Insert 18333fig0402.png
+![](/figures/18333fig0402-tn.png)
 Figuur 4-2. De GitHub plan pagina.
 
 Hier moet je een gebruikersnaam kiezen die nog niet gebruikt is in het systeem, en een e-mail adres invullen dat bij het account hoort, en een wachtwoord (zie Figuur 4-3).
 
-Insert 18333fig0403.png
+![](/figures/18333fig0403-tn.png)
 Figuur 4-3. Het GitHub gebruikers inteken formulier.
 
 Als je account beschikbaar is, is dit een goed moment om je publieke SSH sleutel ook toe te voegen. We hebben het genereren van een nieuwe sleutel eerder behandeld, in de "Je Publieke SSH Sleutel Genereren" paragraaf. Neem de inhoud van de publieke sleutel van dat paar, en plak het in het SSH publieke sleutel tekstveld. Door op de "explain ssh keys" link te klikken wordt je naar gedetaileerde instructies gebracht die je vertellen hoe dit te doen op alle veelvoorkomende besturingssystemen.
 Door op de "I agree, sign me up" knop te klikken wordt je naar het dashboard van je nieuwe gebruikers gebracht (zie Figuur 4-4).
 
-Insert 18333fig0404.png
+![](/figures/18333fig0404-tn.png)
 Figuur 4-4. Het GitHub gebruikers dashboard.
 
 Vervolgens kun je een nieuw repository aanmaken.
@@ -801,17 +801,17 @@ Vervolgens kun je een nieuw repository aanmaken.
 
 Start door op de "create a new one" link te klikken naast Your Repositories op het gebruikers dashboard. Je wordt naar het Create a New Repository formulier gebracht (zie Figuur 4-5).
 
-Insert 18333fig0405.png
+![](/figures/18333fig0405-tn.png)
 Figuur 4-5. Een nieuw repository aanmaken op GitHub.
 
 Het enige dat je eigenlijk moet doen is een projectnaam opgeven, maar je kunt ook een beschrijving toevoegen. Wanneer je dat gedaan hebt, klik je op de "Create Repository" knop. Nu heb je een nieuw repository op GitHub (zie Figuur 4-6).
 
-Insert 18333fig0406.png
+![](/figures/18333fig0406-tn.png)
 Figuur 4-6. GitHub project hoofd informatie.
 
 Omdat je er nog geen code hebt, zal GitHub je de instructies tonen hoe je een splinternieuw project moet aanmaken, een bestaand Git project moet pushen, of een project van een publieke Subversion repository moet importeren (zie Figuur 4-7).
 
-Insert 18333fig0407.png
+![](/figures/18333fig0407-tn.png)
 Figuur 4-7. Instructies voor een nieuwe repository.
 
 Deze instructies zijn vergelijkbaar met wat we al hebben laten zien. Om een project te initialiseren dat nog geen Git project is, gebruik je
@@ -827,7 +827,7 @@ Als je een lokaal Git repository hebt, voeg dan GitHub als remote toe en push je
 
 Nu wordt je project gehost op GitHub, en kun je de URL aan iedereen geven waarmee je je project wilt delen. In dit geval is het `http://githup.com/testinguser/iphone_project`. Je kunt aan het begin van elk van je project pagina's zien dat je twee Git URLs hebt (zie Figuur 4-8).
 
-Insert 18333fig0408.png
+![](/figures/18333fig0408-tn.png)
 Figuur 4-8. Project met een publieke URL en een privé URL.
 
 De Public Clone URL is een publieke alleen-lezen Git URL, waarmee iedereen het project kan clonen. Deel deze URL door 'm op je website neer te zetten of welke manier dan ook.
@@ -838,7 +838,7 @@ De Your Clone URL is een lees/schrijf SSH-gebaseerde URL waar je alleen over kun
 
 Als je een bestaande publiek Subversion project hebt dat je in Git wilt importeren, kan GitHub dat vaak voor je doen. Aan de onderkant van de instructies pagina staat een link naar een Subversion import. Als je die aanklikt, zie je een formulier met informatie over het importeer proces een een tekstveld waar je de URL van je publieke Subversion project in kan plakken (zie Figuur 4-9).
 
-Insert 18333fig0409.png
+![](/figures/18333fig0409-tn.png)
 Figuur 4-9. Subversion importeer interface.
 
 Als je project erg groot is, niet standaard, of privé, dan zal dit proces waarschijnlijk niet voor je werken. In Hoofdstuk 7 zul je leren om meer gecompliceerde handmatige project imports te doen.
@@ -849,17 +849,17 @@ Laten we de rest van het team toevoegen. Als John, Josie en Jessica allemaal int
 
 Klik de "edit" knop of de Admin tab aan de bovenkant van het project, om de Admin pagina te bereiken van je GitHub project (zie Figuur 4-10).
 
-Insert 18333fig0410.png
+![](/figures/18333fig0410-tn.png)
 Figuur 4-10. GitHub administratie pagina.
 
 Om een andere gebruiker schrijftoegang tot je project te geven, klik dan de "Add another collaborator" link. Er verschijnt een nieuw tekstveld, waarin je een gebruikersnaam kunt invullen. Op het moment dat je typt, komt er een hulp tevoorschijn, waarin alle mogelijke overeenkomende gebruikersnamen staan. Als je de juiste gebruiker vindt, klik dan de Add knop om die gebruiker als een medewerker aan je project toe te voegen (zie Figuur 4-11). 
 
-Insert 18333fig0411.png
+![](/figures/18333fig0411-tn.png)
 Figuur 4-11. Een medewerker aan je project toevoegen.
 
 Als je klaar bent met medewerkers toevoegen, dan zou je een lijst met de namen moeten zien in het Repository Collaborators veld (zie Figuur 4-12).
 
-Insert 18333fig0412.png
+![](/figures/18333fig0412-tn.png)
 Figuur 4-12. Een lijst met medewerkers aan je project.
 
 Als je toegang van individuen moet intrekken, dan kun je de "revoke" link klikken, en dan wordt hun push toegang ingetrokken. Voor toekomstige projecten, kun je ook groepen medewerker kopiëren door de permissies van een bestaand project te kopiëren.
@@ -868,7 +868,7 @@ Als je toegang van individuen moet intrekken, dan kun je de "revoke" link klikke
 
 Nadat je je project gepusht hebt, of geïmporteerd vanuit Subversion, heb je een hoofd project pagina die er uitziet zoals Figuur 4-13.
 
-Insert 18333fig0413.png
+![](/figures/18333fig0413-tn.png)
 Figuur 4-13. Een GitHub project hoofdpagina.
 
 Als mensen je project bezoeken, zien ze deze pagina. Het bevat tabs naar de verschillende aspecten van je projecten. De Commits tab laat een lijst van commits in omgekeerde chronologische volgorde zien, vergelijkbaar met de output van het `git log` commando. De Network tab toont alle mensen die je project hebben geforked en bijgedragen hebben. De Downloads tab staat je toe project binaries te uploaden en naar tarballs en gezipte versies van ieder getagged punt in je project te linken. De Wiki tab voorziet in een wiki waar je documentatie kunt schrijven of andere informatie over je project. De Graphs tab heeft wat contributie visualisaties en statistieken over je project. De hoofd Source tab waarop je binnen komt, toont de inhoud van de hoofddirectory van je project en toont automatisch het README bestand eronder als je er een hebt. Deze tab toont ook een veld met de laatste commit informatie.
@@ -881,12 +881,12 @@ Op deze manier hoeven projecten zich geen zorgen te maken over het toevoegen van
 
 Om een project te forken, bezoek dan de project pagina (in dit geval, mojombo/chronic) en klik de "fork" knop aan de bovenkant (zie Figuur 4-14).
 
-Insert 18333fig0414.png
+![](/figures/18333fig0414-tn.png)
 Figuur 4-14. Een schrijfbare kopie van een project krijgen door de "fork" knop te klikken.
 
 Na een paar seconden wordt je naar je nieuwe project pagina gebracht, wat aangeeft dat dit project een fork is van een ander (zie Figuur 4-15).
 
-Insert 18333fig0415.png
+![](/figures/18333fig0415-tn.png)
 Figuur 4-15. Jouw fork van een project.
 
 ### GitHub samenvatting ###

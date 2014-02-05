@@ -225,7 +225,7 @@ La spécification de plage de *commits* la plus fréquente est la syntaxe double
 En gros, cela demande à Git de résoudre la plage des *commits* qui sont accessibles depuis un *commit* mais ne le sont pas depuis un autre.
 Par exemple, disons que votre historique ressemble à celui de la figure 6-1.
 
-Insert 18333fig0601.png
+![](/figures/18333fig0601-tn.png)
 Figure 6-1. Exemple d'historique pour la sélection de plages de *commits*.
 
 Si vous voulez savoir ce qui n'a pas encore été fusionné sur votre branche `master` depuis votre branche `experience`, vous pouvez demander à Git de vous montrer un listing des *commits* avec `master..experience` — ce qui signifie « tous les *commits* accessibles par `experience` qui ne le sont pas par `master` ».

@@ -152,7 +152,7 @@ De `master^{tree}` syntax specificeert het tree object waarnaar gewezen wordt do
 
 Conceptueel zijn de gegevens die Git opslaat zoiets als in Figuur 9-1.
 
-Insert 18333fig0901.png
+![](/figures/18333fig0901-tn.png)
 Figuur 9-1. Eenvoudige versie van het Git data model.
 
 Je kunt je eigen tree maken. Normaal gesproken maakt Git een tree door de status van je staging area of index te pakken en daar een tree object mee te schrijven. Dus, om een treeobject te maken moet je eerst een index opzetten door een paar bestanden te stagen. Om een index te maken met een enkele vermelding - de eerste versie van je test.txt bestand - kun je het plumbing commando `update-index` gebruiken. Je gebruikt dit commando om kunstmatig de eerdere versie van het test.txt bestand toe te voegen aan een nieuwe staging area. Je moet het de `--add` optie meegeven omdat het bestand nog niet bestaat in je staging area (je hebt zelfs nog geen staging area ingesteld) en `--cacheinfo` omdat het bestand dat je toevoegt niet in je directory staat maar in je databank. Daarna specificeer je de modus, SHA-1 en bestandsnaam:
@@ -200,7 +200,7 @@ Merk op dat deze tree beide bestandsvermeldingen bevat en ook dat de SHA van tes
 
 Als je een werkdirectory zou hebben gemaakt van de nieuwe tree die je zojuist geschreven hebt, zou je de twee bestanden in het hoogste niveau van de werkdirectory krijgen en een subdirectory genaamd `bak` die de eerste versie van het test.txt bestand bevat. Je kunt de gegevens die Git bevat voor deze structuren zien zoals getoond in Figuur 9-2.
 
-Insert 18333fig0902.png
+![](/figures/18333fig0902-tn.png)
 Figuur 9-2. De inhoud structuur van je huidige Git gegevens.
 
 ### Commit objecten ###
@@ -277,7 +277,7 @@ Verbazingwekkend. Je hebt zojuist de lagere operaties uitgevoerd om een Git hist
 
 Als je alle interne verwijzingen volgt, krijg je een object-graaf die er uitzien zoals Figuur 9-3.
 
-Insert 18333fig0903.png
+![](/figures/18333fig0903-tn.png)
 Figuur 9-3. Alle objecten in je Git directory.
 
 ### Object opslag ###
@@ -362,7 +362,7 @@ Je branch zal alleen werk bevatten vanaf die commit en eerder:
 
 Nu ziet je Git gegevensbank er conceptueel ongeveer uit zoals in Figuur 9-4.
 
-Insert 18333fig0904.png
+![](/figures/18333fig0904-tn.png)
 Figuur 9-4. Git directory objecten met branch head referenties erbij.
 
 Als je commando's zoals `git branch (branchnaam)` uitvoert, voert Git eigenlijk dat `update-ref` commando uit om de SHA-1 van de laatste commit van de branch waarop je zit toe te voegen aan een door jou te benoemen nieuwe referentie.

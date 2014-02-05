@@ -14,7 +14,7 @@ Bir grafik ya da web tasarımcısıysanız ve bir görselin ya da tasarımın de
 
 Bu sorunla baş edebilmek için, programcılar uzun zaman önce, dosyalardaki bütün değişiklikleri sürüm kontrolüne alan basit bir veritabanına sahip olan yerel SKS'ler geliştirdiler (bkz. Figür 1-1).
 
-Insert 18333fig0101.png 
+![](/figures/18333fig0101-tn.png) 
 Figür 1-1. Yerel sürüm kontrol diyagramı.
 
 En yaygın SKS araçlarından biri, bugün hâlâ pekçok bilgisayara kurulu olarak dağıtılan, rcs adında bir sistemdi. Ünlü Mac OS X işletim sistemi bile, Developer Tools'u yüklediğinizde, rcs komutunu kurmaktadır. Bu araç, iki sürüm arasındaki yamaları (yani, dosyalar arasındaki farkları) özel bir biçimde diske kaydeder; daha sonra, bu yamaları birbirine ekleyerek, bir dosyanın belirli bir sürümdeki görünümünü yeniden oluşturur.
@@ -23,7 +23,7 @@ En yaygın SKS araçlarından biri, bugün hâlâ pekçok bilgisayara kurulu ola
 
 İnsanların karşılaştığı ikinci büyük sorun, başka sistemlerdeki programcılarla birlikte çalışma ihtiyacından ileri gelir. Bu sorunla başa çıkabilmek için, Merkezi Sürüm Kontrol Sistemleri (MSKS) geliştirilmiştir. Bu sistemler, meselâ CVS, Subversion ve Perforce, sürüm kontrolüne alınan bütün dosyaları tutan bir sunucu ve bu sunucudan dosyaları seçerek alan (_check out_) istemcilerden oluşur. Bu yöntem, yıllarca, sürüm kontrolünde standart yöntem olarak kabul gördü (bkz. Figür 1-2).
 
-Insert 18333fig0102.png 
+![](/figures/18333fig0102-tn.png) 
 Figür 1-2. Merkezi sürüm kontrol diyagramı.
 
 Bu yöntemin, özellikle yerel SKS'lere göre, çok sayıda avantajı vardır. Örneğin, bir projedeki herkes, diğerlerinin ne yaptığından belirli ölçüde haberdardır. Sistem yöneticileri kimin hangi yetkilere sahip olacağını oldukça ayrıntılı biçimde düzenleyebilirler; üstelik bir MSKS'yi yönetmek, her istemcide ayrı ayrı kurulu olan yerel veritabanlarını yönetmeye göre çok daha kolaydır.
@@ -36,7 +36,7 @@ Bu noktada Dağıtık Sürüm Kontrol Sistemleri (DSKS) devreye girer. Bir DSKS'
 
 Böylece, sunuculardan biri çökerse, ve o sunucu üzerinden ortak çalışma yürüten sistemler varsa, istemcilerden birinin yazılım havuzu sunucuya geri yüklenerek sistem kurtarılabilir. Her seçme (_checkout_) işlemi esasında bütün verinin yedeklenmesiyle sonuçlanır (bkz. Figür 1-3).
 
-Insert 18333fig0103.png 
+![](/figures/18333fig0103-tn.png) 
 Figür 1-3. Dağıtık sürüm kontrol diyagramı.
 
 Dahası, bu sistemlerden çoğu birden çok uzak uçbirimdeki yazılım havuzuyla rahatlıkla çalışır, böylece, aynı proje için aynı anda farklı insan topluluklarıyla farklı biçimlerde ortak çalışmalar yürütebilirsiniz. Bu, birden çok iş akışı ile çalışabilmenizi sağlar, ki bu merkezi sistemlerde (hiyerarşik modeller gibi) mümkün değildir.
@@ -63,12 +63,12 @@ Peki Git özünde nedir? Bu, özümsenmesi gereken önemli bir alt bölüm, çü
 
 Git ile diğer SKS'ler (Subversion ve ahbapları dahil) arasındaki esas fark, Git'in bilgiyi yorumlayış biçimiyle ilgilidir. Kavramsal olarak, diğer sistemlerin çoğu, bilgiyi dosya-tabanlı bir dizi değişiklik olarak depolar. Bu sistemler (CVS, Subversion, Perforce, Bazaar ve saire) bilgiyi, kayıt altında tuttukları bir dosya kümesi ve zamanla her bir dosya üzerinde yapılan değişikliklerin listesi olarak yorumlarlar (bkz. Figür 1-4).
 
-Insert 18333fig0104.png 
+![](/figures/18333fig0104-tn.png) 
 Figür 1-4. Diğer sistemler veriyi her bir dosyanın ilk sürümu üzerinde yapılan değişiklikler olarak depolama eğilimindedir.
 
 Git, veriyi böyle yorumlayıp depolamaz. Bunun yerine, Git, veriyi, bir mini dosya sisteminin bellek kopyaları olarak yorumlar. Her kayıt işleminde (_commit_), ya da projenizin konumunu her kaydedişinizde, Git o anda dosyalarınızın nasıl göründüğünün bir fotoğrafını çekip o bellek kopyasına bir referansı depolar. Verimli olabilmek için, değişmeyen dosyaları yeniden depolamaz, yalnızca halihazırda depolanmış olan bir önceki özdeş kopyaya bir bağlantı kurar. Git'in veriyi yorumlayışı daha çok Figür 1-5'teki gibidir.
 
-Insert 18333fig0105.png 
+![](/figures/18333fig0105-tn.png) 
 Figür 1-5. Git veriyi projenin zaman içindeki bellek kopyaları olarak depolar.
 
 Bu, Git'le neredeyse bütün diğer SKS'ler arasında ciddi bir ayrımdır. Bu ayrım nedeniyle Git, sürüm kontrolünün, diğer sürüm kontrol sistemlerinin çoğu tarafından önceki kuşaklardan devralınan neredeyse bütün yönlerini yeniden gözden geçirmek zorunda bırakır. Bu ayrım Git'i basit bir SKS olmanın ötesinde, etkili araçlara sahip bir mini dosya sistemi gibi olmaya iter. Veriyi bu şekilde yorumlamanın yararlarından bazılarını dallanmayı işleyeceğimiz 3. Bölüm'de ele alacağız.
@@ -103,7 +103,7 @@ Bu Git kullanmayı keyifli hale getirir, çünkü işleri ciddi biçimde sıkın
 
 Bu da bizi bir Git projesinin üç ana bölümüne getiriyor: Git klasörü, çalışma klasörü ve hazırlık alanı.
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figür 1-6. Çalışma klasörü, hazırlık alanı ve Git klasörü.
 
 Git klasörü, Git'in üstverileri (_metadata_) ve nesne veritabanını depoladığı yerdir. Bu, Git'in en önemli parçasıdır ve bir yazılım havuzunu bir bilgisayardan bir başkasına klonladığınızda kopyalanan şeydir.
@@ -167,7 +167,7 @@ Git'i Mac'te kurmak için iki kolay yol vardır. En kolayı, SourceForge sayfas�
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png 
+![](/figures/18333fig0107-tn.png) 
 Figür 1-7. Git OS X yükleyicisi.
 
 Diğer başlıca yol, Git'i MacPorts (`http://www.macports.org`) vasıtasıyla kurmaktır. MacPorts halihazırda kurulu bulunuyorsa Git'i şu komutla kurabilirsiniz:

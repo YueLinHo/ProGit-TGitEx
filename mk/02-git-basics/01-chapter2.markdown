@@ -1,4 +1,4 @@
-# Основи на Git #
+﻿# Основи на Git #
 
 Доколку треба да прочитате само едно поглавје за да почнете со Git, тогаш ова е тоа поглавје. Ова поглавје ги покрива сите основни наредби кои што ви требаат за да ги изведете најголемиот дел од работите со Git. На крајот од ова поглавје, би требало да можете да конфигурирате и иницијализирате репозитори, да почнете и да престанете да следите (track) датотеки, промените да ги поставите на сцена (stage) и да ги комитирате. Исто така ќе ви покажеме како да го подесите Git да игнорира одредени датотеки и патерни од датотеки, како лено и брзо да поправите случајна грешка, како да го прелистувате историјатот на вашиот проект и како да гледате измени помеѓу состојбите, и како да уфрлите и повлечете измени од оддалечени репозиторија.
 
@@ -46,7 +46,7 @@ Git има неколку различни протоколи за пренос 
 
 Како што ќе правите промени во фајловите Git ќе ги препознава како фајлови со променета содржина бидејќи тоа се промени после вашиот последен 'commit'.Ваквите фајлови ги ставате на сцена и им правите комит, се така во круг. Животниот циклус е прикажан на слика 2-1.
 
-Insert 18333fig0201.png 
+![](/figures/18333fig0201-tn.pnt) 
 Слика 2-1. Животен циклус на статусот на фајловите.
 
 ### Проверка на статусот на фајловите ###
@@ -622,7 +622,7 @@ Of the nearly 20,000 commits in the Git source code history, this command shows 
 
 If you like to use a more graphical tool to visualize your commit history, you may want to take a look at a Tcl/Tk program called gitk that is distributed with Git. Gitk is basically a visual `git log` tool, and it accepts nearly all the filtering options that `git log` does. If you type gitk on the command line in your project, you should see something like Figure 2-2.
 
-Insert 18333fig0202.png 
+![](/figures/18333fig0202-tn.pnt) 
 Figure 2-2. The gitk history visualizer.
 
 You can see the commit history in the top half of the window along with a nice ancestry graph. The diff viewer in the bottom half of the window shows you the changes introduced at any commit you click.

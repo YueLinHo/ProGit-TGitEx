@@ -19,17 +19,17 @@ Quando crei il commit lanciado `git commit`, Git calcola il checksum di ogni dir
 
 Il tuo repository Git ora contiene cinque oggetti: un blob per i contenuti di ogni singolo file nell'albero, un albero che elenca i contenuti della directory e specifica i nomi dei file che devono essere salvati come blob, e un commit con il puntatore alla radice dell'albero e a tutti i metadati del commit. Concettualmente, i dati nel tuo repository Git assomigliano alla Figura 3-1. 
 
-Insert 18333fig0301.png 
+![](/figures/18333fig0301-tn.png) 
 Figura 3-1. Dati di un singolo commit nel repository.
 
 Se fai dei cambiamenti ed esegui il commit nuovamente, il commit successivo immagazzinerà un puntatore al commit che lo precede. Dopo due o più invii, la tua storia assomiglierà a qualcosa di simile alla Figura 3-2.
 
-Insert 18333fig0302.png 
+![](/figures/18333fig0302-tn.png) 
 Figura 3-2. Dati di Git per commit multipli.
 
 In Git un ramo è semplicemente un puntatore ad uno di questi commit. Il nome del ramo principale in Git è master. Quando inizi a fare dei commit, li stai dando al ramo master che punterà all'ultimo commit che hai eseguito. Ogni volta che invierai un commit, lui si sposterà in avanti automaticamente.
 
-Insert 18333fig0303.png 
+![](/figures/18333fig0303-tn.png) 
 Figura 3-3. Ramo che punta alla storia dei commit dei dati.
 
 Cosa succede se crei un nuovo ramo? Beh, farlo crea un nuovo puntatore che tu puoi muovere. Diciamo che crei un ramo chiamato testing. Lo farai con il comando `git branch`:
@@ -38,12 +38,12 @@ Cosa succede se crei un nuovo ramo? Beh, farlo crea un nuovo puntatore che tu pu
 
 Questo creerà un nuovo puntatore al commit in cui tu ti trovi correntemente (vedi Figura 3-4).
 
-Insert 18333fig0304.png 
+![](/figures/18333fig0304-tn.png) 
 Figura 3-4. Rami multipli che puntano alla storia dei commit dei dati.
 
 Come fa Git a sapere in quale ramo ti trovi ora? Lui mantiene uno speciale puntatore chiamato HEAD. Nota che questo è differente dal concetto di HEAD di altri VCSs che potresti aver usato in passato, come Subversion o CVS. In Git, è un puntatore al ramo locale su cui ti trovi. In questo caso sei ancora sul ramo master. Il comando git branch ha solamente creato un nuovo ramo — non si è spostato in questo ramo (vedi Figura 3-5).
 
-Insert 18333fig0305.png 
+![](/figures/18333fig0305-tn.png) 
 Figura 3-5. Il file HEAD punta al ramo in cui ti trovi ora.
 
 Per spostarsi in un ramo preesistente, devi usare il comando `git checkout`. Dunque spostati nel ramo testing:
@@ -52,7 +52,7 @@ Per spostarsi in un ramo preesistente, devi usare il comando `git checkout`. Dun
 
 Questo sposterà il puntatore HEAD al ramo testing (vedi Figura 3-6).
 
-Insert 18333fig0306.png
+![](/figures/18333fig0306-tn.png)
 Figura 3-6. HEAD punta ad un altro ramo dopo che ti sei spostato.
 
 Qual'è il significato di tutto questo? Beh, facciamo un altro commit:
@@ -62,7 +62,7 @@ Qual'è il significato di tutto questo? Beh, facciamo un altro commit:
 
 La Figura 3-7 illustra il risultato.
 
-Insert 18333fig0307.png 
+![](/figures/18333fig0307-tn.png) 
 Figura 3-7. Il ramo a cui punta HEAD si muoverà avanti ad ogni commit.
 
 Questo è interessante, perché ora il tuo ramo testing è stato spostato in avanti, ma il tuo ramo master punta ancora al commit in cui ti trovavi prima di spostarti di ramo con `git checkout`. Ora torna indietro al ramo master:
@@ -71,7 +71,7 @@ Questo è interessante, perché ora il tuo ramo testing è stato spostato in ava
 
 La Figura 3-8 mostra il risultato.
 
-insert 18333fig0308.png 
+![](/figures/18333fig0308-tn.png) 
 Figura 3-8. HEAD si è spostato ad un altro ramo con un checkout.
 
 Questo comando ha fatto due cose. Ha spostato il puntatore HEAD indietro per puntare al ramo master e ha riportato i file nella tua directory di lavoro allo stato in cui si trovavano in quel momento. Questo significa anche che i cambiamenti che farai da questo punto in poi saranno separati da una versione più vecchia del progetto. Essenzialmente riavvolge temporaneamente il lavoro che hai fatto nel tuo ramo testing così puoi muoverti in una direzione differente.
@@ -83,7 +83,7 @@ Fai ora un po' di modifiche ed esegui ancora un commit:
 
 Ora la storia del tuo progetto è separata (vedi Figura 3-9). Hai creato e ti sei spostato in un ramo, hai fatto un lavoro in esso e poi sei tornato sul ramo principale e hai fatto dell'altro lavoro. Entrambi questi cambiamenti sono isolati in rami separati: puoi spostarti indietro o in avanti fra i rami e poi fonderli assieme quando sarai pronto. E puoi farlo semplicemente con i comandi `branch` e `checkout`.
 
-Insert 18333fig0309.png 
+![](/figures/18333fig0309-tn.png) 
 Figura 3-9. Le storie dei rami sono separate.
 
 Dato che un ramo in Git è semplicemente un file che contiene 40 caratteri di un checksum SHA-1 del commit al quale punta, i rami si possono creare e distruggere facilmente. Creare un nuovo ramo è semplice e veloce quanto scrivere 41 byte in un file (40 caratteri ed il fine riga).
@@ -111,7 +111,7 @@ A questo punto, ricevi una chiamata per un problema critico e hai bisogno subito
 
 Primo, diciamo che stai lavorando sul tuo progetto e hai già un po' di commit (vedi Figura 3-10).
 
-Insert 18333fig0310.png 
+![](/figures/18333fig0310-tn.png) 
 Figura 3-10. Una storia di commit corta e semplice.
 
 Hai deciso che lavorerai alla richiesta #53 di un qualsiasi sistema di tracciamento dei problemi che la tua compagnia utilizza. Per essere chiari, Git non si allaccia a nessun particolare sistema di tracciamento; ma dato che il problema #53 è un argomento specifico su cui vuoi lavorare, creerai un nuovo ramo su cui lavorare. Per creare un ramo e spostarsi direttamente in esso, puoi lanciare il comando `git checkout` con `-b`:
@@ -126,7 +126,7 @@ Questa è la scorciatoia per:
 
 La Figura 3-11 illustra il risultato.
 
-Insert 18333fig0311.png 
+![](/figures/18333fig0311-tn.png) 
 Figura 3-11. É stato creato un nuovo ramo.
 
 Lavori sul tuo sito web e fai alcuni commit. Facendo questo muoverai il ramo `iss53` avanti, perché ti sei spostato in esso (infatti, il puntatore HEAD rimanda ad esso, vedi Figura 3-12):
@@ -134,7 +134,7 @@ Lavori sul tuo sito web e fai alcuni commit. Facendo questo muoverai il ramo `is
 	$ vim index.html
 	$ git commit -a -m 'added a new footer [issue 53]'
 
-Insert 18333fig0312.png 
+![](/figures/18333fig0312-tn.png) 
 Figura 3-12. Il ramo iss53 è stato spostato in avanti con il tuo lavoro.
 
 Ora ricevi la telefonata che ti avverte c'è un problema con il sito web, e devi risolverlo immediatamente. Con Git, non devi fare un deploy della tua soluzione con i cambiamenti del ramo `iss53` e non devi fare alcuno sforzo per riavvolgere le modifiche che hai fatto prima di applicare il fix a quello che è in produzione. Tutto ciò che devi fare è spostarti nel ramo master.
@@ -155,7 +155,7 @@ Successivamente, hai un hotfix da creare. Crea un ramo hotfix su cui lavorare fi
 	[hotfix]: created 3a0874c: "fixed the broken email address"
 	 1 files changed, 0 insertions(+), 1 deletions(-)
 
-Insert 18333fig0313.png 
+![](/figures/18333fig0313-tn.png) 
 Figura 3-13. Ramo hotfix basato sul ramo master.
 
 Puoi avviare il tuo test, essere sicuro che la tua soluzione sia ciò che vuoi ottenere, e fonderla nel ramo master per inserirla nella fase di produzione. Puoi fare questo con il comando `git merge`:
@@ -171,7 +171,7 @@ Avrai notato la frase "Fast forward" nella fusione. Dato che il commit a cui pun
 
 I tuoi cambiamenti sono ora nell'istantanea del commit che punta al ramo `master`, e puoi utilizzare la tua modifica (vedi Figura 3-14).
 
-Insert 18333fig0314.png 
+![](/figures/18333fig0314-tn.png) 
 Figura 3-14. Il tuo ramo master punta allo stesso punto del ramo hotfix dopo l'unione.
 
 Dopo che il tuo fix super-importante è disponibile, sei pronto per tornare al lavoro che stavi eseguendo precedentemente all'interruzione. Ovviamente, prima devi eliminare il ramo `hotfix`, perché non ne avrai più bisogno — il ramo `master` punta allo stesso posto. Puoi eliminarlo con l'opzione `-d` di `git branch`:
@@ -188,7 +188,7 @@ Ora puoi tornare al tuo lavoro precedente sul problema #53 (vedi Figura 3-15):
 	[iss53]: created ad82d7a: "finished the new footer [issue 53]"
 	 1 files changed, 1 insertions(+), 0 deletions(-)
 
-Insert 18333fig0315.png 
+![](/figures/18333fig0315-tn.png) 
 Figura 3-15. Il ramo iss53 può andare avanti indipendentemente.
 
 Non è un problema non avere il lavoro svolto nel ramo `hotfix` nei file del ramo `iss53`. Se hai bisogno di inserire le modifiche, puoi fondere il ramo `master` nel ramo `iss53` lanciando `git merge master`, o puoi aspettare di integrare queste modifiche quando deciderai ti inserire il ramo `iss53` nel ramo `master`.
@@ -205,14 +205,14 @@ Supponiamo tu abbia deciso che il lavoro sul problema #53 sia completo e pronto 
 
 Il risultato è leggermente differente rispetto alla fusione precedente di `hotfix`. In questo caso, Git ha eseguito la fusione in tre punti, usando le due istantanee che puntano all'estremità del ramo e al progenitore comune dei due. La Figura 3-16 evidenza i tre snapshot che Git usa per fare la fusione di questo caso.
 
-Insert 18333fig0316.png 
+![](/figures/18333fig0316-tn.png) 
 Figura 3-16. Git automaticamente identifica il miglior progenitore comune su cui basare la fusione dei rami.
 
 Invece di muovere il puntatore del ramo in avanti, Git crea una nuova istantanea che risulta da questa fusione e automaticamente crea un nuovo commit che punta ad essa (vedi Figura 3-17). Questo si chiama commit di fusione ed è speciale perché ha più di un genitore.
 
 Vale la pena sottolineare che Git determina il migliore progenitore comune da utilizzare per la sua unione di base, questo è diverso da CVS o Subversion (prima della versione 1.5), in cui lo sviluppatore facendo la fusione doveva capire la base migliore di unione. Questo rende la fusione dannatamente semplice rispetto ad altri sistemi.
 
-Insert 18333fig0317.png 
+![](/figures/18333fig0317-tn.png) 
 Figura 3-17. Git automaticamente crea un nuovo commit che contiene la fusione dei lavori.
 
 Ora che il tuo lavoro è fuso, non hai più bisogno del ramo `iss53`. Puoi eliminarlo e chiudere manualmente il ticket nel tuo sistema di tracciamento:
@@ -348,12 +348,12 @@ Alcuni sviluppatori Git hanno un flusso di lavoro che abbraccia questo approccio
 
 In realtà, stiamo parlando dello spostamento dei puntatori sulla linea dei commit eseguiti. I rami stabili saranno alla base della storia dei tuoi commit e i rami di sviluppo saranno al di sopra della storia (vedi Figura 3-18).
 
-Insert 18333fig0318.png 
+![](/figures/18333fig0318-tn.png) 
 Figura 3-18. I rami più stabili sono generalmente all'inizio della storia dei commit.
 
 É generalmente facile pensare come un sistema di silos, dove una serie di commit gradualmente vanno in un contenitore più stabile quando sono bene testati (vedi Figura 3-19).
 
-Insert 18333fig0319.png 
+![](/figures/18333fig0319-tn.png) 
 Figura 3-19. Può essere di aiuto pensare ai rami come dei silos.
 
 Puoi mantenere questa cosa per svariati livelli di stabilità. Alcuni progetti molto grandi hanno inoltre un ramo `proposte` o `ap` (aggiornamenti proposti) che integrano rami che non sono pronti per entrare nel ramo `master` o `successivo`. L'idea è che i tuoi rami sono a vari livelli di stabilità; quando raggiungono un maggior livello di stabilità, sono fusi nel ramo superiore.
@@ -367,12 +367,12 @@ Lo hai visto nell'ultima sezione per i rami `iss53` e `hotfix`. Hai fatto alcuni
 
 Considera un esempio di lavoro (su `master`), ti sposti in un altro ramo per un problema (`iss91`), lavori su questo per un po', ti sposti in una seconda branca per provare un altro modo per risolvere il problema (`iss91v2`), torni al ramo principale e lavori su questo per un poco, e poi vai in un altro ramo per fare un lavoro che non sei sicuro sia proprio una buona idea (ramo `dumbidea`). La storia dei tuoi commit assomiglierà a qualcosa come la Figura 3-20.
 
-Insert 18333fig0320.png 
+![](/figures/18333fig0320-tn.png) 
 Figura 3-20. La storia dei tuoi commit con più rami.
 
 Ora, diciamo che hai deciso che ti piace la seconda soluzione per risolvere il problema (`iss91v2`); e hai mostrato il ramo `dumbidea` ai tuoi collaboratori, e si scopre una genialata. Puoi gettare via il ramo `iss91` (perdendo i commit C5 e C6) e fondere gli altri due. La tua storia assomiglierà alla Figura 3-21.
 
-Insert 18333fig0321.png 
+![](/figures/18333fig0321-tn.png) 
 Figura 3-21. La tua storia dopo che hai fatto la fusione di dumbidea e iss91v2.
 
 É importante ricordare che ogni volta che si fa una cosa simile i rami sono completamente separate. Quando crei rami o fai fusioni, tutto è eseguito nel tuo repository Git — nessuna comunicazione con il server è avvenuta.
@@ -385,27 +385,27 @@ Prendono la forma di `(remote)/(branch)`. Per esempio, se vuoi vedere come appar
 
 Questo può un po' confondere, quindi vediamo un esempio. Diciamo che hai un server Git nella tua rete raggiungibile a `git.ourcompany.com`. Se fai una clonazione da qui, Git automaticamente lo nomina `origin` per te, effettua il pull di tutti i dati, crea un puntatore dove si trova il ramo `master` e lo nomina localmente `origin/master`; e non puoi spostarlo. Git inoltre ti da il tuo ramo `master` che parte dallo stesso punto del ramo originario `master`, così hai qualcosa da cui puoi iniziare a lavorare (vedi Figura 3-22).
 
-Insert 18333fig0322.png 
+![](/figures/18333fig0322-tn.png) 
 Figura 3-22. Un clone con Git fornisce un proprio ramo principale e un puntatore origin/master al ramo principale di origine.
 
 Se fai del lavoro sul tuo ramo principale locale, e, allo stesso temo, qualcuno ha inviato degli aggiornamenti al ramo principale di `git.ourcompany.com`, allora la tua storia si muoverà in avanti in modo differente. Inoltre, mentre non hai contatti con il tuo server di partenza, il tuo puntatore `origin/master` non si sposterà (vedi Figura 3-23).
 
-Insert 18333fig0323.png 
+![](/figures/18333fig0323-tn.png) 
 Figura 3-23. Lavorando in locale ed avendo qualcuno che ha inviato al server remoto qualcosa rende l'avanzamento delle storie differente.
 
 Per sincronizzare il tuo lavoro, devi avviare il comando `git fetch origin`. Questo comando guarda qual'è il server di origine (in questo caso, è `git.ourcompany.com`), preleva qualsiasi dato che ancora non possiedi, e aggiorna il tuo database locale, spostando il puntatore `origin/master` alla sua nuova, più aggiornata posizione (vedi Figura 3-24).
 
-Insert 18333fig0324.png 
+![](/figures/18333fig0324-tn.png) 
 Figura 3-24. Il comando git fetch aggiorna i tuoi riferimenti remoti.
 
 Avendo più server remoti e volendo vedere come sono i rami remoti per questi progetti esterni, assumiamo che abbia un altro server Git interno che è usato solamente per lo sviluppo di un tuo team. Questo server è `git.team1.ourcompany.com`. Puoi aggiungerlo come una nuova referenza remoto al tuo progetto su cui stai lavorando avviando il comando `git remote add` come visto al Capitolo 2. Nominalo `teamone`, che sarà l'abbreviazione per tutto l'URL (vedi Figura 3-25).
 
-Insert 18333fig0325.png 
+![](/figures/18333fig0325-tn.png) 
 Figura 3-25. Aggiungere un altro server remoto.
 
 Ora, puoi lanciare `git fetch teamone` per prelevare tutto quello che non possiedi dal server remoto `teamone`. Dato che il server ha un sottoinsieme dei dati del server `origin` che già possiedi, Git non va a prendere nessun dato ma imposta un ramo remoto chiamato `teamone/master` a puntare al commit che `teamone` ha come suo ramo `master` (vedi Figura 3-26).
 
-Insert 18333fig0326.png 
+![](/figures/18333fig0326-tn.png) 
 Figura 3-26. Hai un riferimento al ramo principale di teamone posizionato localmente.
 
 ### Invio ###
@@ -480,12 +480,12 @@ In Git, ci sono due modi per integrare i cambiamenti da un ramo in un altro: il 
 
 Se torni indietro in un precedente esempio alla sezione sulla fusione (vedi Figura 3-27), puoi vedere che hai separato il tuo lavoro e hai fatto dei commit in rami differenti.
 
-Insert 18333fig0327.png 
+![](/figures/18333fig0327-tn.png) 
 Figura 3-27. L'inizio della divisione della storia dei commit.
 
 Il modo più semplice per integrare i due rami, come abbiamo visto, è il comando `merge`. Lui avvia una fusione a tre vie con le ultime due istantanee dei rami (C3 e C4) ed il più recente progenitore comune dei due (C2), creando un nuovo snapshot (e commit), come visualizzato in Figura 3-28.
 
-Insert 18333fig0328.png 
+![](/figures/18333fig0328-tn.png) 
 Figura 3-28. Fusione di un ramo per integrare una storia divisa.
 
 Tuttavia, esiste un'altra possibilità: puoi prendere una patch del cambiamento che abbiamo introdotto in C3 ed applicarla all'inizio di C4. In Git, questo è chiamato _rifondazione_. E con il comando `rebase`, puoi prendere tutti i cambiamenti che sono stati inviati su un ramo ed applicarli su un altro.
@@ -499,12 +499,12 @@ In questo esempio, digita quanto segue:
 
 Questi comandi funzionano andando al progenitore comune dei due rami (uno è quello in cui ti trovi e uno è quello su cui stai facendo il rebase), ottiene il diff di ogni commit del ramo in cui ti trovi, salva le informazioni in un file temporaneo, reimposta il ramo corrente allo stesso commit del ramo su cui stai facendo il rebase, e alla fine applica ogni singolo cambiamento. La Figura 3-29 illustra questo processo.
 
-Insert 18333fig0329.png 
+![](/figures/18333fig0329-tn.png) 
 Figura 3-29. Rifondazione dei cambiamenti introdotti in C3 in C4.
 
 A questo punto, puoi tornare indietro sul ramo principale e fare una fusione veloce (vedi Figura 3-30).
 
-Insert 18333fig0330.png 
+![](/figures/18333fig0330-tn.png) 
 Figura 3-30. Avanzamento veloce del ramo principale.
 
 Ora, lo snapshot puntato da C3' è esattamente lo stesso del puntatore nell'esempio di fusione. Non c'è differenza nel prodotto finale dell'integrazione, ma la rifondazione crea una storia più pulita. Se esamini il log del ramo su cui è stato fatto il rebase, assomiglia ad una storia lineare: appare come se tutto il lavoro fosse stato fatto in serie, invece è stato fatto in parallelo.
@@ -517,7 +517,7 @@ Nota che lo snapshot punta al commit finale, che è l'ultimo dei commit su cui �
 
 Puoi anche avere il tuo rebase su qualcosa che non è il ramo di rebase. Prendi la storia della Figura 3-31, per esempio. Hai un ramo a tema (`server`) per aggiungere delle funzioni lato server al tuo progetto, e fai un commit. Poi, ti sposti su un altro ramo per creare dei cambiamenti sul lato client (`client`) e fai dei commit. Alla fine, torni sul tuo ramo server e fai degli altri commit.
 
-Insert 18333fig0331.png 
+![](/figures/18333fig0331-tn.png) 
 Figura 3-31. Una storia con un ramo a tema ed un altro ramo a tema da questo.
 
 Supponiamo che tu decida di voler unire i tuoi cambiamenti lato client nella linea principale per un rilascio, ma non vuoi unire le modifiche lato server per testarle ulteriormente. Puoi prendere le modifiche sul client che non sono sul server (C8 e C9) ed applicarle nel ramo master usano l'opzione `--onto` di `git rebase`:
@@ -526,7 +526,7 @@ Supponiamo che tu decida di voler unire i tuoi cambiamenti lato client nella lin
 
 Questo dice, “Prendi il ramo client, fai le patch a partire dall'ancora comune dei rami `client` e `server`, ed applicali in `master`.“ É un po' complesso; ma il risultato, mostrato in Figura 3-32, è davvero interessante.
 
-Insert 18333fig0332.png 
+![](/figures/18333fig0332-tn.png) 
 Figura 3-32. Rifondazione di un ramo a tema con un altro ramo a tema.
 
 Ora puoi fare una fusione veloce con il ramo master (vedi Figura 3-33):
@@ -534,7 +534,7 @@ Ora puoi fare una fusione veloce con il ramo master (vedi Figura 3-33):
 	$ git checkout master
 	$ git merge client
 
-Insert 18333fig0333.png 
+![](/figures/18333fig0333-tn.png) 
 Figura 3-33. Fusione ad avanzamento veloce con il ramo master per includere i cambiamenti del ramo client.
 
 Diciamo che hai deciso di inviare il tutto nel ramo server. Puoi fare un rebase del ramo server in quello master senza dover controllarlo prima lanciando `git rebase [basebranch] [topicbranch]` — che controlla il ramo a tema (in questo caso, `server`) per te e gli applica il ramo base (`master`):
@@ -543,7 +543,7 @@ Diciamo che hai deciso di inviare il tutto nel ramo server. Puoi fare un rebase 
 
 Questo applica il tuo lavoro `server` sopra al tuo lavoro `master`, come in Figura 3-34.
 
-Insert 18333fig0334.png 
+![](/figures/18333fig0334-tn.png) 
 Figura 3-34. Rifondazione del ramo server sopra al ramo master.
 
 Poi, puoi fare una fusione veloce con il ramo base (`master`):
@@ -556,7 +556,7 @@ Puoi rimuovere i rami `client` e `server` perché tutto il lavoro è integrato e
 	$ git branch -d client
 	$ git branch -d server
 
-Insert 18333fig0335.png 
+![](/figures/18333fig0335-tn.png) 
 Figura 3-35. Storia finale dei commit.
 
 ### I Rischio della Rifondazione ###
@@ -571,22 +571,22 @@ Quando fai il rebase di qualcosa, stai abbandonando i commit esistenti per crear
 
 Vedi l'esempio su come funziona il rebase che hai reso pubblico e cosa può causare. Supponiamo che abbia clonato un repository da un server centrale e poi abbia fatto dei lavori. La storia dei tuoi commit assomiglierà alla Figura 3-36.
 
-Insert 18333fig0336.png 
+![](/figures/18333fig0336-tn.png) 
 Figura 3-36. Repository clonato e del lavoro basato su questo.
 
 Ora, qualcuno ha fatto molto lavoro che include una fusione, e ha inviato questo lavoro al server centrale. Tu scarichi questo e lo unisci con un nuovo ramo remoto nel tuo lavoro, rendendo la tua storia come qualcosa in Figura 3-37.
 
-Insert 18333fig0337.png 
+![](/figures/18333fig0337-tn.png) 
 Figura 3-37. Scarichi più commit, e li fondi assieme nel tuo lavoro.
 
 Poi, la persona che ha inviato il suo lavoro decide di tornare indietro e fa un rebase del suo lavoro; e da un `git push --force` per sovrascrivere la storia del server. Puoi poi scaricare nuovamente dal server i nuovi commit.
 
-Insert 18333fig0338.png 
+![](/figures/18333fig0338-tn.png) 
 Figura 3-38. Qualcuno ha inviato dei commit su cui è stato fatto il rebase, abbandonando i commit che su cui avevi basato il tuo lavoro.
 
 A questo punto devi fondere di nuovo il tuo lavoro, e tu lo avevi già fatto. La rifondazione modifica gli hash SHA-1 di questi commit così per Git sono come dei nuovi commit, mentre di fatto hai già il lavoro C4 nel tuo repository (vedi Figura 3-39).
 
-Insert 18333fig0339.png 
+![](/figures/18333fig0339-tn.png) 
 Figura 3-39. Fai la fusione nello stesso lavoro con un nuovo commit di unione.
 
 Devi fondere questo lavoro in ogni punto così puoi rimanere aggiornato con l'altro sviluppatore in futuro. Dopo che hai fatto questo, la storia dei tuoi commit contiene sia i commit C4 e C4', che hanno un hash SHA-1 differente ma introducono lo stesso lavoro e hanno lo stesso messaggio per il commit. Se lanci `git log` quando la tua storia assomiglia a questo, vedrai i due commit che hanno lo stesso autore data e messaggio, e ciò confonde. Inoltre, Se invii questa storia al server, tu reinserisci nel server centrale questi commit che hanno subito un rebase, ciò confonde ulteriormente le persone.

@@ -314,7 +314,7 @@ Deste jeito, você pode configurar um servidor HTTP com acesso de leitura para o
 
 Agora que você tem acesso de leitura/escrita e apenas leitura para o seu projeto, você pode querer configurar um visualizador simples baseado em web. Git vem com um script CGI chamado GitWeb que normalmente é usado para isso. Você pode ver o GitWeb em uso em sites como `http://git.kernel.org` (veja a Figura 4-1).
 
-Insert 18333fig0401.png
+![](/figures/18333fig0401-tn.png)
 Figure 4-1. A interface de usuário baseada em web GitWeb.
 
 Se você quiser ver como GitWeb aparecerá para o seu projeto, Git vem com um comando para disparar uma instância temporária se você tem um servidor leve no seu sistema como `lighttpd` ou `webrick`. Em máquinas Linux, `lighttpd` normalmente está instalado, então você deve conseguir fazê-lo funcionar digitando `git instaweb` no diretório do seu projeto. Se você está usando um Mac, Leopard vem com Ruby pré-instalado, então `webrick` é sua melhor aposta. Para iniciar `instaweb` com um manipulador diferente de lighttpd, você pode rodá-lo com a opção `--httpd`.
@@ -768,17 +768,17 @@ GitHub também é uma empresa comercial que cobra para contas que mantêm reposi
 
 A primeira coisa que você precisa fazer é criar uma conta de usuário gratuita. Se você visitar a página de Preços e Inscrição em `http://github.com/plans` e clicar no botão "Sign Up" na conta gratuita (ver figura 4-2), você é levado à página de inscrição.
 
-Insert 18333fig0402.png
+![](/figures/18333fig0402-tn.png)
 Figure 4-2. A página de planos do GitHub.
 
 Aqui você deve escolher um nome de usuário que ainda não foi utilizada no sistema e digitar um endereço de e-mail que será associado com a conta e uma senha (veja a Figura 4-3).
 
-Insert 18333fig0403.png
+![](/figures/18333fig0403-tn.png)
 Figure 4-3. O formulário de inscrição do GitHub.
 
 Este é um bom momento para adicionar sua chave pública SSH também. Mostramos como gerar uma nova chave antes, na seção "Gerando Sua Chave Pública SSH". Copie o conteúdo da chave pública, e cole-o na caixa de texto "SSH Public Key". Clicando no link "explain ssh keys" irá mostrar instruções detalhadas sobre como fazê-lo em todos os principais sistemas operacionais. Clicando no botão "I agree, sign me up" levará você ao painel principal de seu novo usuário (ver Figura 4-4).
 
-Insert 18333fig0404.png
+![](/figures/18333fig0404-tn.png)
 Figure 4-4. O painel principal do usuário do GitHub.
 
 Em seguida, você pode criar um novo repositório.
@@ -787,17 +787,17 @@ Em seguida, você pode criar um novo repositório.
 
 Comece clicando no link "create a new one" ao lado de seus repositórios no painel do usuário. Você é levado para um formulário para criação de um novo repositório (ver Figura 4-5).
 
-Insert 18333fig0405.png
+![](/figures/18333fig0405-tn.png)
 Figure 4-5. Criando um novo repositório no GitHub.
 
 Tudo o que você realmente tem que fazer é fornecer um nome de projeto, mas você também pode adicionar uma descrição. Quando terminar, clique no botão "Create Repository". Agora você tem um novo repositório no GitHub (ver Figura 4-6).
 
-Insert 18333fig0406.png
+![](/figures/18333fig0406-tn.png)
 Figure 4-6. Informações de um projeto do GitHub.
 
 Já que você não tem nenhum código ainda, GitHub irá mostrar-lhe instruções de como criar um novo projeto, fazer um push de um projeto Git existente, ou importar um projeto de um repositório Subversion público (ver Figura 4-7).
 
-Insert 18333fig0407.png
+![](/figures/18333fig0407-tn.png)
 Figure 4-7. Instrução para novos repositórios.
 
 Estas instruções são semelhantes ao que nós já vimos. Para inicializar um projeto se já não é um projeto Git, você usa
@@ -813,7 +813,7 @@ Quando você tem um repositório Git local, adicione GitHub como um remoto e fa�
 
 Agora seu projeto está hospedado no GitHub, e você pode dar a URL para quem você quiser compartilhar seu projeto. Neste caso, é `http://github.com/testinguser/iphone_project`. Você também pode ver a partir do cabeçalho em cada uma das páginas do seu projeto que você tem duas URLs Git (ver Figura 4-8).
 
-Insert 18333fig0408.png
+![](/figures/18333fig0408-tn.png)
 Figure 4-8. Cabeçalho do projeto com uma URL pública e outra privada.
 
 A URL pública é uma URL Git somente leitura sobre a qual qualquer um pode clonar o projeto. Sinta-se a vontade para dar essa URL e postá-la em seu site ou qualquer outro lugar.
@@ -824,7 +824,7 @@ A URL privada é uma URL para leitura/gravação baseada em SSH que você pode u
 
 Se você tem um projeto Subversion público existente que você deseja importar para o Git, GitHub muitas vezes pode fazer isso por você. Na parte inferior da página de instruções há um link para importação do Subversion. Se você clicar nele, você verá um formulário com informações sobre o processo de importação e uma caixa de texto onde você pode colar a URL do seu projeto Subversion público (ver Figura 4-9).
 
-Insert 18333fig0409.png
+![](/figures/18333fig0409-tn.png)
 Figure 4-9. Interface de importação do Subversion.
 
 Se o seu projeto é muito grande, fora do padrão, ou privado, esse processo provavelmente não vai funcionar para você. No Capítulo 7, você vai aprender como fazer a importação de projetos mais complicados manualmente.
@@ -835,17 +835,17 @@ Vamos adicionar o resto da equipe. Se John, Josie, e Jessica se inscreverem no G
 
 Clique no botão "editar" no cabeçalho do projeto ou na guia Admin no topo do projeto para chegar à página de administração do seu projeto GitHub (ver Figura 4-10).
 
-Insert 18333fig0410.png
+![](/figures/18333fig0410-tn.png)
 Figure 4-10. Página de administração do GitHub.
 
 Para dar a outro usuário acesso de escrita ao seu projeto, clique no link “Add another collaborator”. Uma nova caixa de texto aparece, no qual você pode digitar um nome de usuário. Conforme você digita, um ajudante aparece, mostrando a você nomes de usuários possíveis. Quando você encontrar o usuário correto, clique no botão "Add" para adicionar o usuário como colaborador em seu projeto (ver Figura 4-11).
 
-Insert 18333fig0411.png
+![](/figures/18333fig0411-tn.png)
 Figure 4-11. Adicionando um colaborador a seu projeto.
 
 Quando você terminar de adicionar colaboradores, você deve ver uma lista deles na caixa de colaboradores do repositório (ver Figura 4-12).
 
-Insert 18333fig0412.png
+![](/figures/18333fig0412-tn.png)
 Figure 4-12. Uma lista de colaboradores em seu projeto.
 
 Se você precisar revogar acesso às pessoas, você pode clicar no link "revoke", e seus acessos de escrita serão removidos. Para projetos futuros, você também pode copiar grupos de colaboradores ao copiar as permissões de um projeto existente.
@@ -854,7 +854,7 @@ Se você precisar revogar acesso às pessoas, você pode clicar no link "revoke"
 
 Depois de fazer um push no seu projeto ou tê-lo importado do Subversion, você tem uma página principal do projeto que é algo como Figura 4-13.
 
-Insert 18333fig0413.png
+![](/figures/18333fig0413-tn.png)
 Figure 4-13. A página principal do projeto no GitHub.
 
 Quando as pessoas visitam o seu projeto, elas veem esta página. Ela contém guias para diferentes aspectos de seus projetos. A guia Commits mostra uma lista de commits em ordem cronológica inversa, semelhante à saída do comando `git log`. A guia Network mostra todas as pessoas que criaram um fork do seu projeto e contribuíram para nele. A guia Downloads permite que você faça upload de arquivos binários e crie links para tarballs e versões compactadas de todas as versões de seu projeto. A guia Wiki fornece uma wiki onde você pode escrever documentação ou outras informações sobre o projeto. A guia Graphs tem algumas visualizações e estatísticas de contribuições sobre o seu projeto. A guia Source mostra uma listagem de diretório principal de seu projeto e processa automaticamente o arquivo README abaixo se você tiver um. Essa guia também mostra uma caixa com a informação do commit mais recente.
@@ -867,12 +867,12 @@ Dessa forma, os projetos não têm que se preocupar com a adição de usuários 
 
 Para fazer um fork de um projeto, visite a página do projeto (neste caso, mojombo/chronic) e clique no botão "fork" no cabeçalho (ver Figura 4-14).
 
-Insert 18333fig0414.png
+![](/figures/18333fig0414-tn.png)
 Figure 4-14. Obtenha uma cópia de um projeto, que pode ser modificado, clicando no botão "fork".
 
 Depois de alguns segundos, você é levado à página do seu novo projeto, o que indica que este projeto é um fork de outro (ver Figura 4-15).
 
-Insert 18333fig0415.png
+![](/figures/18333fig0415-tn.png)
 Figure 4-15. Seu fork de um projeto.
 
 ### Sumário do GitHub ###

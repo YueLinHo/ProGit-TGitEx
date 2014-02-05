@@ -46,7 +46,7 @@ Muista, että jokainen tiedosto työhakemistossasi voi olla yhdessä kahdesta ti
 
 Editoidessasi tiedostoja Git näkee ne muokattuina, koska olet muuttanut niitä viimeisimmän pysyvän muutoksen jälkeen. *Lavastat* nämä muutetut tiedostot, jonka jälkeen muutat kaikki lavastetut muutokset pysyvästi, ja sykli toistuu. Tämä elämänsykli on kuvattu Kuvassa 2-1.
 
-Insert 18333fig0201.png 
+Insert 18333fig0201-tn.png) 
 Kuva 2-1. Tiedostojesi tilan elämänsykli.
 
 ### Tiedostojesi tilan tarkistaminen ###
@@ -667,7 +667,7 @@ Tämä komento näyttää melkein 20 000 pysyvän muutoksen Gitin lähdekoodihis
 
 Jos haluat käyttää graafisempaa työkalua visualisoidaksesi pysyvien muutosten historiaasi, voit haluta katsoa `gitk`:ksi kutsuttua Tcl/Tk-ohjelmaa, jota levitetään Gitin kanssa. Gitk on periaatteessa visuaalinen `git log` -työkalu ja se hyväksyy lähes kaikki suodatusoptiot, joita `git log`kin hyväksyy. Jos kirjoitat projektissasi komentoriville `gitk`, sinun pitäisi saada Kuvaa 2-2 vastaava tulos.
 
-Insert 18333fig0202.png
+Insert 18333fig0202-tn.png)
 Kuva 2-2. Gitk -historian visualisoija.
 
 Voit nähdä pysyvien muutosten historian ikkunan ylemmässä puoliskossa yhdessä kivan syntyperäkaavion kanssa. Vertailuohjelma ikkunan alemmassa puoliskossa näyttää sinulle napsauttamassasi pysyvässä muutoksessa esitellyt muutokset.

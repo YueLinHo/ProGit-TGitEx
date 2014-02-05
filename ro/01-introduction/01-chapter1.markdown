@@ -14,7 +14,7 @@ Metoda aleasă de mulți pentru controlul versiunilor este de a copia fișierele
 
 Pentru a trata această problemă, programatorii au dezvoltat cu mult timp în urmă sisteme locale pentru controlul versiunilor (VCS locale) care conțineau o bază de date simplă ce ținea toate schimbările fișierelor aflate sub controlul versiunilor (vezi Figura 1-1).
 
-Insert 18333fig0101.png 
+![](/figures/18333fig0101-tn.png) 
 Figura 1-1. Diagramă pentru controlul versiunilor local.
 
 Unul dintre cele mai populare unelte VCS era un sistem denumit rcs, care este încă distribuit cu multe calculatoare și astăzi. Până și popularul sistem de operare Mac OS X include comanda rcs atunci când instalați Uneltele de Dezvoltare. Acest utilitar practic funcționează prin menținerea mai multor mulțimi de patch-uri ("petice" [ro], care reprezintă de fapt diferențele dintre fișiere) de la schimbare la alta într-un format special pe disc; apoi utilitarul poate recrea cum arăta un anumit fișier la un anumit moment de timp prin adăugarea tuturor patch-urilor.
@@ -23,7 +23,7 @@ Unul dintre cele mai populare unelte VCS era un sistem denumit rcs, care este î
 
 Următoarea mare problemă pe care oamenii o au este necesitatea de a colabora cu alți dezvoltatori din alte sisteme. Pentru a face față acestei probleme, au fost dezvoltate Sisteme Centralizate de Controlul Versiunilor (SCCV, CVCS [en]). Aceste sisteme, cum ar fi CVS, Subversion, și Perforce, au un singur server care conține toate fișierele aflate sub controlul versiunilor, și un număr de clienți care preiau (check out [en]) fișiere din acea locație centrală. Timp de mulți ani, acesta a reprezentat standardul sistemele pentru controlul versiunilor (vezi Figura 1-2).
 
-Insert 18333fig0102.png 
+![](/figures/18333fig0102-tn.png) 
 Figura 1-2. Diagramă pentru controlul versiunilor centralizat.
 
 Acest model oferă multe avantaje, în special pentru sistemele locale de versionare. De exemplu, oricine știe până la un anumit punct ce face într-un proiect orice altcineva. Administratorii au un control foarte exact asupra ce poate face un anumit utilizator; în același timp fiind mult mai ușor de administrat un CVCS decât lucrul cu baze de date locale fiecărui client.
@@ -34,7 +34,7 @@ Totuși, acest model are și niște dezavantaje serioase. Cel mai evident este l
 
 Acum este momentul în care Sistemele Distribuite pentru Controlul Versiunilor (DVCS [en]) își fac apariția. Într-un DVCS (cum ar fi Git, Mercurial, Bazaar sau Darcs), clienții nu doar preiau ultima versiune a fișierelor: ei descarcă o copie completă a repository-ului. Deci chiar dacă orice server se defectează, și aceste sisteme colaborau prin intermediul lui, oricare din repository-urile de la client pot fi copiate înapoi pe server pentru a-l aduce la starea inițială. Fiecare checkout este efectiv un backup complet a tuturor datelor (vezi Figura 1-3).
 
-Insert 18333fig0103.png 
+![](/figures/18333fig0103-tn.png) 
 Figura 1-3. Diagramă cu sistemul distribuit al versiunilor.
 
 Mai mult, multe din aceste sisteme se descurcă suficient de bine cu lucrul simultan cu mai multe repository-uri, așă că putem colabora cu diferite grupuri de oameni în diverse moduri în același timp în cadrul aceluiași proiect. Aceasta ne permite să ne configurăm diverse modele de lucru care nu sunt posibile în sistemele centralizate, de exemplu un model ierarhic.
@@ -61,12 +61,12 @@ Pe scurt, ce este Git? Această secțiune este important de urmărit, deoarece d
 ### Instantanee, nu Diferențe ###
 Principala diferență dintre Git și oricare alte sisteme de versionare (Subversion și prietenii săi inclusiv) este modul în care Git își gestionează datele. Conceptual, majoritatea celorlalte sisteme își stochează informațiile ca o listă de schimbări asupra fișierelor. Aceste sisteme (CVS, Subversion, Perforce, Bazaar și altele) văd informațiile ca o mulțime de fișiere și schimbările asupra fișierelor în timp, după cum este ilustrat în Figura 1-4.
 
-Insert 18333fig0104.png 
+![](/figures/18333fig0104-tn.png) 
 Figura 1-4. Alte sisteme tind să stocheze datele ca schimbări relative la versiune de bază a fiecărui fișier.
 
 Git nu vede și nici nu stochează datele în acest mod. În schimb, Git consideră datele sale mai mult ca o mulțime de instantanee (snapshots [en]) ale unu mini sistem de fișiere. De fiecare dată când faceți commit, sau salvați starea proiectului dumneavoastră în Git, acesta practic salvează o poză a stării curente a tuturor fișierelor din acel moment și stochează o referință la acel instantaneu. Pentru a fi eficient, dacă există fișiere care nu s-au schimbat, Git nu stochează fișierul iarași ci doar o legătură către fișierul anterior stocat identic cu cel din prezent. Git vede datele stocate similar cu Figura 1-5.
 
-Insert 18333fig0105.png 
+![](/figures/18333fig0105-tn.png) 
 Figura 1-5. Git stochează datele ca și instantanee ale proiectului de-a lungul timpului.
 
 Aceasta este o distincție importantă dintre Git și aproape toate celelalte VCS. Aceasta face ca Git să reconsidere fiecare aspect al controlului versiunilor pe care majoritatea sistemelor le-au copiat de la generația anterioară. Acest aspect face ca Git să fie mult asemănător cu un mini sistem de fișiere cu niște unelte incredibil de utile adăugate peste el, comparativ cu un simplu VCS, Vom analiza unele dintre benefiicle câștigate prin a vedea datele voastre în acest fel atunci când ne vom ocupa de crearea ramurilor (branches [en]) in Capitolul 3.
@@ -101,7 +101,7 @@ Acum, fiți atenți. Acesta este lucrul principal care trebuie să vi-l amintiț
 
 Aceasta ne duce la principalele trei secțiuni ale unui proiect Git: directorul Git, directorul curent, și zona de așteptare (staging area [en]).
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figura 1-6. Directorul de lucru, zona de așteptare, și directorul git.
 
 Directorul Git este locația unde Git își stochează metadate și baza de date cu obiecte a proiectului dumneavoastră. Aceasta este partea cea mai importantă a Git, și reprezintă ceea ce este copiat atunci când clonați un repository de la un alt calculator.
@@ -165,7 +165,7 @@ Sunt două moduri simple de a instala Git pe sistemele Mac. Cea mai simplă este
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png 
+![](/figures/18333fig0107-tn.png) 
 Figura 1-7. Programul de instalare Git în OS X.
 
 Cealaltă posibilitate este să instalați Git prin intermediul MacPorts (`http://www.macports.org`). Dacă aveți instalat MacPorts, atunci instalați Git cu comanda

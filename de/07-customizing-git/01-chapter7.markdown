@@ -284,7 +284,7 @@ wird Git P4Merge starten, anstatt den Vergleich in der Kommandozeile auszugeben.
 
 <!--Figure 7-1. P4Merge.-->
 
-Insert 18333fig0701.png
+![](/figures/18333fig0701-tn.png)
 Abbildung 7-1. P4Merge
 
 <!--If you try to merge two branches and subsequently have merge conflicts, you can run the command `git mergetool`; it starts P4Merge to let you resolve the conflicts through that GUI tool.-->
@@ -677,12 +677,12 @@ Wie sich herausstellt, kann man aber seine eigenen Filter schreiben, um bei Comm
 
 <!--Figure 7-2. The “smudge” filter is run on checkout.-->
 
-Insert 18333fig0702.png
+![](/figures/18333fig0702-tn.png)
 Abbildung 7-2. Der „smudge“ Filter wird beim Checkout ausgeführt.
 
 <!--Figure 7-3. The “clean” filter is run when files are staged.-->
 
-Insert 18333fig0703.png
+![](/figures/18333fig0703-tn.png)
 Abbildung 7-3. Der „clean“ Filter wird beim Transfer in die Staging Area ausgeführt.
 
 <!--The original commit message for this functionality gives a simple example of running all your C source code through the `indent` program before committing. You can set it up by setting the filter attribute in your `.gitattributes` file to filter `*.c` files with the "indent" filter:-->

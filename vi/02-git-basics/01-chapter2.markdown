@@ -46,7 +46,7 @@ Hãy nhớ là mỗi tập tin trong thư mục làm việc của bạn có th�
 
 Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi so với lần commit trước đó. Bạn *stage* các tập tin bị thay đổi này và sau đó commit tất cả các thay đổi đã được staged (tổ chức) đó, và quá trình này cứ thế lặp đi lặp lại như được miêu tả trong Hình 2-1.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Hình 2-1. Vòng đời các trạng thái của tập tin.
 
 ### Kiểm Tra Trạng Thái Của Tập Tin ###
@@ -668,7 +668,7 @@ Có gần 20,000 commit trong lịch sử mã nguồn của Git, lệnh này ch�
 
 Nếu bạn muốn sử dụng một công cụ đồ hoạ để trực quan hoá lịch sử commit, bạn có thể thử một chương trình Tcl/Tk có tên `gitk` được xuất bản kèm với git. Gitk cơ bản là một công cụ `git log` trực quan, nó chấp nhận hầu hết các lựa chọn để lọc mà `git log` thường dùng. Nếu bạn gõ `gitk` trên thư mục của dự án, bạn sẽ thấy giống như Hình 2-2.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Hình 2-2. Công cụ trực quan hoá lịch sử commit gitk.
 
 Bạn có thể xem lịch sử commit ở phần nửa trên của cửa sổ cùng cùng một biểu đồ "cây" (ancestry) trực quan. Phần xem diff ở nửa dưới của cửa sổ hiện thị các thay đổi trong bất kỳ commit nào bạn click ở trên.

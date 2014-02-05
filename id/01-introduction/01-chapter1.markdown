@@ -14,7 +14,7 @@ Kebanyakan orang melakukan pengontrolan versi dengan cara menyalin berkas-berkas
 
 Untuk mengatasi permasalahan ini, para programmer mengembangkan berbagai VCS lokal yang memiliki sebuah basis data sederhana untuk menyimpan semua perubahan pada berkas yang berada dalam cakupan revision control (Lihat Gambar 1-1).
 
-Insert 18333fig0101.png 
+![](/figures/18333fig0101-tn.png) 
 Gambar 1-1. Diagram version control lokal.
 
 Salah satu perkakas VCS yang populer adalah rcs, kakas ini masih didistribusikan dengan berbagai komputer pada masa kini. Bahkan sistem operasi Mac OS X menyertakan rcs ketika menginstal Developer Tools. Kakas ini pada dasarnya bekerja dengan cara menyimpan kumpulan patch dari satu perubahan ke perubahan lainnya dalam format khusus pada disk; ini kemudian dapat digunakan untuk menciptakan kembali wujud/keadaan suatu berkas pada suatu saat dengan cara menggunakan patch yang berkesesuaian dengan berkas dan waktu yang diinginkan.
@@ -23,7 +23,7 @@ Salah satu perkakas VCS yang populer adalah rcs, kakas ini masih didistribusikan
 
 Permasalahan berikutnya yang dihadapi adalah para pengembang perlu melakukan kolaborasi dengan pengembang pada sistem lainnya. Untuk mengatasi permasalahan ini maka dibangunlah Centralized Version Control Systems (CVCSs). Sistem ini, diantaranya CVS, Subversion, dan Perforce, memiliki sebuah server untuk menyimpan setiap versi berkas, dan beberapa klien yang dapat melakukan checkout berkas dari server pusat. Untuk beberapa tahun, sistem seperti ini menjadi standard untuk version control (lihat Gambar 1-2).
 
-Insert 18333fig0102.png 
+![](/figures/18333fig0102-tn.png) 
 Gambar 1-2. Diagram version control terpusat.
 
 Sistem seperti ini memiliki beberapa kelebihan, terutama jika dibandingkan dengan VCS lokal. Misalnya, setiap orang pada tingkat tertentu mengetahui apa yang orang lain lakukan pada proyek. Administrator memiliki kendali yang mantap atas siapa yang dapat melakukan apa; dan adalah jauh lebih mudah untuk mengelola sebuah CVCS dibandingkan menangani database lokal pada setiap client.
@@ -34,7 +34,7 @@ Walau demikian, sistem dengan tatanan seperti ini memiliki kelemahan serius. Kel
 
 Inilah saatnya bagi Distributed Version Control Systems untuk mengambil tempat. dalam sebuah DVCS (seperti Git, Mercurial, Bazaar atau Darcs), klien tidak hanya melakukan checkout untuk snapshot terakhir setiap berkas, namun mereka (klien) memiliki salinan penuh dari repositori tersebut. Jadi, jika server mati, dan sistem berkolaborasi melalui server tersebut, maka klien manapun dapat mengirimkan salinan repositori tersebut kembali ke server. Setiap checkout pada DVCS merupakan sebuah backup dari keseluruhan data (lihat Gambar 1-3).
 
-Insert 18333fig0103.png 
+![](/figures/18333fig0103-tn.png) 
 Gambar 1-3. Diagram distributed version control.
 
 Lebih jauh lagi, kebanyakan sistem seperti ini mampu menangani sejumlah remote repository dengan baik, jadi anda dapat melakukan kolaborasi dengan berbagai kelompok kolaborator dalam berbagai cara secara bersama-sama pada suatu proyek. Hal ini memungkinkan anda untuk menyusun beberapa jenis alur kerja yang tidak mungkin dilakukan pada sistem terpusat, seperti hierarchical model. 
@@ -61,12 +61,12 @@ Jadi, sebenarnya apa yang dimaksud dengan Git? Ini adalah bagian penting untuk d
 
 Salah satu perbedaan yang mencolok antar Git dengan VCS lainnya (Subversion dan kawan-kawan) adalah dalam cara Git memperlakukan datanya. Secara konseptual, kebanyakan sistem lain menyimpan informasi sebagai sebuah daftar perubahan berkas. Sistem seperti ini (CVS, Subversion, Bazaar, dan yang lainnya) memperlakukan informasi yang disimpannya sebagai sekumpulan berkas dan perubahan yang terjadi pada berkas-berkas tersebut, sebagaimana yang diperlihatkan pada Gambar 1-4.
 
-Insert 18333fig0104.png 
+![](/figures/18333fig0104-tn.png) 
 Gambar 1-4. Sistem lain menyimpan data perubahan terhadap versi awal setiap berkas.
 
 Git tidak bekerja seperti ini. Melainkan, Git memperlakukan datanya sebagai sebuah kumpulan snapshot dari sebuah miniatur sistem berkas. Setiap kali anda melakukan commit, atau melakukan perubahan pada proyek Git anda, pada dasarnya Git merekam gambaran keadaan berkas-berkas anda pada saat itu dan menyimpan referensi untuk gambaran tersebut. Agar efisien, jika berkas tidak mengalami perubahan, Git tidak akan menyimpan berkas tersebut melainkan hanya pada file yang sama yang sebelumnya telah disimpan. Git memperlakukan datanya seperti terlihat pada Gambar 1-5.
 
-Insert 18333fig0105.png 
+![](/figures/18333fig0105-tn.png) 
 Gambar 1-5. Git menyimpan datanya sebagai snapshot dari proyek setiap saat.
 
 Ini adalah sebuah perbedaan penting antara Git dengan hampir semua VCS lain. Hal ini membuat Git mempertimbangkan kembali hampir setiap aspek dari version control yang oleh kebanyakan sistem lainnya disalin dari generasi sebelumnya. Ini membuat Git lebih seperti sebuah miniatur sistem berkas dengan beberapa tool yang luar biasa ampuh yang dibangun di atasnya, ketimbang sekadar sebuah VCS. Kita akan mempelajari beberapa manfaat yang anda dapatkan dengan memikirkan data anda dengan cara ini ketika kita membahas "Git branching" pada Bab 3.
@@ -101,7 +101,7 @@ Sekarang perhatikan. Ini adalah hal utama yang harus diingat tentang Git jika an
 
 Ini membawa kita ke tiga bagian utama dari sebuah projek Git: direktori Git, direktori kerja, dan staging area.
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figure 1-6. Direktori kerja, staging area, dan direktori git.
 
 Direktori Git adalah dimana Git menyimpan metadata dan database objek untuk projek anda. Ini adalah bahagian terpenting dari Git, dan inilah yang disalin ketika anda melakukan kloning sebuah repository dari komputer lain.
@@ -165,7 +165,7 @@ Terdapat dua cara mudah untuk menginstal Git pada sebuah komputer Mac. Cara term
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png 
+![](/figures/18333fig0107-tn.png) 
 Gambar 1-7. Git OS X installer.
 
 Cara lainnya adalah dengan menggunakan MacPorts (`http://www.macports.org`). Jika anda telah menginstall MacPorts, maka anda dapat menginstall Git melalui cara berikut

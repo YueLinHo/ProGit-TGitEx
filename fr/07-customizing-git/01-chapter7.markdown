@@ -229,7 +229,7 @@ Après avoir réglé tout ceci, si vous lancez des commandes de diff telles que 
 
 Au lieu d'obtenir la sortie du diff dans le terminal, Git lance P4Merge, ce qui ressemble à la figure 7-1.
 
-Insert 18333fig0701.png
+![](/figures/18333fig0701-tn.png)
 Figure 7-1. L'outil de fusion P4Merge.
 
 Si vous essayez de fusionner deux branches et créez des conflits de fusion, vous pouvez lancer la commande `git mergetool` qui démarrera P4Merge pour vous laisser résoudre les conflits au moyen d'un outil graphique.
@@ -564,10 +564,10 @@ Ces filtres s'appellent « *clean* » et « *smudge* ».
 Dans le fichier `.gitattributes`, vous pouvez indiquer un filtre pour des chemins particuliers puis créer des scripts qui traiteront ces fichiers avant qu'ils soient extraits (« *smudge* », voir figure 7-2) et juste avant qu'ils soient validés (« *clean* », voir figure 7-2).
 Ces filtres peuvent servir à faire toutes sortes de choses attrayantes.
 
-Insert 18333fig0702.png
+![](/figures/18333fig0702-tn.png)
 Figure 7-2. Le filtre « *smudge* » est lancé lors d'une extraction.
 
-Insert 18333fig0703.png
+![](/figures/18333fig0703-tn.png)
 Figure 7-3. Le filtre « *clean* » est lancé lorsque les fichiers sont indexés.
 
 Le message de validation d'origine pour cette fonctionnalité donne un exemple simple permettant de passer tout votre code C par le programme `indent` avant de valider.

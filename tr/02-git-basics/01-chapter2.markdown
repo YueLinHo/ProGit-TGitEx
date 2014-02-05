@@ -47,7 +47,7 @@ Unutmayın, çalışma klasörünüzdeki dosyalar iki halden birinde bulunurlar:
 Dosyaları düzenlemeye başladığınızda, Git onları değişmiş olarak görecektir, çünkü son kaydınızdan beri üzerlerinde değişiklik yapmış olacaksınız. Değiştirdiğiniz bu dosyaları önce _hazırlayıp_ sonra bütün _hazırlanmış_ değişiklikleri kaydedeceksiniz ve bu döngü böyle sürüp gidecek. Bu döngü, Figür 2-1'de gösteriliyor.
 
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Figür 2-1. Dosyalarınızın değişik durumlarının döngüsü.
 
 ### Dosyaların Durumlarını Kontrol Etmek ###
@@ -625,7 +625,7 @@ Bu komut, Git kaynak kodu yazılım havuzundaki yaklaşık 20,000 komut arasınd
 
 Kayıt tarihçenizi görüntülemek için görselliği daha çok ön planda olan bir araç kullanmak isterseniz, Git'le birlikte dağıtılan bir Tcl/Tk programı olan `gitk`'ya bir göz atmak isteyebilirsiniz. Gitk, temelde `git log`'u görselleştiren bir araçtır ve neredeyse `git log`'un kabul ettiği bütün filtreleme seçeneklerini tanır. Proje klasörünüzde komut satırına `gitk` yazacak olursanız Figür 2-2'deki gibi bir şey görürsünüz.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figür 2-2. gitk grafiklse tarihçe görüntüleyicisi.
 
 Pencerenin üst yarısında bir kalıtım grafiğinin yanı sıra kayıt tarihçesini görebilirsiniz. Alttaki kayıt içeriği görüntüleyicisi, tıkladığınız herhangi bir kayıttaki değişiklikleri gösterecektir.

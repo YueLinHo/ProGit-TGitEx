@@ -225,7 +225,7 @@ Nadat dit alles gebeurd is, kan je diff commando's zoals deze uitvoeren:
 
 in plaats van de uitvoer van diff op de commando regel, wordt een instantie van P4Merge gestart door Git, en dat ziet er ongeveer uit als in Figuur 7-1.
 
-Insert 18333fig0701.png
+![](/figures/18333fig0701-tn.png)
 Figuur 7-1. P4Merge.
 
 Als je twee branches probeert te mergen en je krijgt vervolgens merge conflicten, kan je het `git mergetool` commando uitvoeren. P4Merge wordt dan opgestart om je het conflict op te laten lossen met behulp van dat GUI tool.
@@ -491,10 +491,10 @@ Echter dit resultaat heeft slechts een beperkte nut. Als je sleutelwoord vervang
 
 Je kunt echter je eigen filters voor het doen van vervanging bij commit/checkout schrijven. Dit zijn de "kuis" ("clean") en "besmeer" ("smudge") filters. In het `.gitattributes` bestand kan je voor bepaalde paden een filter instellen en dan scripts instellen die bestanden bewerkt vlak voordat ze uitgechecked worden ("smudge", zie Figuur 7-2) en vlak voordat ze gecommit worden ("clean", zie Figuur 7-3). De filters kunnen ingesteld worden om allerlei leuke dingen doen.
 
-Insert 18333fig0702.png
+![](/figures/18333fig0702-tn.png)
 Figuur 7-2. Het “smudge” filter wordt bij checkout uitgevoerd.
 
-Insert 18333fig0703.png
+![](/figures/18333fig0703-tn.png)
 Figuur 7-3. Het “clean” filter wordt uitgevoerd zodra bestanden worden gestaged.
 
 De originele commit boodschap van deze functionaliteit geeft een eenvoudig voorbeeld hoe je al je C broncode door het `indent` programma kunt laten bewerken alvorens te committen. Je kunt het instellen door het filter attribuut in je `.gitattributes` bestand te zetten zodat `*.c` bestanden door de "indent" filter gehaald worden:

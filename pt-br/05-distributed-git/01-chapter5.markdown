@@ -12,7 +12,7 @@ Ao contrário de Sistemas de Controle de Versão Centralizados (CVCSs), a nature
 
 Com sistemas centralizados normalmente há apenas um modelo de colaboração, centralizado. Um hub central, ou repositório, pode aceitar o código, e todos sincronizam o seu trabalho com ele. Vários desenvolvedores são nós — consumidores do hub — e sincronizam em um lugar único (ver Figura 5-1).
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Figura 5-1. Fluxo de Trabalho Centralizado.
 
 Isto significa que se dois desenvolvedores clonam o hub e ambos fazem alterações, o primeiro desenvolvedor a dar push de suas alterações pode fazê-lo sem problemas. O segundo desenvolvedor deve fazer merge do trabalho do primeiro antes de dar push, de modo a não substituir as alterações do primeiro desenvolvedor. Isso vale para o Git assim como o Subversion (ou qualquer CVCS), e este modelo funciona perfeitamente no Git.
@@ -31,7 +31,7 @@ Como o Git permite que você tenha múltiplos repositórios remotos, é possíve
 5. O mantenedor adiciona o repositório do desenvolvedor como um repositório remoto e faz merge das alterações localmente.
 6. O mantenedor dá push das alterações mescladas para o repositório principal.
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Figura 5-2. Fluxo de trabalho de Gerente de Integração.
 
 Este é um fluxo de trabalho muito comum em sites como GitHub, onde é fácil de fazer uma fork (forquilha ou bifurcação, porque o histórico não-linear é uma árvore) de um projeto e dar push das suas alterações para que todos possam ver. Uma das principais vantagens desta abordagem é que você pode continuar a trabalhar, e o mantenedor do repositório principal pode puxar as alterações a qualquer momento. Desenvolvedores não tem que esperar o projeto incorporar as suas mudanças — cada um pode trabalhar em seu próprio ritmo.
@@ -45,7 +45,7 @@ Esta é uma variante de um fluxo de trabalho de múltiplos repositórios. É ger
 3. O ditador faz merge dos branches `master` dos tenentes em seu branch `master`.
 4. O ditador dá push das alterações de seu `master` para o repositório de referência para que os desenvolvedores possam fazer rebase em cima dele.
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Figura 5-3. Fluxo de Trabalho do Ditador Benevolente.
 
 Este tipo de fluxo de trabalho não é comum, mas pode ser útil em projetos muito grandes ou em ambientes altamente hierárquicos, porque ele permite ao líder do projeto (o ditador) delegar grande parte do trabalho e recolher grandes subconjuntos do código em vários pontos antes de integrar eles.
@@ -160,7 +160,7 @@ John não consegue dar push porque Jessica deu push de outras alterações nesse
 
 Nesse ponto, o repositório local de John se parece com a Figura 5-4.
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Figura 5-4. Repositório inicial de John.
 
 John tem uma referência para as alterações que Jessica fez, mas ele tem que fazer merge com seu próprio trabalho para poder dar push das suas próprias alterações:
@@ -172,7 +172,7 @@ John tem uma referência para as alterações que Jessica fez, mas ele tem que f
 
 O merge funciona — o histórico de commits do John agora se parece com a Figura 5-5.
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Figura 5-5. Repositório do John depois de fazer merge em `origin/master`.
 
 Agora John pode testar seu código para ter certeza que ele ainda funciona, e então ele pode dar push de seu novo trabalho mesclado para o servidor:
@@ -184,12 +184,12 @@ Agora John pode testar seu código para ter certeza que ele ainda funciona, e en
 
 Finalmente, o histórico de commits de John se parece com a Figura 5-6.
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Figura 5-6. O histórico de John depois de ter dado push para o servidor de origem (remote `origin`).
 
 Nesse meio tempo, Jessica tem trabalhado em um "topic branch". Ela criou um "topic branch" chamado `issue54` e fez três commits naquele branch. Ela não baixou as alterações de John ainda, então o histórico de commits dela se parece com a Figura 5-7.
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Figura 5-7. Histórico inicial de commits de Jessica.
 
 Jessica quer sincronizar com John, então ela faz fetch:
@@ -202,7 +202,7 @@ Jessica quer sincronizar com John, então ela faz fetch:
 
 Isso baixa o trabalho que John tinha empurrado (push). o histórico de Jessica agora se parece com a Figura 5-8.
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Figura 5-8. O histórico de Jessica depois de baixar as alterações de John.
 
 Jessica pensa que seu "topic branch" está pronto, mas ela quer saber com o que ela precisa fazer merge para poder dar push de seu trabalho. Ela executa `git log` para descobrir:
@@ -239,7 +239,7 @@ Não acontece nenhum problema; como você pode ver, foi um simples fast-forward.
 
 Tudo mesclou perfeitamente, e o histórico de Jessica agora se parece com a Figura 5-9.
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Figura 5-9. O histórico de Jessica depois de mesclar as alterações de John.
 
 Agora `origin/master` é acessível através do branch `master` de Jessica, então ela pode perfeitamente dar push (assumindo que John não deu push com novas alterações nesse meio tempo):
@@ -251,12 +251,12 @@ Agora `origin/master` é acessível através do branch `master` de Jessica, ent�
 
 Cada desenvolvedor fez alguns commits e integrou o trabalho do outro com sucesso; veja Figura 5-10.
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Figura 5-10. O histórico de Jessica depois de dar push para o servidor.
 
 Esse é um dos fluxos de trabalho mais simples. Você trabalha um pouco, geralmente em um topic branch, e faz merge em seu branch `master` quando ele estiver pronto para ser integrado. Quando você quiser compartilhar seu trabalho, você faz merge em seu próprio branch `master`, baixa as últimas alterações do servidor com fetch e faz merge de `origin/master` se tiver sido alterado, e então dá push para o branch `master` no servidor. A ordem é semelhante ao mostrado na Figura 5-11.
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Figura 5-11. Sequencia geral dos eventos para um fluxo de trabalho simples para Git com múltiplos desenvolvedores.
 
 ### Equipe Privada Gerenciada ###
@@ -302,7 +302,7 @@ Agora, Jessica faz dois commits para o branch `featureB`:
 
 O repositório de Jessica se parece com a Figura 5-12.
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Figura 5-12. O histórico de commits inicial de Jessica.
 
 Ela está pronta para fazer push de seu trabalho, mas recebe um e-mail de Josie avisando que ela já fez um trabalho inicial e que está no servidor no branch `featureBee`. Primeiro Jessica precisa mesclar essas alterações com suas próprias para que ela possa dar push de suas alterações para o servidor. Ela pode então baixar as alterações de Josie com `git fetch`:
@@ -367,17 +367,17 @@ Jessica quer melhorar uma coisa, então ela faz um novo commit e dá push de vol
 
 O histórico de commit de Jessica agora parece com a Figura 5-13.
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Figura 5-13. O histórico de Jessica depois do commit no feature branch.
 
 Jessica, Josie e John informam os integradores que os branches `featureA` e `featureBee` no servidor estão prontos para integração na linha principal. Depois que eles integrarem esses branches na linha principal, baixar (fetch) irá trazer os novos commits mesclados, fazendo o histórico de commit ficar como na Figura 5-14.
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Figura 5-14. O histórico de Jessica depois de mesclar ambos topic branches.
 
 Muitos grupos mudam para Git por causa da habilidade de ter múltiplas equipes trabalhando em paralelo, mesclando diferentes linhas de trabalho mais tarde. A habilidade de partes menores de uma equipe colaborar via branches remotos sem necessariamente ter que envolver ou impedir a equipe inteira é um grande benefício do Git. A sequencia para o fluxo de trabalho que você viu aqui é como mostrado na Figura 5-15.
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Figure 5-15. Sequencia básica desse fluxo de trabalho de equipe gerenciada.
 
 ### Pequeno Projeto Público ###
@@ -437,7 +437,7 @@ Em um projeto que você não é o mantenedor, é geralmente mais fácil ter um b
 
 Agora, cada um de seus tópicos é contido em um silo — similar a uma fila de patchs — que você pode reescrever, fazer rebase e modificar sem os tópicos interferirem ou interdepender um do outro como na Figura 5-16.
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Figura 5-16. Histórico de commits inicial com trabalho do featureB.
 
 Vamos dizer que o mantenedor do projeto tenha puxado um punhado de outros patches e testou seu primeiro branch, mas ele não mescla mais. Nesse caso, você pode tentar fazer rebase daquele branch em cima de `origin/master`, resolver os conflitos para o mantenedor e então submeter novamente suas alterações:
@@ -448,7 +448,7 @@ Vamos dizer que o mantenedor do projeto tenha puxado um punhado de outros patche
 
 Isso sobrescreve seu histórico para parecer com a Figura 5-17.
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Figura 5-17. Histórico de commits depois do trabalho em featureA.
 
 Já que você fez rebase de seu trabalho, você tem que especificar a opção `-f` para seu comando `push` poder substituir o branch `featureA` no servidor com um commit que não é descendente dele. Uma alternativa seria dar push desse novo trabalho para um branch diferente no servidor (talvez chamado `featureAv2`).
@@ -465,7 +465,7 @@ A opção `--squash` pega todo o trabalho feito no branch mesclado e espreme ele
 
 Agora você pode enviar ao mantenedor uma mensagem informando que você fez as alterações requisitadas e eles podem encontrar essas mudanças em seu branch `featureBv2` (veja Figura 5-18).
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Figura 5-18. Histórico de commit depois do trabalho em featureBv2.
 
 ### Grande Projeto Público ###
@@ -752,10 +752,10 @@ Quando todo o trabalho em seu topic branch estiver pronto para ser integrado em 
 
 Um fluxo de trabalho simples faz merge de seu trabalho em seu branch `master`. Nesse cenário, você tem um branch `master` que contém código estável. Quando você tiver trabalho em um topic branch que você fez ou que alguém contribuiu e você verificou, você faz merge no branch `master`, remove o topic branch e continua o processo. Se você tem um repositório com trabalho em dois branches chamados `ruby_client` e `php_client` que se parecem com a Figura 5-19 e faz primeiro merge de `ruby_client` e então de `php_client`, então seu histórico se parecerá como na Figura 5-20.
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Figura 5-19. histórico com vários topic branches.
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Figura 5-20. Depois de um merge de topic branches.
 
 Isso é provavelmente o fluxo de trabalho mais simples, mas é problemático se você estiver lidando com repositórios ou projetos maiores.
@@ -763,13 +763,13 @@ Isso é provavelmente o fluxo de trabalho mais simples, mas é problemático se 
 Se você tiver mais desenvolvedores ou um projeto maior, você irá provavelmente querer usar pelo menos um ciclo de merge de duas fases. Nesse cenário você tem dois branches de longa duração, `master` e `develop`, dos quais você determina que `master` é atualizado só quando uma liberação bem estável é atingida e todo novo trabalho é integrado no branch `develop`. Você dá push regularmente de ambos os branches para o repositório público. Cada vez que você tiver um novo topic branch para fazer merge (Figura 5-21), você faz merge em `develop` (Figura 5-22); então, quando você criar uma tag o release, você avança (fast-forward) `master` para onde o agora estável branch `develop` estiver (Figura 5-23).
 
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Figura 5-21. Antes do merge do topic branch.
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Figura 5-22. Depois do merge do topic branch.
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Figura 5-23. Depois da liberação do topic branch.
 
 Dessa forma, quando as pessoas clonarem seu repositório do projeto, eles podem fazer checkout ou do `master` para fazer build da última versão estável e se manter atualizado facilmente, ou eles pode fazer checkout do develop para conseguir coisas mais de ponta.
@@ -779,12 +779,12 @@ Você pode também continuar esse conceito, tendo um branch de integração onde
 
 O projeto Git tem quatro branches de longa duração: `master`, `next` e `pu` (proposed updates, atualizações propostas) para trabalho novo e `maint` para manutenção de versões legadas. Quando trabalho novo é introduzido por contribuintes, ele é coletado em topic branches no repositório do mantenedor em uma maneira similar ao que já foi descrito (veja Figura 5-24). Nesse ponto, os tópicos são avaliados para determinar se eles são seguros e prontos para consumo ou se eles precisam de mais trabalho. Se eles são seguros, é feito merge em `next` e é dado push do branch para que todo mundo possa testar os tópicos integrados juntos.
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Figura 5-24. Gerenciando uma série complexa de topic branches contribuídos em paralelo.
 
 Se os tópicos ainda precisam de trabalho, é feito merge em `pu`. Quando é determinado que eles estão totalmente estáveis, é feito novamente merge dos tópicos em `master` e os branches refeitos com os tópicos que estavam em `next`, mas não graduaram para `master` ainda. Isso significa que `master` quase sempre avança, `next` passa por rebase de vez em quando e `pu` ainda mais frequentemente (veja Figura 5-25).
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Figura 5-25. Fazendo merge de topic branches contribuídos em branches de integração de longa duração.
 
 Quando finalmente tiver sido feito merge do topic branch em `master`, ele é removido do repositório. O projeto Git também tem um branch `maint` que é copiado (fork) da última versãp a fornecer patches legados no caso de uma versão de manutenção ser requerida. Assim, quando você clona o repositório do Git, você tem quatro branches que você pode fazer checkout para avaliar o projeto em diferentes estágios de desenvolvimento, dependendo em quão atualizado você quer estar ou como você quer contribuir; e o mantenedor tem um fluxo de trabalho estruturado para ajudá-lo a vetar novas contribuições.
@@ -795,7 +795,7 @@ Outros mantenedores preferem fazer rebase ou cherry-pick do trabalho contribuíd
 
 A outra forma de mover trabalho introduzido de um branch para outro é cherry-pick. Um cherry-pick no Git é como um rebase para um único commit. Ele pega o patch que foi introduzido em um commit e tenta reaplicar no branch que você está. Isso é útil se você tem vários commits em um topic branch e quer integrar só um deles, ou se você tem um commit em um topic branch que você prefere usar cherry-pick ao invés de rebase. Por exemplo, vamos supor que você tem um projeto que se parece com a Figura 5-26.
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Figura 5-26. Histórico do exemplo antes de um cherry pick.
 
 Se você quer puxar o commit `e43a6` no branch `master`, você pode executar
@@ -807,7 +807,7 @@ Se você quer puxar o commit `e43a6` no branch `master`, você pode executar
 
 Isso puxa as mesmas alterações introduzidas em `e43a6`, mas o commit tem um novo valor SHA-1, porque a data de aplicação é diferente. Agora seu histórico se parece com a Figura 5-27.
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Figura 5-27. Histórico depois de fazer cherry-pick de um commit no topic branch.
 
 Agora você pode remover seu topic branch e se livrar dos commits que você não quer puxar.

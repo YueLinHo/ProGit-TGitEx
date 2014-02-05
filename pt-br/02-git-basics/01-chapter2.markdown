@@ -46,7 +46,7 @@ Lembre-se que cada arquivo em seu diretório de trabalho pode estar em um de doi
 
 Conforme você edita esses arquivos, o Git passa a vê-los como modificados, porque você os alterou desde seu último commit. Você *seleciona* esses arquivos modificados e então faz o commit de todas as alterações selecionadas e o ciclo se repete. Este ciclo é apresentado na Figura 2-1.
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Figura 2-1. O ciclo de vida dos status de seus arquivos.
 
 ### Verificando o Status de Seus Arquivos ###
@@ -623,7 +623,7 @@ Dos 20.000 commits mais novos no histórico do código fonte do Git, este comand
 
 Se você quiser usar uma ferramenta gráfica para visualizar seu histórico de commit, você pode querer dar uma olhada em um programa Tcl/Tk chamado `gitk` que é distribuído com o Git. Gitk é basicamente uma ferramenta visual para `git log`, e ele aceita aproximadamente todas as opções de filtros que `git log` aceita. Se você digitar `gitk` na linha de comando em seu projeto, você deve ver algo como a Figura 2-2.
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Figura 2-2. O visualizador de histórico gitk.
 
 Você pode ver o histórico de commit na metade de cima da janela juntamente com um agradável gráfico. O visualizador de diff na metade de baixo da janela mostra a você as mudanças introduzidas em qualquer commit que você clicar.

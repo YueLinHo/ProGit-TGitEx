@@ -116,7 +116,7 @@ A sintaxe `master^{tree}` especifica o objeto árvore que é apontado pelo últi
 
 Conceitualmente, os dados que o Git está armazenando são algo como mostra a Figura 9-1.
 
-Insert 18333fig0901.png
+![](/figures/18333fig0901-tn.png)
 Figura 9-1. Versão simples do modelo de dados Git.
 
 Você pode criar sua própria árvore. Git normalmente cria uma árvore, a partir do estado de sua área de seleção ou índice e escreve um objeto árvore a partir dele. Assim, para criar um objeto árvore, primeiro você tem que criar um índice colocando alguns arquivos na área de seleção (staging area). Para criar um índice com uma única entrada — a primeira versão do seu arquivo text.txt — você pode usar o comando plumbing `update-index`. Você pode usar este comando para adicionar artificialmente a versão anterior do arquivo test.txt em uma nova área de seleção. Você deve passar a opção `--add` porque o arquivo ainda não existe na sua área de seleção (você não tem sequer uma área de seleção criada ainda) e `--cacheinfo` porque o arquivo que você está adicionando não está em seu diretório, mas está em seu banco de dados. Então, você especifica o modo, o SHA-1, e o nome do arquivo:
@@ -164,7 +164,7 @@ Note que esta árvore tem entradas de arquivos e também que o SHA de test.txt �
 
 Se você criou um diretório de trabalho da nova árvore que acabou de escrever, você teria os dois arquivos no nível mais alto do diretório de trabalho e um subdiretório chamado `bak`, que continha a primeira versão do arquivo teste.txt. Você pode pensar nos dados que o Git contém para estas estruturas como sendo parecidas com a Figura 9-2.
 
-Insert 18333fig0902.png
+![](/figures/18333fig0902-tn.png)
 Figura 9-2. A estrutura de conteúdo de seus dados Git atuais.
 
 ### Objetos de Commit ###
@@ -241,7 +241,7 @@ Incrível. Você acabou de fazer as operações de baixo nível para construir u
 
 Se você seguir todos os ponteiros internos, você tem um gráfico como o da Figura 9-3.
 
-Insert 18333fig0903.png
+![](/figures/18333fig0903-tn.png)
 Figura 9-3. Todos os objetos em seu diretório Git.
 
 ### Armazenamento de Objetos ###
@@ -326,7 +326,7 @@ Seu branch irá conter apenas o trabalho do commit abaixo:
 
 Agora, seu banco de dados Git conceitualmente é algo como a Figura 9-4.
 
-Insert 18333fig0904.png
+![](/figures/18333fig0904-tn.png)
 Figura 9-4. Objetos de diretório Git com referências ao branch head incluídas.
 
 Quando você executar comandos como `git branch (branchname)`, Git basicamente executa o comando `update-ref` para adicionar o SHA-1 do último commit do branch em que você está em qualquer nova referência que deseja criar.

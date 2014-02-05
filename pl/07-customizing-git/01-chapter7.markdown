@@ -284,7 +284,7 @@ Zamiast wyniku pokazanego w wierszu poleceń, Git uruchomi P4Merge, pokazując w
 
 <!-- Instead of getting the diff output on the command line, Git fires up P4Merge, which looks something like Figure 7-1. -->
 
-Insert 18333fig0701.png
+![](/figures/18333fig0701-tn.png)
 Figure 7-1. P4Merge.
 
 Jeżeli spróbujesz wykonać łączenie (ang. merge) na dwóch gałęziach, które zakończy się konfliktem, możesz uruchomić komendę `git mergetool`; zostanie uruchomiony skrypt P4Merge, pozwalający na rozwiązanie konfliktów poprzez interfejs graficzny GUI.
@@ -573,10 +573,10 @@ However, that result is of limited use. If you’ve used keyword substitution in
 
 It turns out that you can write your own filters for doing substitutions in files on commit/checkout. These are the "clean" and "smudge" filters. In the `.gitattributes` file, you can set a filter for particular paths and then set up scripts that will process files just before they’re checked out ("smudge", see Figure 7-2) and just before they’re committed ("clean", see Figure 7-3). These filters can be set to do all sorts of fun things.
 
-Insert 18333fig0702.png
+![](/figures/18333fig0702-tn.png)
 Figure 7-2. The “smudge” filter is run on checkout.
 
-Insert 18333fig0703.png
+![](/figures/18333fig0703-tn.png)
 Figure 7-3. The “clean” filter is run when files are staged.
 
 The original commit message for this functionality gives a simple example of running all your C source code through the `indent` program before committing. You can set it up by setting the filter attribute in your `.gitattributes` file to filter `*.c` files with the "indent" filter:

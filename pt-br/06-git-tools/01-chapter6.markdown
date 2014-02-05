@@ -189,7 +189,7 @@ Agora que você pode especificar commits individuais, vamos ver como especificar
 
 A especificação de intervalo mais comum é a sintaxe de ponto-duplo. Isso basicamente pede ao Git para encontrar um intervalo de commits que é acessível a partir de um commit, mas não são acessíveis a partir de outro. Por exemplo, digamos que você tem um histórico de commits como a Figure 6-1.
 
-Insert 18333fig0601.png
+![](/figures/18333fig0601-tn.png)
 Figura 6-1. Exemplo de histórico de seleção de intervalo.
 
 Você quer ver o que existe no seu branch mas não existe no branch master. Você pede ao Git para mostrar um log apenas desses commits com `master..experiment` — isso significa "todos os commits acessíveis por experiment que não são acessíveis por master." Para deixar os exemplos mais breves e claros, vou usar as letras dos objetos dos commits do diagrama no lugar da saída real do log na ordem que eles seriam mostrados:

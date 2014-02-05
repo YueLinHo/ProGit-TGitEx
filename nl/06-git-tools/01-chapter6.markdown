@@ -227,7 +227,7 @@ Nu je individuele commits kunt specificeren, laten we zien hoe je reeksen van co
 
 De meest voorkomende reeks specificatie is de dubbel-punt syntax. Eigenlijk vraag je hiermee aan Git een reeks commits op te zoeken, die bereikbaar zijn van de ene commit maar niet vanuit een ander. Bijvoorbeeld, stel dat je een commit-geschiedenis hebt die eruit ziet zoals in Figuur 6-1.
 
-Insert 18333fig0601.png
+![](/figures/18333fig0601-tn.png)
 Figuur 6-1. Voorbeeldgeschiedenis voor reeks-selectie.
 
 Je wilt zien wat er in je experimentele branch zit dat nog niet in je hoofdbranch gemerged is. Je kunt Git vragen om een log te tonen van alleen die commits met `master..experiment`, wat zoveel betekent als "alle commits die bereikbaar zijn voor experiment, die niet bereikbaar zijn voor master". Om de voorbeelden kort en duidelijk te houden zal ik de letters van de commitobjecten in het diagram gebruiken in plaats van de echte log output, in de volgorde waarin ze getoond zouden worden:

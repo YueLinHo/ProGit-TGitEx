@@ -14,7 +14,7 @@ Sok ember választja verziókövető megoldásnak a fájlok különböző mappá
 
 Régebben a probléma megoldására a programozók egyéni VR-eket fejlesztettek, aminek volt egy egyszerű adatbázisa amiben követte a fájlok egyes verzióit (Lásd 1-1 ábra).
 
-Insert 18333fig0101.png
+![](/figures/18333fig0101-tn.png)
 1-1 ábra. Egyéni verziókövetés sematikus ábrája.
 
 Az egyik legnébszerűbb VR a sok közül az rcs, ami még mindig sok számítógépen megtalálható. A népszerű Mac OS X operációs rendszer is tartalmazza, ha feltelpítjük a Fejlesztő Eszközöket. Ez az eszköz egyszerűen folt (patch) készleteket (a fájlok verziók közötti különbségégek összesége) tárol minden egyes változás egy speciális formátumban a merevlemezen; a fájlok bármely állapotra visszaállíthatóak a foltok segítségével.
@@ -23,7 +23,7 @@ Az egyik legnébszerűbb VR a sok közül az rcs, ami még mindig sok számító
 
 Az embereknek szembesülnie kellet azzal a problémával, hogy együtt kell működniük más fejesztőkkel akik más-más rendszereket használták. A probléma megoldását a központosított verzióküvető rendszerek (KVR) kifejlesztése kívánta meg. Ezek a rendszerek, úgymint a CVS, a Subversion (SVN) és a Prefoce, egy darab központi szerveren tárolják az összes verziókövetett fájlt, a kliensek pedig ebből a központi tárolóból kérik le azokat. Sok évig ezt jelentette "A verziókövetést" (Lásd 1-2 ábra).
 
-Insert 18333fig0102.png
+![](/figures/18333fig0102-tn.png)
 1-2 ábra. Központi verziókövetés sematikus ábrája.
 
 Ez az összeállítás rengeteg előnnyel rendelkezett, különös képpen az egyéni VR-kel szemben. Példának okáért, mindenki pontosan tudta ki mit csinál a projekten belül. Az adminisztrátorok teljes körüen irányítusk alatt tarthatják ki, mit és hogyan tehet meg; nagyságrendekkel könnyebb adminisztrálni egy KVR-t mint ha az összes kliens lokális adatbázisait kellene.
@@ -34,7 +34,7 @@ Ugyanakkor ez az összeállításnak van néhány komoly hátránya. A legnyílv
 
 Ekkor jöttek az Elosztott Verziókövető Rendszerek (EVR). Az EVR-ekben, mint a Git, a Mercurical, a Bazaar vagy a Dracs, a kliensek nem csak a legutolsó állapotot kérik le, hanem a teljes repositorit. Ekéépen ha a szerver megáll, amin eddig folyt az együttműködés, bármelyik kliens repositoriból vissza állítható a teljes adatbázis. Minden adat lekérés tényleg teljes mentésnek felel meg (Lásd 1-3 ábra).
 
-Insert 18333fig0103.png
+![](/figures/18333fig0103-tn.png)
 1-3 ábra. Elosztott verziókövetés sematikus ábrája.
 
 Ezenkívül, a legtöbb ilyen rendszer támogatja a több távoli repositori elérését, így lehetővé válik számunkra hogy több különböző csoportokkal különböző módun tudjanak együtműködni ugyaz azon a projekt keretein belül. Így lehetőség van több munkafolyamat (workflow) alkamazására, ami egy centralizát hiearchiskus modelben elképzelhetetlen.
@@ -61,12 +61,12 @@ So, what is Git in a nutshell? This is an important section to absorb, because i
 
 The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they keep as a set of files and the changes made to each file over time, as illustrated in Figure 1-4.
 
-Insert 18333fig0104.png 
+![](/figures/18333fig0104-tn.png) 
 Figure 1-4. Other systems tend to store data as changes to a base version of each file.
 
 Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a set of snapshots of a mini filesystem. Every time you commit, or save the state of your project in Git, it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again—just a link to the previous identical file it has already stored. Git thinks about its data more like Figure 1-5. 
 
-Insert 18333fig0105.png 
+![](/figures/18333fig0105-tn.png) 
 Figure 1-5. Git stores data as snapshots of the project over time.
 
 This is an important distinction between Git and nearly all other VCSs. It makes Git reconsider almost every aspect of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Chapter 3.
@@ -101,7 +101,7 @@ Now, pay attention. This is the main thing to remember about Git if you want the
 
 This leads us to the three main sections of a Git project: the Git directory, the working directory, and the staging area.
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figure 1-6. Working directory, staging area, and git directory.
 
 The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
@@ -165,7 +165,7 @@ There are two easy ways to install Git on a Mac. The easiest is to use the graph
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png 
+![](/figures/18333fig0107-tn.png) 
 Figure 1-7. Git OS X installer.
 
 The other major way is to install Git via MacPorts (`http://www.macports.org`). If you have MacPorts installed, install Git via

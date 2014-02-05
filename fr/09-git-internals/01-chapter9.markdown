@@ -162,7 +162,7 @@ Remarquez que le sous-répertoire `lib` n'est pas un blob, mais un pointeur vers
 
 Conceptuellement, les données que Git stocke ressemblent à la figure 9-1.
 
-Insert 18333fig0901.png
+![](/figures/18333fig0901-tn.png)
 Figure 9-1. Une version simple du modèle de données Git.
 
 Vous pouvez créer votre propre arbre.
@@ -224,7 +224,7 @@ Dans ce cas, vous pouvez récupérer un arbre existant dans votre zone d'attente
 Si vous créez un répertoire de travail à partir du nouvel arbre que vous venez d'enregistrer, vous aurez deux fichiers à la racine du répertoire de travail, ainsi qu'un sous-répertoire appelé `bak` qui contient la première version du fichier `test.txt`.
 Vous pouvez vous représenter les données que Git utilise pour ces structures comme sur la figure 9-2.
 
-Insert 18333fig0902.png
+![](/figures/18333fig0902-tn.png)
 Figure 9-2. Structure du contenu de vos données Git actuelles.
 
 ### Objets *Commit* ###
@@ -310,7 +310,7 @@ Voici tous les objets contenus dans le répertoire exemple, commentés d'après 
 
 Si vous suivez les pointeurs internes de ces objets, vous obtenez un graphe comme celui de la figure 9-3.
 
-Insert 18333fig0903.png
+![](/figures/18333fig0903-tn.png)
 Figure 9-3. Tous les objets de votre répertoire Git.
 
 ### Stockage des objets ###
@@ -412,7 +412,7 @@ Cette branche contiendra seulement le travail effectué jusqu'à ce *commit* :
 
 La base de donnée Git ressemble maintenant à quelque chose comme la figure 9-4.
 
-Insert 18333fig0904.png
+![](/figures/18333fig0904-tn.png)
 Figure 9-4. Le répertoire d'objets de Git y compris la référence au dernier état de la branche.
 
 Quand on exécute un commande comme  `git branch (nomdebranche)`, Git exécute simplement la commande `update-ref` pour ajouter l'empreinte SHA-1 du dernier *commit* dans la référence que l'on veut créer.

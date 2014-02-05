@@ -169,7 +169,7 @@ Git speichert Daten also, konzeptuell gesehen, in etwa wie in Bild 9-1 dargestel
 
 <!--Figure 9-1. Simple version of the Git data model.-->
 
-Insert 18333fig0901.png
+![](/figures/18333fig0901-tn.png)
 Bild 9-1. Vereinfachte Darstellung des Git-Datenmodels.
 
 <!--You can create your own tree. Git normally creates a tree by taking the state of your staging area or index and writing a tree object from it. So, to create a tree object, you first have to set up an index by staging some files. To create an index with a single entry — the first version of your test.txt file — you can use the plumbing command `update-index`. You use this command to artificially add the earlier version of the test.txt file to a new staging area. You must pass it the `-\-add` option because the file doesn’t yet exist in your staging area (you don’t even have a staging area set up yet) and `-\-cacheinfo` because the file you’re adding isn’t in your directory but is in your database. Then, you specify the mode, SHA-1, and filename:-->
@@ -235,7 +235,7 @@ Wenn Du ein Arbeitsverzeichnis aus diesem neuen Tree-Objekt auschecken würdest,
 
 <!--Figure 9-2. The content structure of your current Git data.-->
 
-Insert 18333fig0902.png
+![](/figures/18333fig0902-tn.png)
 Bild 9-2. Die Datenstruktur des gegenwärtigen Git-Repositorys.
 
 <!--### Commit Objects ###-->
@@ -331,7 +331,7 @@ Wenn man all diese internen Zeiger nachverfolgt, erhält man einen Objekt-Graphe
 
 <!--Figure 9-3. All the objects in your Git directory.-->
 
-Insert 18333fig0903.png
+![](/figures/18333fig0903-tn.png)
 Bild 9-3. Alle Objekte in Deinem Git-Repository.
 
 <!--### Object Storage ###-->
@@ -448,7 +448,7 @@ Die Git-Datenbank unseres Beispiel-Repositorys ist jetzt wie folgt strukturiert:
 
 <!--Figure 9-4. Git directory objects with branch head references included.-->
 
-Insert 18333fig0904.png
+![](/figures/18333fig0904-tn.png)
 Bild 9-4. Git-Verzeichnis-Objekte mit Branch-Head-Referenzen.
 
 <!--When you run commands like `git branch (branchname)`, Git basically runs that `update-ref` command to add the SHA-1 of the last commit of the branch you’re on into whatever new reference you want to create.-->

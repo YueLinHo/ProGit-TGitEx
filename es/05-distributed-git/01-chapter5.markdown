@@ -12,7 +12,7 @@ Al contrario de otros Sistemas Centralizados de Control de Versiones, (CVCSs, Ce
 
 En los sistemas centralizados, tenemos una única forma de trabajar. Un repositorio o punto central guarda el código fuente; y todo el mundo sincroniza su trabajo con él. Unos cuantos desarrolladores son nodos de trabajo --consumidores de dicho repositorio-- y se sincronizan con dicho punto central. (ver Figura 5-1).
 
-Insert 18333fig0501.png
+![](/figures/18333fig0501-tn.png)
 Figura 5-1. Flujo de trabajo centralizado.
 
 Esto significa que, si dos desarrolladores clonan desde el punto central, y ambos hacen cambios; tan solo el primero de ellos en enviar sus cambios de vuelta lo podrá hacer limpiamente. El segundo desarrollador deberá fusionar previamente su trabajo con el del primero, antes de enviarlo, para evitar el sobreescribir los cambios del primero. Este concepto es también válido en Git, tanto como en Subversion (o cualquier otro CVCS), y puede ser perfectamente utilizado en Git.
@@ -31,7 +31,7 @@ Al permitir multiples repositorios remotos, en Git es posible tener un flujo de 
 5. La gestora añade como remoto el repositorio de la colaboradora y fusiona (merge) los cambios localmente.
 6. La gestora envia (push) los cambios fusionados al repositorio principal.
 
-Insert 18333fig0502.png
+![](/figures/18333fig0502-tn.png)
 Figura 5-2. Flujo de trabajo Gestor-de-Integración.
 
 Esta es una forma de trabajo muy común en sitios tales como GitHub, donde es sencillo bifurcar (fork) un proyecto y enviar tus cambios a tu copia, donde cualquiera puede verlos. La principal ventaja de esta forma de trabajar es que puedes continuar trabajando, y la persona gestora del repositorio principal podrá recuperar (pull) tus cambios en cualquier momento. Las personas colaboradoras no tienen por qué esperar a que sus cambios sean incorporados al proyecto, --cada cual puede trabajar a su propio ritmo--.
@@ -45,7 +45,7 @@ Es una variante del flujo de trabajo con multiples repositorios. Se utiliza gene
 3. El dictador fusiona las ramas master de los tenientes en su propia rama master.
 4. El dictador envia (push) su rama master al repositorio de referencia, para permitir que los desarrolladores reorganicen (rebase) desde ella.
 
-Insert 18333fig0503.png
+![](/figures/18333fig0503-tn.png)
 Figura 5-3. Fujo de trabajo del dictador benevolente.
 
 Esta manera de trabajar no es muy habitual, pero es muy util en proyectos muy grandes o en organizaciónes fuertemente jerarquizadas. Permite al lider o a la lider del proyecto (el/la dictador/a) delegar gran parte del trabajo; recolectando el fruto de multiples puntos de trabajo antes de integrarlo en el proyecto.
@@ -154,7 +154,7 @@ John no puede enviar porque Jessica ha enviado previamente. Entender bien esto e
 
 En este punto, el repositorio local de John será algo parecido a la Figura 5-4.
 
-Insert 18333fig0504.png
+![](/figures/18333fig0504-tn.png)
 Figura 5-4. El repositorio inicial de John.
 
 John tiene una referencia a los cambios enviados por Jessica, pero ha de fusionarlos en su propio trabajo antes de que se le permita enviar:
@@ -166,7 +166,7 @@ John tiene una referencia a los cambios enviados por Jessica, pero ha de fusiona
 
 Si la fusión se realiza sin problemas, el historial de John será algo parecido a la Figura 5-5.
 
-Insert 18333fig0505.png
+![](/figures/18333fig0505-tn.png)
 Figura 5-5. El repositorio de John tras fusionar origin/master.
 
 En este momento, John puede comprobar su código para verificar que sigue funcionando correctamente, y luego puede enviar su trabajo al servidor:
@@ -178,12 +178,12 @@ En este momento, John puede comprobar su código para verificar que sigue funcio
 
 Finalmente, el historial de John es algo parecido a la Figura 5-6.
 
-Insert 18333fig0506.png
+![](/figures/18333fig0506-tn.png)
 Figura 5-6. El historial de John tras enviar al servidor origen.
 
 Mientras tanto, jessica ha seguido trabajando en una rama puntual (topic branch). Ha creado una rama puntual denominada 'issue54' y ha realizado tres confirmaciones de cambios (commit) en dicha rama. Como todavia no ha recuperado los cambios de John, su historial es como se muestra en la Figura 5-7.
 
-Insert 18333fig0507.png
+![](/figures/18333fig0507-tn.png)
 Figura 5-7. Historial inicial de Jessica.
 
 Jessica desea sincronizarse con John, para lo cual:
@@ -196,7 +196,7 @@ Jessica desea sincronizarse con John, para lo cual:
 
 Esto recupera el trabajo enviado por John durante el tiempo en que Jessica estaba trabajando. El historial de Jessica es en estos momentos como se muestra en la figura 5-8.
 
-Insert 18333fig0508.png
+![](/figures/18333fig0508-tn.png)
 Figura 5-8. El historial de Jessica tras recuperar los cambios de John.
 
 Jessica considera su rama puntual terminada, pero quiere saber lo que debe integrar con su trabajo antes de poder enviarla. Lo comprueba con el comando 'git log':
@@ -233,7 +233,7 @@ No hay ningún problema; como puedes observar, es un simple avance rápido (fast
 
 Todo se integra limpiamente, y el historial de Jessica queda como en la Figura 5-9.
 
-Insert 18333fig0509.png
+![](/figures/18333fig0509-tn.png)
 Figura 5-9. El historial de Jessica tras fusionar los cambios de John.
 
 En este punto, la rama 'origin/master' es alcanzable desde la rama 'master' de Jessica, permitiendole enviar (push) --asumiendo que John no haya enviado nada más durante ese tiempo--:
@@ -245,12 +245,12 @@ En este punto, la rama 'origin/master' es alcanzable desde la rama 'master' de J
 
 Cada desarrollador ha confirmado algunos cambios y ambos han fusionado sus trabajos correctamente; ver Figura 5-10.
 
-Insert 18333fig0510.png
+![](/figures/18333fig0510-tn.png)
 Figura 5-10. El historial de Jessica tras enviar de vuelta todos los cambios al servidor.
 
 Este es uno de los flujos de trabajo más simples. Trabajas un rato, normalmente en una rama puntual de un asunto concreto, y la fusionas con tu rama principal cuando la tienes lista para integrar. Cuando deseas compartir ese trabajo, lo fusionas (merge) en tu propia rama 'master'; luego recuperas (fetch) y fusionas (merge) la rama 'origin/master', por si hubiera cambiado; y finalmente envias (push) la rama 'master' de vuelta al servidor. La secuencia general es algo así como la mostrada en la Figura 5-11.
 
-Insert 18333fig0511.png
+![](/figures/18333fig0511-tn.png)
 Figura 5-11. Secuencia general de eventos en un flujo de trabajo multidesarrollador simple.
 
 ### Grupo Privado Gestionado ###
@@ -296,7 +296,7 @@ Y realiza un par de confirmaciones de cambios (commits) en la rama 'featureB':
 
 Quedando su repositorio como se muestra en la Figura 5-12
 
-Insert 18333fig0512.png
+![](/figures/18333fig0512-tn.png)
 Figura 5-12. Historial inicial de Jessica.
 
 Cuando está preparada para enviar (push) su trabajo, recibe un correo electronico de Josie de que ha puesto en el servidor una rama denominada 'featureBee', con algo de trabajo. Jessica necesita fusionar (merge) dichos cambios con los suyos antes de poder enviarlos al servidor. Por tanto, recupera (fetch) los cambios de Josie:
@@ -361,17 +361,17 @@ Jessica realiza algunos ajustes, los confirma (commit) y los envia (push) de vue
 
 Quedando su historial como se muestra en la Figura 5-13.
 
-Insert 18333fig0513.png
+![](/figures/18333fig0513-tn.png)
 Figura 5-13. El historial de Jessica después de confirmar cambios en una rama puntual.
 
 Jessica, Josie y John informan a los integradores de que las ramas 'featureA' y 'featureBee' del servidor están preparadas para su integración con la línea principal del programa. Despues de que dichas ramas sean integradas en la línea principal, una recuperación (fetch) traerá de vuelta las confirmaciones de cambios de las integraciones (merge commits), dejando un historial como el mostrado en la Figura 5-14.
 
-Insert 18333fig0514.png
+![](/figures/18333fig0514-tn.png)
 Figura 5-14. El historial de Jessica tras fusionar sus dos ramas puntuales.
 
 Muchos grupos se están pasando a trabajar con Git, debido a su habilidad para mantener multiples equipos trabajando en paralelo, fusionando posteriormente las diferentes líneas de trabajo. La habilidad para que pequeños subgrupos de un equipo colaboren a través de ramas remotas, sin necesidad de tener en cuenta o de perturbar el equipo completo, es un gran beneficio de trabajar con Git. La secuencia del flujo de trabajo que hemos visto es algo así como lo mostrado en la Figura 5-15.
 
-Insert 18333fig0515.png
+![](/figures/18333fig0515-tn.png)
 Figura 5-15. Secuencia básica de este flujo de trabajo en equipo gestionado.
 
 ### Pequeño Proyecto Público ###
@@ -431,7 +431,7 @@ En un proyecto del que no seas gestor, suele ser más sencillo tener una rama ta
 
 De esta forma, cada uno de los temas está aislado dentro de un silo, --similar a una cola de parches--; permitiendote reescribir, reorganizar y modificar cada uno de ellos sin interferir ni crear interdependencias entre ellos.
 
-Insert 18333fig0516.png
+![](/figures/18333fig0516-tn.png)
 Figura 5-16. Historial inicial con el trabajo de la funcionalidad B.
 
 Supongamos que el gestor del proyecto ha recuperado e integrado un grupo de otros parches y después lo intenta con tu primer parche, viendo que no se integra limpiamente.  En este caso, puedes intentar reorganizar (rebase) tu parche sobre 'origin/master', arreglar los conflictos y volver a enviar tus cambios:
@@ -442,7 +442,7 @@ Supongamos que el gestor del proyecto ha recuperado e integrado un grupo de otro
 
 Esto reescribe tu historial, quedando como se vé en la Figura 5-17.
 
-Insert 18333fig0517.png
+![](/figures/18333fig0517-tn.png)
 Figura 5-17. Historial tras el trabajo en la funcionalidad A.
 
 Debido a que has reorganizado (rebase) tu rama de trabajo, tienes que indicar la opción '-f' en tu comando de envio (push), para permitir que la rama 'featureA' del servidor sea reemplazada por una confirmación de cambios (commit) que no es hija suya. Una alternativa podría ser el enviar (push) este nuevo trabajo a una rama diferente del servidor (por ejemplo a 'featureAv2').
@@ -459,7 +459,7 @@ La opción '--squash' coge todo el trabajo en la rama fusionada y lo aplica, en 
 
 En estos momentos, puedes notificar al gestor del proyecto que has realizado todos los cambios solicitados y que los puede encontrar en tu rama 'featureBv2' (ver Figura 5-18).
 
-Insert 18333fig0518.png
+![](/figures/18333fig0518-tn.png)
 Figura 5-18. Historial tras el trabajo en la versión 2 de la funcionalidad B.
 
 ### Proyecto Público Grande ###
@@ -747,23 +747,23 @@ Cuando todo el trabajo presente en tu rama puntual esté listo para ser integrad
 
 Una forma simple de trabajar es fusionandolo todo en tu rama 'master'. En este escenario, tienes una rama 'master' que contiene, principalmente, código estable. Cuando en una rama puntual tienes trabajo ya terminado o contribuciones ya verificadas de terceros, los fusionas en tu rama 'master', borras la rama puntual, y continuas trabajando en otra/s rama/s.  Si, tal y como se muestra en la Figura 5-19,  tenemos un repositorio con trabajos en dos ramas, denominadas 'ruby client' y 'php client'; y fusionamos primero la rama 'ruby client' y luego la 'php client', obtendremos un historial similar al de la Figura 5-20.
 
-Insert 18333fig0519.png
+![](/figures/18333fig0519-tn.png)
 Figura 5-19. Historial con varias ramas puntuales.
 
-Insert 18333fig0520.png
+![](/figures/18333fig0520-tn.png)
 Figura 5-20. Tras fusionar una rama puntual.
 
 Este es probablemente el flujo de trabajo más sencillo. Pero puede dar problemas cuando estás tratando con grandes repositorios o grandes proyectos.
 
 Teniendo muchos desarrolladores o proyectos muy grandes, muy posiblemente desees utilizar un ciclo con por lo menos dos fases. En este escenario, se dispone de dos ramas de largo recorrido: 'master' y 'develop'. La primera de ellas, 'master', será actualizada únicamente por los lanzamientos de código muy estable. La segunda rama, 'develop', es donde iremos integrando todo el código nuevo.  Ambas ramas se enviarán periodicamente al repositorio público. Cada vez que tengas una nueva rama puntual lista para integrar (Figura 5-21), la fusionarás en la rama 'develop'. Y  cuando marques el lanzamiento de una versión estable, avanzarás la rama 'master' hasta el punto donde la rama 'develop' se encuentre en ese momento (Figura 5-23).
 
-Insert 18333fig0521.png
+![](/figures/18333fig0521-tn.png)
 Figura 5-21. Antes de fusionar una rama puntual.
 
-Insert 18333fig0522.png
+![](/figures/18333fig0522-tn.png)
 Figura 5-22. Tras fusionar una rama puntual.
 
-Insert 18333fig0523.png
+![](/figures/18333fig0523-tn.png)
 Figura 5-23. Tras un lanzamiento puntual.
 
 De esta forma, cuando alguien clone el repositorio de tu proyecto, podrá recuperar (checkout) y mantener actualizadas tanto la última version estable como la versión con el material más avanzado; en las ramas 'master' y 'develop', respectivamente.
@@ -773,12 +773,12 @@ Puedes continuar ampliando este concepto, disponiendo de una rama 'integrate' do
 
 El proyecto Git tiene cuatro ramas de largo recorrido: 'master', 'next', 'pu' (proposed updates) para el trabajo nuevo, y 'maint' (maintenance) para trabajos de mantenimiento de versiones previas. A medida que vamos introduciendo nuevos trabajos de las personas colaboradoras, estos se van recolectando en ramas puntuales en el repositorio de una persona gestora; de forma similar a como se ha ido describiendo (ver Figura 5-24). En un momento dado, las funcionalidades introducidas se evaluan; comprobando si son seguras y si están preparadas para los consumidores; o si, por el contrario, necesitan dedicarles más trabajo. Las funcionalidades que resultan ser seguras y estar preparadas se fusionan (merge) en la rama 'next'; y esta es enviada (push) al repositorio público, para que cualquiera pueda probarlas.
 
-Insert 18333fig0524.png
+![](/figures/18333fig0524-tn.png)
 Figura 5-24. Gestionando complejas series de ramas puntuales paralelas con funcionalidades varias.
 
 Si las funcionalidades necesitan ser más trabajadas, se fusionan (merge) en la rama 'pu'. Y cuando las funcionalidades permanecen totalmente estables, se refusionan en la rama 'master'; componiendolas desde las funcionalidades en la rama 'next' aún sin   promocionar a 'master'.  Esto significa que 'master' prácticamente siempre avanza; 'next' se reorganiza (rebase) de vez en cuando; y 'pu' es reorganizada con más frecuencia (ver Figura 5-25).
 
-Insert 18333fig0525.png
+![](/figures/18333fig0525-tn.png)
 Figura 5-25. Fusionando aportaciones de ramas puntuales en ramas de más largo recorrido.
 
 Una rama puntual se borra del repositorio cuando, finalmente, es fusionada en la rama 'master'. El proyecto Git dispone también de una rama 'maint' que se bifurca (fork) a partir de la última versión ya lanzada; para trabajar en parches, en caso de necesitarse alguna versión intermedia de mantenimiento. Así, cuando clonas el repositorio de Git, obtienes cuatro ramas que puedes recuperar (checkout); pudiendo evaluar el proyecto en distintos estadios de desarrollo, dependiendo de cuán avanzado desees estar o cómo desees contribuir. Y así, los gestores de mantenimiento disponen de un flujo de trabajo estructurado, para ayudarles en el procesado e incorporación de nuevas contribuciones.
@@ -789,7 +789,7 @@ Otros gestores de mantenimiento,  al procesar el trabajo recibido de las persona
 
 El otro camino para introducir trabajo de una rama en otra, es entresacarlo. Entresacar (cherry-pick) en Git es como reorganizar (rebase) una sola confirmación de cambios (commit). Se trata de coger el parche introducido por una determinada confirmación de cambios e intentar reaplicarlo sobre la rama donde te encuentres en ese momento. Puede ser util si tienes varias confirmaciones de cambios en una rama puntual, y tan solo deseas integar una de ellas; o si tienes una única confirmación de cambios en una rama puntual, y prefieres entresacarla en lugar de reorganizar. Por ejemplo, suponiendo que tienes un proyecto parecido al ilustrado en la Figura 5-26.
 
-Insert 18333fig0526.png
+![](/figures/18333fig0526-tn.png)
 Figura 5-26. Historial de ejemplo, antes de entresacar.
 
 Si deseas integar únicamente la confirmación 'e43a6' en tu rama 'master', puedes lanzar:
@@ -801,7 +801,7 @@ Si deseas integar únicamente la confirmación 'e43a6' en tu rama 'master', pued
 
 Esto introduce exactamente el mismo cambio introducido por 'e43a6', pero con un nuevo valor SHA-1 de confirmación; ya que es diferente la fecha en que ha sido aplicado. Tu historial quedará tal como ilustra la Figura 5-27.
 
-Insert 18333fig0527.png
+![](/figures/18333fig0527-tn.png)
 Figura 5-27. Historial tras entresacar una confirmación de cambios de una rama puntual.
 
 Ahora, ya puedes borrar la rama puntual y descartar las confirmaciones de cambios que no deseas integrar.

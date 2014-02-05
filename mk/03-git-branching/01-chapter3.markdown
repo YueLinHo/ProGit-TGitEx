@@ -1,4 +1,4 @@
-# Гранење со Git #
+﻿# Гранење со Git #
 
 Во скоро секој VCS постои подршка за гранење. Гранење значи одделување од главната линија за развој и се продолжува со работа без интерференција во основната содржина. Во многу VCS алатки овој процес може да биде доста скап. Често има потреба од креирање на нова копија од изворниот код, што може да одземе многу време, посебно за поголеми проекти.
 
@@ -19,17 +19,17 @@
 
 Во овој момент вашата база на податоци содржи 5 објекти: еден blob за зодржината на секој од трите директориуми, едно дрво со кое е прикажана содржината на папката и во кое се наведени имињата на директориумите за секој blob и еден комит со покажувач до дрвото и комитираните мета-податоци. Концептуално податоците во базата на податоци изгледаат како на Слика 3-1.
 
-Insert 18333fig0301.png 
+![](/figures/18333fig0301-tn.png) 
 Слика 3-1. Приказ на базата на податоци после еден комит.
 
 Ако направите некоја промена и извршите повторно комит, овој комит зачувува покажувач кон записот кој дошол непосредно пред него. После две нови комитувања, вашата историја би можела да изгледа како на Слика 3-2.
 
-Insert 18333fig0302.png 
+![](/figures/18333fig0302-tn.png) 
 Слика 3-2. Git објекти после повеќе запишувања.
 
 Гранка во Git преставува едноставен покажувач кон еден од овие записи. Основната гранка се нарекува главна гранка или master. При првиот запис ви се доделува master гранка која покажува до последниот запис што сте го направиле. Секогаш кога запишувате (комитирате) покажувачот автоматски се поместува нанапред.
 
-Insert 18333fig0303.png 
+![](/figures/18333fig0303-tn.png) 
 Слика 3-3. Гранка која покажува кон историјата на записите.
 
 Што се случува кога креирате нова гранка? Со креирање на нова гранка се креира нов покажувач со кој може да се поместувате помеѓу записите. Да претпоставиме дека имаме креирано нова гранка со име testing. Ова се прави со командата `git branch`.
@@ -38,12 +38,12 @@ Insert 18333fig0303.png
 
 Со ова се креира нов покажувач кој покажува на истиот запис кој го користете во моментот на креирањето на гранката (Слика 3-4).
 
-Insert 18333fig0304.png 
+![](/figures/18333fig0304-tn.png) 
 Слика 3-4. Повеќе гранки кои покажуваат кон историјата на записите.
 
 Како Git препознава на која гранка моментално се наоѓате? Се чува посебен покажувач кој се нарекува HEAD. Овој покажувач е различен од концептот за HEAD во останатите VSC кои ви се познати, како што се Subversion или CVS. Во Git HEAD е покажувач до локалната гранка на која моментално се наоѓате. Во овој случај тој е поставен на главната гранка - master гранка. Командата git branch само креира нова гранка но не го поместува HEAD покажувачот кон ново креираната гранка (Слика 3-5).
 
-Insert 18333fig0305.png 
+![](/figures/18333fig0305-tn.png) 
 Слика 3-5. HEAD датотека која покажува кон гранката на која се наоѓате.
 
 За да се префрлите кон веќе постоечка гранка се користи командата `git checkout`:
@@ -52,7 +52,7 @@ Insert 18333fig0305.png
 
 Ова го поместува HEAD да покажува кон гранката testing (Слика 3-6).
 
-Insert 18333fig0306.png
+![](/figures/18333fig0306-tn.png)
 Слика 3-6. HEAD покажува кон друга гранка кога се поместуваме на друга гранка.
 
 Кое е значењето на ова? Да направиме уште еден комит:
@@ -62,7 +62,7 @@ Insert 18333fig0306.png
 
 Слика 3-7 го прикажува резултатот.
 
-Insert 18333fig0307.png 
+![](/figures/18333fig0307-tn.png) 
 Слика 3-7. Гранката кон која покажува HEAD се поместува нанапред со секој комит.
 
 Ова е доста интересно бидејќи сега вашата гранка testing се придвижува нанапред, но вашата master гранка сеуште покажува кон записот на кој се наоѓавте кога е повикана командата `git checkout`. Да се придвижиме назад кон master гранката:
@@ -71,7 +71,7 @@ Insert 18333fig0307.png
 
 Слика 3-8 го прикажува резултатот.
 
-Insert 18333fig0308.png 
+![](/figures/18333fig0308-tn.png) 
 Слика 3-8. HEAD се поместува кон друга гранка со командата checkout.
 
 Оваа команда направи две работи. Го помести HEAD да покажува кон master гранката и ги врати директориумите во работната папка кон целосната слика кон која покажува master гранката. Ова значи дека промените кои ќе настанат од овој момент ќе потекнуваат од постара верзија на проектот. Генерално означува дека се враќаме назад и привремено ги одфрламе промените кои се направени на гранката testing со цел да продолжиме во различна насока.
@@ -83,7 +83,7 @@ Insert 18333fig0308.png
 
 Сега историјата на вашиот проект се разграни (Слика 3-9). Креиравме нова гранка и се префрливме на неа, направивме некои измени, а потоа се префрливме на main гранката и исто така направивме измени. Двете измени се изолирани во посебни гранки: може во секој момент да се префрлиме на некоја од гранките и да ги споиме кога ќе завршеме со сите потребни измени. Целата оваа работа е извршена со едноставни `branch` и `checkout` команди.
 
-Insert 18333fig0309.png 
+![](/figures/18333fig0309-tn.png) 
 Слика 3-9. Разгранување на гранката.
 
 Бидејќи гранка во Git е всушност едноставен директориум кој содржи SHA-1 контролна сума на записот кон кој покажува со големина од 40 карактери, гранките завземаат малку ресурси при креирање и бришење на истите. Креирање на нова гранка е едноставен процес на запишување на 41 бајт во директориум (40 карактери и 1 карактер за нов ред).
@@ -111,7 +111,7 @@ Insert 18333fig0309.png
 
 Да претпоставиме дека работите на вашиот проект и веќе имате направено неколку комитирања (Слика 3-10).
 
-Insert 18333fig0310.png 
+![](/figures/18333fig0310-tn.png) 
 Слика 3-10. Кратка и едноставна историја на записи.
 
 Сте одлучиле дека сакате да работите на изданието #53, во кој и да било систем за водење на евиденција кој го користи вашата компанија. Да разјасниме Git не е поврзан со никој специфичен систем за евиденција на изданијата, но бидејќи сакате да работите на изданието #53, креирате нова гранка на која ќе работите. За да креираме гранка и да се префрлиме на неа може да ја користеме командата `git checkout` со опцијата `-b`:
@@ -126,7 +126,7 @@ Insert 18333fig0310.png
 
 Слика 3-11 го прикажува резултатот.
 
-Insert 18333fig0311.png 
+![](/figures/18333fig0311-tn.png) 
 Слика 3-11. Креирање на нов покажувач кон гранка.
 
 Додека работите на вашата веб страна правите комит т.е ги зачувувате измените. Со ова гранката `iss53` се поместува нанапред, бидејќи сте направиле checked out (HEAD покажува кон неа; Слика 3-12):
@@ -134,7 +134,7 @@ Insert 18333fig0311.png
 	$ vim index.html
 	$ git commit -a -m 'added a new footer [issue 53]'
 
-Insert 18333fig0312.png 
+![](/figures/18333fig0312-tn.png) 
 Слика 3-12. Гранката iss53 се поместува нанапред.
 
 Во овој момент добивате известување дека има проблем со вашата веб страна и морате итно да го поравете проблемот. Со Git немора решението на проблемот да го направите заедно со промените на гранката `iss53`. Се што треба да направите е да се вратите назад кон вашата главна гранка (master branch).
@@ -155,7 +155,7 @@ Insert 18333fig0312.png
 	[hotfix]: created 3a0874c: "fixed the broken email address"
 	 1 files changed, 0 insertions(+), 1 deletions(-)
 
-Insert 18333fig0313.png 
+![](/figures/18333fig0313-tn.png) 
 Слика 3-13. Гранка hotfix базирана на вашата главна гранка.
 
 Можете да направите одредени тестови за да бидете сигурни дека проблемот е решен, а потоа ја соединувате гранката со вашата главна гранка. Ова се прави со командата `git merge`:
@@ -171,7 +171,7 @@ Insert 18333fig0313.png
 
 Вашите измени сега се наоѓаат во целосниот запис кон кој покажува `master` гранката (Слика 3-14).
 
-Insert 18333fig0314.png 
+![](/figures/18333fig0314-tn.png) 
 Слика 3-14. По спојувањето главна гранка покажува кон истото место кон кое покажува hotfix гранката.
 
 Откако решенитео на ненадејниот проблем е зачувано, подготвени сме да се вратиме назад на работата која ја работевме пред да бидеме прекинати. Меѓутоа прво ја бришеме `hotfix` гранката бидејќи повеќе не ни е потребна - `master` гранката покажува на исто место. Ова се прави со додавање на опцијата `-d` на командата `git branch`:
@@ -188,7 +188,7 @@ Insert 18333fig0314.png
 	[iss53]: created ad82d7a: "finished the new footer [issue 53]"
 	 1 files changed, 1 insertions(+), 0 deletions(-)
 
-Insert 18333fig0315.png 
+![](/figures/18333fig0315-tn.png) 
 Слика 3-15. Сега гранката iss53 може независно да се придвижува нанапред.
 
 Овде е важно да се напомене дека промените кои се направени во `hotfix` гранката не се вклучени во гранката `iss53`. Ако сакате да ги повлечете овие промени, може да ја споите вашата `master` гранка со гранката `iss53` со извршување на командата `git merge master` или пак може подоцна ги повечете измените од `iss53` назад кон `master` гранката.
@@ -205,14 +205,14 @@ Insert 18333fig0315.png
 
 Ова изгледа малку поинаку отколку претходниот случај со спојувањето на `hotfix` гранката. Во овој случај вашата историја на развој започнува од некоја постара точка. Поради тоа што записот на гранката на која се наоѓате не е директен наследник на гранката на која што сакате да запишете, Git мора да изврши дополнителни работи. Во овој случај Git врши едноставено тристрано спојување, користејќи ги целосните записи кон кои покажуваат двете гранки и нивниот заеднички предок. На Слика 3-16 се прикажани трите целосни записи кои Git ги користи при ова спојување.
 
-Insert 18333fig0316.png 
+![](/figures/18333fig0316-tn.png) 
 Слика 3-16. Git автоматски го пронаоѓа најдобриот заеднички предок, кој го користи како основа за спојување.
 
 Наместо да го помести покажувачот нанапред, Git креира нов целосен запис кој произлегува од ова тристрано спојување и креира нов комит кој покажува кон него (Слика 3-17). Овој запис при спојување е карактеристичен по тоа што има повеќе од еден родител.
 
 Важно е да се напомене дека Git го одредува најдобриот предок кој го користи како основа при спојувањето; ова е различно од CVS или од Subversion(пред верзијата 1.5), каде програмерот кој го врши спојувањето мора сам да одреди кој е најдобар предок. Ова го прави спојувањето со Git доста полесно во споредба со овие системи.
 
-Insert 18333fig0317.png 
+![](/figures/18333fig0317-tn.png) 
 Слика 3-17. Git автоматски креира нов комит објект кој ги содржи споените измени.
 
 Сега откако вашите измени се споени со главната гранака немате потреба од гранката `iss53`. Може слободно да ја избришиме:
@@ -348,12 +348,12 @@ Many Git developers have a workflow that embraces this approach, such as having 
 
 In reality, we’re talking about pointers moving up the line of commits you’re making. The stable branches are farther down the line in your commit history, and the bleeding-edge branches are farther up the history (see Figure 3-18).
 
-Insert 18333fig0318.png 
+![](/figures/18333fig0318-tn.png) 
 Figure 3-18. More stable branches are generally farther down the commit history.
 
 It’s generally easier to think about them as work silos, where sets of commits graduate to a more stable silo when they’re fully tested (see Figure 3-19).
 
-Insert 18333fig0319.png 
+![](/figures/18333fig0319-tn.png) 
 Figure 3-19. It may be helpful to think of your branches as silos.
 
 You can keep doing this for several levels of stability. Some larger projects also have a `proposed` or `pu` (proposed updates) branch that has integrated branches that may not be ready to go into the `next` or `master` branch. The idea is that your branches are at various levels of stability; when they reach a more stable level, they’re merged into the branch above them.
@@ -367,12 +367,12 @@ You saw this in the last section with the `iss53` and `hotfix` branches you crea
 
 Consider an example of doing some work (on `master`), branching off for an issue (`iss91`), working on it for a bit, branching off the second branch to try another way of handling the same thing (`iss91v2`), going back to your master branch and working there for a while, and then branching off there to do some work that you’re not sure is a good idea (`dumbidea` branch). Your commit history will look something like Figure 3-20.
 
-Insert 18333fig0320.png 
+![](/figures/18333fig0320-tn.png) 
 Figure 3-20. Your commit history with multiple topic branches.
 
 Now, let’s say you decide you like the second solution to your issue best (`iss91v2`); and you showed the `dumbidea` branch to your coworkers, and it turns out to be genius. You can throw away the original `iss91` branch (losing commits C5 and C6) and merge in the other two. Your history then looks like Figure 3-21.
 
-Insert 18333fig0321.png 
+![](/figures/18333fig0321-tn.png) 
 Figure 3-21. Your history after merging in dumbidea and iss91v2.
 
 It’s important to remember when you’re doing all this that these branches are completely local. When you’re branching and merging, everything is being done only in your Git repository — no server communication is happening.
@@ -385,27 +385,27 @@ They take the form `(remote)/(branch)`. For instance, if you wanted to see what 
 
 This may be a bit confusing, so let’s look at an example. Let’s say you have a Git server on your network at `git.ourcompany.com`. If you clone from this, Git automatically names it `origin` for you, pulls down all its data, creates a pointer to where its `master` branch is, and names it `origin/master` locally; and you can’t move it. Git also gives you your own `master` branch starting at the same place as origin’s `master` branch, so you have something to work from (see Figure 3-22).
 
-Insert 18333fig0322.png 
+![](/figures/18333fig0322-tn.png) 
 Figure 3-22. A Git clone gives you your own master branch and origin/master pointing to origin’s master branch.
 
 If you do some work on your local master branch, and, in the meantime, someone else pushes to `git.ourcompany.com` and updates its master branch, then your histories move forward differently. Also, as long as you stay out of contact with your origin server, your `origin/master` pointer doesn’t move (see Figure 3-23).
 
-Insert 18333fig0323.png 
+![](/figures/18333fig0323-tn.png) 
 Figure 3-23. Working locally and having someone push to your remote server makes each history move forward differently.
 
 To synchronize your work, you run a `git fetch origin` command. This command looks up which server origin is (in this case, it’s `git.ourcompany.com`), fetches any data from it that you don’t yet have, and updates your local database, moving your `origin/master` pointer to its new, more up-to-date position (see Figure 3-24).
 
-Insert 18333fig0324.png 
+![](/figures/18333fig0324-tn.png) 
 Figure 3-24. The git fetch command updates your remote references.
 
 To demonstrate having multiple remote servers and what remote branches for those remote projects look like, let’s assume you have another internal Git server that is used only for development by one of your sprint teams. This server is at `git.team1.ourcompany.com`. You can add it as a new remote reference to the project you’re currently working on by running the `git remote add` command as we covered in Chapter 2. Name this remote `teamone`, which will be your shortname for that whole URL (see Figure 3-25).
 
-Insert 18333fig0325.png 
+![](/figures/18333fig0325-tn.png) 
 Figure 3-25. Adding another server as a remote.
 
 Now, you can run `git fetch teamone` to fetch everything server has that you don’t have yet. Because that server is a subset of the data your `origin` server has right now, Git fetches no data but sets a remote branch called `teamone/master` to point to the commit that `teamone` has as its `master` branch (see Figure 3-26).
 
-Insert 18333fig0326.png 
+![](/figures/18333fig0326-tn.png) 
 Figure 3-26. You get a reference to teamone’s master branch position locally.
 
 ### Pushing ###
@@ -480,12 +480,12 @@ In Git, there are two main ways to integrate changes from one branch into anothe
 
 If you go back to an earlier example from the Merge section (see Figure 3-27), you can see that you diverged your work and made commits on two different branches.
 
-Insert 18333fig0327.png 
+![](/figures/18333fig0327-tn.png) 
 Figure 3-27. Your initial diverged commit history.
 
 The easiest way to integrate the branches, as we’ve already covered, is the `merge` command. It performs a three-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit), as shown in Figure 3-28.
 
-Insert 18333fig0328.png 
+![](/figures/18333fig0328-tn.png) 
 Figure 3-28. Merging a branch to integrate the diverged work history.
 
 However, there is another way: you can take the patch of the change that was introduced in C3 and reapply it on top of C4. In Git, this is called _rebasing_. With the `rebase` command, you can take all the changes that were committed on one branch and replay them on another one.
@@ -499,12 +499,12 @@ In this example, you’d run the following:
 
 It works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn. Figure 3-29 illustrates this process.
 
-Insert 18333fig0329.png 
+![](/figures/18333fig0329-tn.png) 
 Figure 3-29. Rebasing the change introduced in C3 onto C4.
 
 At this point, you can go back to the master branch and do a fast-forward merge (see Figure 3-30).
 
-Insert 18333fig0330.png 
+![](/figures/18333fig0330-tn.png) 
 Figure 3-30. Fast-forwarding the master branch.
 
 Now, the snapshot pointed to by C3' is exactly the same as the one that was pointed to by C5 in the merge example. There is no difference in the end product of the integration, but rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
@@ -517,7 +517,7 @@ Note that the snapshot pointed to by the final commit you end up with, whether i
 
 You can also have your rebase replay on something other than the rebase branch. Take a history like Figure 3-31, for example. You branched a topic branch (`server`) to add some server-side functionality to your project, and made a commit. Then, you branched off that to make the client-side changes (`client`) and committed a few times. Finally, you went back to your server branch and did a few more commits.
 
-Insert 18333fig0331.png 
+![](/figures/18333fig0331-tn.png) 
 Figure 3-31. A history with a topic branch off another topic branch.
 
 Suppose you decide that you want to merge your client-side changes into your mainline for a release, but you want to hold off on the server-side changes until it’s tested further. You can take the changes on client that aren’t on server (C8 and C9) and replay them on your master branch by using the `--onto` option of `git rebase`:
@@ -526,7 +526,7 @@ Suppose you decide that you want to merge your client-side changes into your mai
 
 This basically says, “Check out the client branch, figure out the patches from the common ancestor of the `client` and `server` branches, and then replay them onto `master`.” It’s a bit complex; but the result, shown in Figure 3-32, is pretty cool.
 
-Insert 18333fig0332.png 
+![](/figures/18333fig0332-tn.png) 
 Figure 3-32. Rebasing a topic branch off another topic branch.
 
 Now you can fast-forward your master branch (see Figure 3-33):
@@ -534,7 +534,7 @@ Now you can fast-forward your master branch (see Figure 3-33):
 	$ git checkout master
 	$ git merge client
 
-Insert 18333fig0333.png 
+![](/figures/18333fig0333-tn.png) 
 Figure 3-33. Fast-forwarding your master branch to include the client branch changes.
 
 Let’s say you decide to pull in your server branch as well. You can rebase the server branch onto the master branch without having to check it out first by running `git rebase [basebranch] [topicbranch]` — which checks out the topic branch (in this case, `server`) for you and replays it onto the base branch (`master`):
@@ -543,7 +543,7 @@ Let’s say you decide to pull in your server branch as well. You can rebase the
 
 This replays your `server` work on top of your `master` work, as shown in Figure 3-34.
 
-Insert 18333fig0334.png 
+![](/figures/18333fig0334-tn.png) 
 Figure 3-34. Rebasing your server branch on top of your master branch.
 
 Then, you can fast-forward the base branch (`master`):
@@ -556,7 +556,7 @@ You can remove the `client` and `server` branches because all the work is integr
 	$ git branch -d client
 	$ git branch -d server
 
-Insert 18333fig0335.png 
+![](/figures/18333fig0335-tn.png) 
 Figure 3-35. Final commit history.
 
 ### The Perils of Rebasing ###
@@ -571,22 +571,22 @@ When you rebase stuff, you’re abandoning existing commits and creating new one
 
 Let’s look at an example of how rebasing work that you’ve made public can cause problems. Suppose you clone from a central server and then do some work off that. Your commit history looks like Figure 3-36.
 
-Insert 18333fig0336.png 
+![](/figures/18333fig0336-tn.png) 
 Figure 3-36. Clone a repository, and base some work on it.
 
 Now, someone else does more work that includes a merge, and pushes that work to the central server. You fetch them and merge the new remote branch into your work, making your history look something like Figure 3-37.
 
-Insert 18333fig0337.png 
+![](/figures/18333fig0337-tn.png) 
 Figure 3-37. Fetch more commits, and merge them into your work.
 
 Next, the person who pushed the merged work decides to go back and rebase their work instead; they do a `git push --force` to overwrite the history on the server. You then fetch from that server, bringing down the new commits.
 
-Insert 18333fig0338.png 
+![](/figures/18333fig0338-tn.png) 
 Figure 3-38. Someone pushes rebased commits, abandoning commits you’ve based your work on.
 
 At this point, you have to merge this work in again, even though you’ve already done so. Rebasing changes the SHA-1 hashes of these commits so to Git they look like new commits, when in fact you already have the C4 work in your history (see Figure 3-39).
 
-Insert 18333fig0339.png 
+![](/figures/18333fig0339-tn.png) 
 Figure 3-39. You merge in the same work again into a new merge commit.
 
 You have to merge that work in at some point so you can keep up with the other developer in the future. After you do that, your commit history will contain both the C4 and C4' commits, which have different SHA-1 hashes but introduce the same work and have the same commit message. If you run a `git log` when your history looks like this, you’ll see two commits that have the same author date and message, which will be confusing. Furthermore, if you push this history back up to the server, you’ll reintroduce all those rebased commits to the central server, which can further confuse people.

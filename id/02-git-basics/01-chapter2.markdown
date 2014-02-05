@@ -46,7 +46,7 @@ Ingat bahwa setiap berkas di dalam direktori kerja Anda dapat berada di 2 keadaa
 
 Sejalan dengan proses edit yang Anda lakukan terhadap berkas-berkas tersebut, Git mencatatnya sebagai terubah, karena Anda telah mengubahnya sejak terakhir commit. Anda kemudian memasukkan berkas-berkas terubah ini ke dalam area stage untuk kemudian dilakukan commit, dan terus siklus ini berulang. Siklus perubahan ini diilustrasikan di Figure-2.1 
 
-Insert 18333fig0201.png 
+![](/figures/18333fig0201-tn.png) 
 Figure 2-1. The lifecycle of the status of your files.
 
 ### Cek Status dari Berkas Anda ###
@@ -623,7 +623,7 @@ Dari sekitar 20,000 commit dalam sejarah kode sumber Git, perintah ini menampilk
 
 Jika Anda ingin menggunakan alat yang lebih grafis untuk menggambarkan sejarah commit Anda, Anda dapat melihat program Tcl/Tk yang disebut gitk yang didistribusikan bersama dengan Git. Gitk sebelunya hanyalah alat visual dari `git log`, dan dia menerima hampir semua opsi pembatasan yang dapat dilakukan oleh `git log`. Jika Anda mengetikkan gitk di baris perintah dalam direktori proyek Anda, Anda akan melihat seperti Gambar 2-2.
 
-Insert 18333fig0202.png 
+![](/figures/18333fig0202-tn.png) 
 Gambar 2-2. Penggambaran sejarah oleh Gitk.
 
 Anda dapat melihat sejarah commit di setengah bagian atas jendela dengan gambar pohon yang menarik. Tampilan diff di bagian bawah jendela memperlihatkan kepada Anda perubahan yang dilakukan di commit manapun yang Anda klik.

@@ -29,7 +29,7 @@ Um diese Arbeit zu erleichtern und sicherer zu machen, haben Programmierer vor l
 
 <!--Figure 1-1. Local version control diagram.-->
 
-Insert 18333fig0101.png
+![](/figures/18333fig0101-tn.png)
 Bild 1-1. Diagramm: Lokale Versionskontrolle
 
 <!--One of the more popular VCS tools was a system called rcs, which is still distributed with many computers today. Even the popular Mac OS X operating system includes the rcs command when you install the Developer Tools. This tool basically works by keeping patch sets (that is, the differences between files) from one revision to another in a special format on disk; it can then recreate what any file looked like at any point in time by adding up all the patches.-->
@@ -45,7 +45,7 @@ Das nächste Problem, mit dem Programmierer sich dann konfrontiert sahen, bestan
 
 <!--Figure 1-2. Centralized version control diagram.-->
 
-Insert 18333fig0102.png
+![](/figures/18333fig0102-tn.png)
 Bild 1-2. Diagramm: Zentralisierte Versionskontrollsysteme
 
 <!--This setup offers many advantages, especially over local VCSs. For example, everyone knows to a certain degree what everyone else on the project is doing. Administrators have fine-grained control over who can do what; and it’s far easier to administer a CVCS than it is to deal with local databases on every client.-->
@@ -65,7 +65,7 @@ Und an dieser Stelle kommen verteilte Versionskontrollsysteme (DVCS) ins Spiel. 
 
 <!--Figure 1-3. Distributed version control diagram.-->
 
-Insert 18333fig0103.png
+![](/figures/18333fig0103-tn.png)
 Bild 1-3. Diagramm: Distribuierte Versionskontrolle
 
 <!--Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project. This allows you to set up several types of workflows that aren’t possible in centralized systems, such as hierarchical models.-->
@@ -115,7 +115,7 @@ Der Hauptunterschied zwischen Git und anderen Versionskontrollsystemen (auch Sub
 
 <!--Figure 1-4. Other systems tend to store data as changes to a base version of each file.-->
 
-Insert 18333fig0104.png
+![](/figures/18333fig0104-tn.png)
 Bild 1-4. Andere Systeme speichern Daten als Änderungen an einzelnen Dateien einer Datenbasis
 
 <!--Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a set of snapshots of a mini filesystem. Every time you commit, or save the state of your project in Git, it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again—just a link to the previous identical file it has already stored. Git thinks about its data more like Figure 1-5.-->
@@ -124,7 +124,7 @@ Git sieht Daten nicht in dieser Weise. Stattdessen betrachtet Git seine Daten eh
 
 <!--Figure 1-5. Git stores data as snapshots of the project over time.-->
 
-Insert 18333fig0105.png
+![](/figures/18333fig0105-tn.png)
 Bild 1-5. Git speichert Daten als eine Historie von Snapshots des Projektes.
 
 <!--This is an important distinction between Git and nearly all other VCSs. It makes Git reconsider almost every aspect of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Chapter 3.-->
@@ -187,7 +187,7 @@ Das führt uns zu den drei Hauptbereichen eines Git Projektes: das Git Verzeichn
 
 <!--Figure 1-6. Working directory, staging area, and git directory.-->
 
-Insert 18333fig0106.png
+![](/figures/18333fig0106-tn.png)
 Bild 1-6. Arbeitsverzeichnis, Staging Area (xxx) und Git Verzeichnis
 
 <!--The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.-->
@@ -289,7 +289,7 @@ Auf einem Mac kann man Git auf zwei Arten installieren. Der einfachste ist, das 
 
 <!--Figure 1-7. Git OS X installer.-->
 
-Insert 18333fig0107.png
+![](/figures/18333fig0107-tn.png)
 Bild 1-7. Git OS X Installationsprogramm
 
 <!--The other major way is to install Git via MacPorts (`http://www.macports.org`). If you have MacPorts installed, install Git via-->

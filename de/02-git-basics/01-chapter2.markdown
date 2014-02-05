@@ -81,7 +81,7 @@ Sobald Du versionierte Dateien bearbeitest, wird Git sie als modifiziert erkenne
 
 <!--Figure 2-1. The lifecycle of the status of your files.-->
 
-Insert 18333fig0201.png
+![](/figures/18333fig0201-tn.png)
 Bild 2-1. Zyklus der Grundzustände Deiner Dateien
 
 <!--### Checking the Status of Your Files ###-->
@@ -929,7 +929,7 @@ Wenn Dir eine grafische Anzeige der Commit Historie lieber ist, kannst Du das Tc
 
 <!--Figure 2-2. The gitk history visualizer.-->
 
-Insert 18333fig0202.png
+![](/figures/18333fig0202-tn.png)
 Bild 2-2. Die gitk Oberfläche
 
 <!--You can see the commit history in the top half of the window along with a nice ancestry graph. The diff viewer in the bottom half of the window shows you the changes introduced at any commit you click.-->

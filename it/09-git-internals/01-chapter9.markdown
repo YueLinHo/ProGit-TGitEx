@@ -121,7 +121,7 @@ Nota che la directory `lib` non è un blob ma un puntatore a un altro albero:
 
 Concettualmente, i dati che vengono salvati da Git sono simili a quelli in Figura 9-1.
 
-Insert 18333fig0901.png 
+![](/figures/18333fig0901-tn.png) 
 Figura 9-1. Versione semplificata del modello dei dati di Git.
 
 Puoi creare il tuo albero come vuoi. Git normalmente crea un albero partendo dallo stato della tua area di staging o dall’indice e scrive albero partendo da lì. Quindi, per creare un albero devi prima creare un indice mettendo in staging alcuni file. Per creare un indice con una singola voce - la prima versione del tuo test.txt - puoi usare il comando *plumbing* `update-index`. Usando questo 
@@ -175,7 +175,7 @@ Nota che questo albero ha entrambe le voci e anche che l’hash SHA di test.txt 
 
 Se hai creato una directory di lavoro dal nuovo albero che hai appena scritto, otterrai i due file nel primo livello della directory e una sotto-directory chiamata `bak`, che contiene la prima versione del file test.txt. Puoi pensare ai dati contenuti da Git per questa strutture come quelli della Figura 9-2.
 
-Insert 18333fig0902.png 
+![](/figures/18333fig0902-tn.png) 
 Figura 9-2. La struttura dei contenuti per i vostri dati di Git.
 
 ### Oggetti Commit ###
@@ -253,7 +253,7 @@ Fantastico. Hai appena eseguito tutte le operazioni di basso livello per costrui
 
 Se segui tutti i puntatori interni otterrai un grafico degli oggetti simile a quelli in Figura 9-3.
 
-Insert 18333fig0903.png 
+![](/figures/18333fig0903-tn.png) 
 Figura 9-3. Tutti gli oggetti nella tua directory Git.
 
 ### Il salvataggio degli oggetti ###
@@ -342,7 +342,7 @@ Il tuo branch conterrà solo il lavoro da quella commit in poi:
 
 Ora, il tuo database Git assomiglia concettualmente alla Figura 9-4.
 
-Insert 18333fig0904.png 
+![](/figures/18333fig0904-tn.png) 
 Figura 9-4. La directory degli oggetti Git directory con inclusi i riferimenti branch e head.
 
 Quando esegui comandi come `git branch (branchname)`, Git in realtà esegue il comando `update-ref` per

@@ -14,7 +14,7 @@
 
 Да бисмо се изборили са овим проблемом, програмери су одавно развили локалне систем за контролу верзија који имају једноставну базу у којој памте све промене над фајловима које прате (види Figure 1-1).
 
-Insert 18333fig0101.png 
+![](/figures/18333fig0101-tn.png) 
 Figure 1-1. Дијаграм локланог система за праћење верзија
 
 Један од популарнијих алата јесте систем rcs, који се и даље испоручује у многим рачунарима и данас. Чак и популарни Mac OS X оперативни систем садржи rcs команду када се инсталирају Програмерки Алати (ор. Developer Tools). Овај алат у ствари ради тако што памти скупове закрпа (тј. фајлове са разликама међу фајловима) од једне промене до друге у посебном формату на диксу; на тај начин, он може да поново рестаурира стање било код фајла у било којој тачки у времену додајући јој закрпе (ен. patch).
@@ -23,7 +23,7 @@ Figure 1-1. Дијаграм локланог система за праћење
 
 Следећи велики проблем који људи сусрећу јесте да морају да сарађују са програмерима на другим системима. Да би се решио овај проблем, развијени су Централизовани системи за праћење верзија. Овакви системи, попут CVS-а, Subversion-a и Perforce-a, поседују један сервер који садржи све верзионисане фајлове, и бројне клијенте који онда пореде фајлове са тим централним местом. Дуги низ година, ово је представљало стандард за праћење верзија (видети Figure 1-2).
 
-Insert 18333fig0102.png 
+![](/figures/18333fig0102-tn.png) 
 Figure 1-2. Дијаграм централизованог система за праћење верзија
 
 Оваква поставка нуди много предности, посебно над чисто локалним системима за верзионисање. На пример, сви знају отприлике шта остали на пројекту раде. Администратори имају прецизну контролу над тиме шта ко може да уради; и много је једноставније да се администрира централизовани систем него управљати локалним базама на сваком клијенту.
@@ -34,7 +34,7 @@ Figure 1-2. Дијаграм централизованог система за 
 
 This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data (see Figure 1-3).
 
-Insert 18333fig0103.png 
+![](/figures/18333fig0103-tn.png) 
 Figure 1-3. Distributed version control diagram
 
 Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project. This allows you to set up several types of workflows that aren’t possible in centralized systems, such as hierarchical models.
@@ -61,12 +61,12 @@ So, what is Git in a nutshell? This is an important section to absorb, because i
 
 The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they keep as a set of files and the changes made to each file over time, as illustrated in Figure 1-4.
 
-Insert 18333fig0104.png 
+![](/figures/18333fig0104-tn.png) 
 Figure 1-4. Other systems tend to store data as changes to a base version of each file.
 
 Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a set of snapshots of a mini filesystem. Every time you commit, or save the state of your project in Git, it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again—just a link to the previous identical file it has already stored. Git thinks about its data more like Figure 1-5. 
 
-Insert 18333fig0105.png 
+![](/figures/18333fig0105-tn.png) 
 Figure 1-5. Git stores data as snapshots of the project over time.
 
 This is an important distinction between Git and nearly all other VCSs. It makes Git reconsider almost every aspect of version control that most other systems copied from the previous generation. This makes Git more like a mini filesystem with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the benefits you gain by thinking of your data this way when we cover Git branching in Chapter 3.
@@ -101,7 +101,7 @@ Now, pay attention. This is the main thing to remember about Git if you want the
 
 This leads us to the three main sections of a Git project: the Git directory, the working directory, and the staging area.
 
-Insert 18333fig0106.png 
+![](/figures/18333fig0106-tn.png) 
 Figure 1-6. Working directory, staging area, and git directory
 
 The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
@@ -165,7 +165,7 @@ There are two easy ways to install Git on a Mac. The easiest is to use the graph
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png 
+![](/figures/18333fig0107-tn.png) 
 Figure 1-7. Git OS X installer
 
 The other major way is to install Git via MacPorts (`http://www.macports.org`). If you have MacPorts installed, install Git via

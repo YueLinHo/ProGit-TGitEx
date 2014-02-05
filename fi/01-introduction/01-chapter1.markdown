@@ -14,7 +14,7 @@ Monen ihmisen versionhallintaratkaisu on kopioida tiedostoja toiseen kansioon (e
 
 Tämän ongelman ratkaisemiksi ohjelmoijat kehittivät kauan sitten paikallisen VCS:n, jolla oli yksinkertainen tietokanta, joka piti kaikki tiedostojen muutokset muutostenhallinnan alla (katso Kuva 1-1).
 
-Insert 18333fig0101.png
+Insert 18333fig0101-tn.png)
 Kuva 1-1. Paikallinen versionhallinta -diagrammi.
 
 Yksi suosituimmista VCS-työkaluista oli rcs:ksi kutsuttu järjestelmä, joka yhä tänä päivänä toimitetaan monen tietokoneen mukana. Jopa suosittu Mac OS X -käyttöjärjestelmä sisältää rcs-komennon Developer Tools -paketin asennuksen jälkeen. Tämä työkalu toimii periaatteessa pitämällä pätsikokoelmia (muutoksia tiedostojen välillä) yhdestä korjauksesta toiseen erikoisformaatissa kiintolevyllä; se voi täten luoda uudelleen sen, miltä mikä tahansa tiedosto näytti millä tahansa ajanhetkellä lisäämällä kaikki tarvittavat pätsit.
@@ -23,7 +23,7 @@ Yksi suosituimmista VCS-työkaluista oli rcs:ksi kutsuttu järjestelmä, joka yh
 
 Seuraava suuri ongelma, mihin ihmiset törmäävät, on, että heillä on tarve tehdä yhteistyötä muissa järjestelmissä olevien kehittäjien kanssa. Tämän ongelman ratkaisemiseksi luotiin keskitetyt versionhallintajärjestelmät (CVCS). Nämä järjestelmät, kuten CVS, Subversion ja Perforce, omaavat yksittäisen palvelimen, joka sisältää kaikki versioidut tiedostot, ja asiakkaita, jotka hakevat tiedostot tästä keskitetystä paikasta. Monet vuodet tämä on ollut versionhallinnan standardi (katso Kuva 1-2).
 
-Insert 18333fig0102.png
+Insert 18333fig0102-tn.png)
 Kuva 1-2. Keskitetty versionhallinta -diagrammi.
 
 Tämä asetelma tarjoaa monta etua, erityisesti paikalliseen VCS:n verrattuna. Esimerkiksi, jokainen tietää jossain määrin, mitä kukin projektissa oleva tekee. Järjestelmänvalvojilla on hienosäädetty kontrolli siihen, mitä kukin voi tehdä; ja on paljon helpompi valvoa CVCS:ää, kuin toimia jokaisen asiakkaan paikallisen tietokannan kanssa.
@@ -34,7 +34,7 @@ Tässä asetelmassa on kuitenkin myös muutama vakava haittapuoli. Kaikkein selv
 
 Tässä kohdassa hajautetut versionhallintajärjestelmät (DVCS) astuvat mukaan. DVCS:ssä (kuten Git, Mercurial, Bazaar tai Darcs) asiakkaat eivät vain hae viimeisintä tilannekuvaa tiedostoista: ne peilaavat täysin koko tietolähteen. Täten, jos mikä tahansa palvelin kuolee, ja nämä järjestelmät tekivät yhteistyötä sen kautta, mikä tahansa asiakastietolähde pystytään kopioimaan takaisin palvelimelle tiedon palauttamiseksi. Jokainen tiedonhaku on todellisuudessa täysi varmuuskopio kaikesta datasta (katso Kuva 1-3).
 
-Insert 18333fig0103.png
+Insert 18333fig0103-tn.png)
 Kuva 1-3. Hajautettu versionhallinta -diagrammi.
 
 Lisäksi monet näistä järjestelmistä selviytyvät melko hyvin siitä, että niillä on monia etätietolähteitä, joiden kanssa ne voivat työskennellä, joten sinä voit tehdä monenlaista yhteistyötä monenlaisien ihmisryhmien kanssa samaan aikaan samassa projektissa. Tämä mahdollistaa sen, että voit aloittaa monenlaisia työnkulkuja, jotka eivät ole mahdollisia keskitetyissä järjestelmissä, kuten hierarkkiset mallit.
@@ -61,12 +61,12 @@ Joten, mitä Git on pähkinänkuoressa? Tämä on tärkeä osa-alue omaksua, kos
 
 Suurin eroavaisuus Gitin ja minkä tahansa muun VCS:n (Subversion ja kumppanit mukaan lukien) välillä on tapa, jolla Git ajattelee dataansa. Käsitteellisesti moni muu järjestelmä varastoi informaatiotansa listana tiedostopohjaisista muutoksista. Nämä järjestelmät (CVS, Subversion, Perforce, Bazaar, ja niin edelleen) ajattelevat informaatiota jota ne varastoivat kokoelmana tiedostoja ja ajan kuluessa jokaiseen tiedostoon tehtyinä muutoksina, kuten on kuvattu Kuvassa 1-4.
 
-Insert 18333fig0104.png
+Insert 18333fig0104-tn.png)
 Kuva 1-4. Muut järjestelmät tapaavat varastoida dataa muutoksina, jokaisen tiedoston alkuperäiseen versioon.
 
 Git ei ajattele tai varastoi dataansa tällä tavalla. Sen sijaan Git ajattelee dataansa enemmän kokoelmana tilannekuvia pikkuruisesta tiedostojärjestelmästä. Joka kerta, kun sinä teet pysyvän muutoksen (commitin), tai tallennat projektisi tilan Gitissä, Git ottaa periaatteessa kuvan siitä, miltä sinun tiedostosi näyttävät kyseisellä hetkellä, ja varastoi viitteen tähän tilannekuvaan. Ollakseen tehokas, jos tiedostoa ei ole muutettu, Git ei varastoi sitä uudestaan - vaan linkittää sen edelliseen identtiseen tiedostoon, jonka se on jo varastoinut. Git ajattelee dataansa enemmän kuten Kuva 1-5 osoittaa.
 
-Insert 18333fig0105.png
+Insert 18333fig0105-tn.png)
 Kuva 1-5. Git varastoi dataa projektin tilannekuvina ajan kuluessa.
 
 Tämä on tärkeä ero Gitin ja melkein minkä tahansa muun VCS:n välillä. Se laittaa Gitin harkitsemaan uudelleen melkein jokaista versionhallinnan aspektia, jotka monet muut järjestelmät kopioivat edeltäneestä sukupolvesta. Tämä tekee Gitistä kuin pikkuruisen tiedostojärjestelmän, jolla on muutamia uskomattoman tehokkaita työkaluja päälle rakennettuna, ennemmin kuin simppelin VCS:n. Me tutkimme joitain hyötyjä, joita saavutat ajattelemalla datastasi tällä tavoin, kun käsittelemme Gitin haarautumista Luvussa 3.
@@ -101,7 +101,7 @@ Lue nyt huolellisesti. Tämä on pääasia muistaa Gitistä, jos sinä haluat lo
 
 Tämä johdattaa meidät kolmeen seuraavaan osaan Git-projektia: Git-hakemisto, työskentelyhakemisto, ja lavastusalue.
 
-Insert 18333fig0106.png
+Insert 18333fig0106-tn.png)
 Kuva 1-6. Työskentelyhakemisto, lavastusalue, ja Git-hakemisto.
 
 Git-hakemisto on paikka, johon Git varastoi metadatan ja oliotietokannan projektillesi. Tämä on kaikkein tärkein osa Gitiä, ja se sisältää sen, mitä kopioidaan, kun kloonaat tietovaraston toiselta tietokoneelta.
@@ -165,7 +165,7 @@ On olemassa kaksi helppoa tapaa asentaa Git Macissä. Helpoin on käyttää graa
 
 	http://sourceforge.net/projects/git-osx-installer/
 
-Insert 18333fig0107.png
+Insert 18333fig0107-tn.png)
 Kuva 1-7. Git OS X -asennusohjelma.
 
 Toinen pääasiallinen tapa on asentaa Git MacPortsin kautta (`http://www.macports.org`). Jos sinulla on MacPorts asennettuna, asenna Git näin:
