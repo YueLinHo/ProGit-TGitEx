@@ -754,6 +754,11 @@ Eines der interessantesten Formate ist `format`, das Dir erlaubt, Dein eigenes F
 
 Tabelle 2-1 zeigt einige nützliche Optionen, die von `format` akzeptiert werden:
 
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
+
 <!--	Option	Description of Output-->
 <!--	%H	Commit hash-->
 <!--	%h	Abbreviated commit hash-->
@@ -812,6 +817,11 @@ Die `oneline` und `format` Optionen können außerdem zusammen mit einer weitere
 
 Das sind nur einige eher simple Format Optionen für die Ausgabe von `git log` – es gibt sehr viel mehr davon. Tabelle 2-2 listet diejenigen Optionen auf, die wir bisher besprochen haben, und einige weitere, die besonders nützlich sind:
 
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
+
 <!--	Option	Description-->
 <!--	-p	Show the patch introduced with each commit.-->
 <!--	-\-word-diff	Show the patch in a word diff format.-->
@@ -836,6 +846,7 @@ Das sind nur einige eher simple Format Optionen für die Ausgabe von `git log` �
 	--relative-date	Zeigt das Datum in relativem Format (z.B. „2 weeks ago“), nicht als vollständiges Datumsformat.
 	--graph	Zeigt einen ASCII Graphen der Branch- und Merge-Historie neben der Ausgabe.
 	--pretty	Zeigt Commits in einem alternativen Format. Gültige Optionen sind: oneline, short, full, fuller und format (mit dem Du Dein eigenes Format spezifizieren kannst)
+	--oneline	A convenience option short for `--pretty=oneline --abbrev-commit`.
 
 <!--### Limiting Log Output ###-->
 ### Log Daten filtern ###
@@ -865,6 +876,11 @@ Eine letzte sehr nützliche Option, die von `git log` akzeptiert wird, ist ein P
 <!--In Table 2-3 we’ll list these and a few other common options for your reference.-->
 
 Tabelle 2-3 zeigt die besprochenen und einige weitere, übliche Optionen:
+
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
 
 <!--	Option	Description-->
 <!--	-(n)	Show only the last n commits-->
@@ -1039,7 +1055,8 @@ Beachte, dass alles was jemals in einem Commit in Git enthalten war, fast immer 
 <!--To be able to collaborate on any Git project, you need to know how to manage your remote repositories. Remote repositories are versions of your project that are hosted on the Internet or network somewhere. You can have several of them, each of which generally is either read-only or read/write for you. Collaborating with others involves managing these remote repositories and pushing and pulling data to and from them when you need to share work.-->
 <!--Managing remote repositories includes knowing how to add remote repositories, remove remotes that are no longer valid, manage various remote branches and define them as being tracked or not, and more. In this section, we’ll cover these remote-management skills.-->
 
-Um mit anderen via Git zusammenzuarbeiten, musst Du wissen, wie Du auf externe (engl. „remote“) Repositorys zugreifen kannst. Remote Repositorys sind Versionen Deines Projektes, die im Internet oder irgendwo in einem anderen Netzwerk gespeichert sind. Du kannst mehrere solcher Repositorys haben und Du kannst jedes davon entweder nur lesen oder lesen und schreiben. Mit anderen via Git zusammenzuarbeiten impliziert, solche Repositorys zu verwalten und Daten aus ihnen herunter- oder heraufzuladen, um Deine Arbeit für andere verfügbar zu machen. Um Remote Repositorys zu verwalten, muss man wissen, wie man sie anlegt und wieder entfernt, wenn sie nicht mehr verwendet werden, wie man externe Branches verwalten und nachverfolgen kann, und mehr. In diesem Kapitel werden wir auf diese Aufgaben eingehen.
+Um mit anderen via Git zusammenzuarbeiten, musst Du wissen, wie Du auf externe (engl. „remote“) Repositorys zugreifen kannst. Remote Repositorys sind Versionen Deines Projektes, die im Internet oder irgendwo in einem anderen Netzwerk gespeichert sind. Du kannst mehrere solcher Repositorys haben und Du kannst jedes davon entweder nur lesen oder lesen und schreiben. Mit anderen via Git zusammenzuarbeiten impliziert, solche Repositorys zu verwalten und Daten aus ihnen herunter- oder heraufzuladen, um Deine Arbeit für andere verfügbar zu machen.
+Um Remote Repositorys zu verwalten, muss man wissen, wie man sie anlegt und wieder entfernt, wenn sie nicht mehr verwendet werden, wie man externe Branches verwalten und nachverfolgen kann, und mehr. In diesem Kapitel werden wir auf diese Aufgaben eingehen.
 
 <!--### Showing Your Remotes ###-->
 ### Remote Repositorys anzeigen ###
