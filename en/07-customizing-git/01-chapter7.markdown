@@ -403,7 +403,6 @@ And make it executable
 
 Now `git diff` will be able to tell you what changed in `.odt` files.
 
-
 ##### Image files #####
 
 Another interesting problem you can solve this way involves diffing image files. One way to do this is to run PNG files through a filter that extracts their EXIF information — metadata that is recorded with most image formats. If you download and install the `exiftool` program, you can use it to convert your images into text about the metadata, so at least the diff will show you a textual representation of any changes that happened:
